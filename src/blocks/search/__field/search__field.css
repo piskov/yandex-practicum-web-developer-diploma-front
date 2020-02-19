@@ -1,0 +1,19 @@
+.search__field {
+  margin-right: -55px;
+
+  flex-grow: 1;
+  padding: 0px 80px 0px 24px;
+
+  border: none;
+  border-radius: 100px;
+  color: #1A1B22;
+}
+
+.search__field:focus {
+  box-shadow: 0 0 0 1pt #4f90f8;
+  outline-style: none;
+}
+
+.search__field::placeholder {
+  color: #B6BCBF;
+}

@@ -1,0 +1,7 @@
+.menu__link_theme_white {
+  color: #B6BCBF;
+}
+
+.menu__link_theme_white:hover {
+  color: white;
+}

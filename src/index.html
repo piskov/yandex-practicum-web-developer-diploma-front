@@ -12,9 +12,198 @@
         href="<%= htmlWebpackPlugin.files.chunks.main.css %>">
   <script type="module"
           src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+  <link rel="apple-touch-icon"
+        sizes="180x180"
+        href="/apple-touch-icon.png">
+  <link rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/favicon-32x32.png">
+  <link rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="/favicon-16x16.png">
+  <link rel="manifest"
+        href="/site.webmanifest">
+  <link rel="mask-icon"
+        href="/safari-pinned-tab.svg"
+        color="#347eff">
+  <meta name="msapplication-TileColor"
+        content="#00aba9">
+  <meta name="theme-color"
+        content="#ffffff">
 </head>
 
-<body>
+<body class="body
+             root
+             text-content
+             text-content_size_normal">
+  <section class="lead">
+    <header class="header
+                   text-content
+                   text-content_bold">
+      <a href="/">
+        <img class="header__logo"
+             src="<%=require('./images/company-logo.svg').default%>"
+             alt="Ссылка на главную страницу">
+      </a>
+      <div class="menu">
+        <nav>
+          <a class="menu__item
+                    menu__current-link
+                    menu__current-link_theme_white"
+             href="/">
+            Главная
+          </a>
+          <a class="menu__item
+                    menu__link
+                    menu__link_theme_white"
+             href="/saved">
+            Сохранённые статьи
+          </a>
+        </nav>
+        <!-- <button class="button
+                       button_theme_transparent
+                       menu__item">
+          Авторизоваться
+        </button> -->
+        <button class="button
+                       button_theme_transparent
+                       menu__item">
+          <div class="button__content-wrapper">
+            <span>Грета</span>
+            <img src="<%=require('./images/logout.svg').default%>"
+                 alt=""
+                 class="button__image">
+          </div>
+        </button>
+      </div>
+    </header>
+
+    <div class="search">
+      <h1 class="search__title
+                 text-title
+                 text-title_size_lead">
+        Что в мире творится?
+      </h1>
+      <p class="search__subtitle">
+        Находите самые свежие статьи на любую тему и сохраняйте
+        в своём личном кабинете.
+      </p>
+      <div class="search__control-wrapper">
+        <input class="search__field
+                      text-content
+                      text-content_size_small"
+               placeholder="Введите тему новости"
+               type="text">
+        <button class="button
+                       button_theme_blue
+                       search__button">
+          Искать
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <h2>Результаты поиска</h2>
+    <div>
+      <article>
+        <div>
+          <button></button>
+        </div>
+        <div>
+          <p>2 августа, 2019</p>
+          <h3>Национальное достояние — парки</h3>
+          <p>
+            В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
+            начала складываться система национальных парков – охраняемых
+            территорий, где и сегодня каждый может приобщиться к природе.
+          </p>
+          <p>Лента.ру</p>
+        </div>
+      </article>
+      <article>
+        <div>
+          <button></button>
+        </div>
+        <div>
+          <p>2 августа, 2019</p>
+          <h3>Лесные огоньки: история одной фотографии</h3>
+          <p>
+            Фотограф отвлеклась от освещения суровой политической реальности
+            Мексики, чтобы запечатлеть ускользающую красоту одного из местных
+            чудес природы.
+          </p>
+          <p>Медуза</p>
+        </div>
+      </article>
+      <article>
+        <div>
+          <button></button>
+        </div>
+        <div>
+          <p>2 августа, 2019</p>
+          <h3>«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
+          <p>
+            Знаменитый фотограф снимает первозданные леса России, чтобы
+            рассказать о необходимости их сохранения. В этот раз он отправился
+            в Двинско-Пинежскую тайгу, где куда-то пошел
+          </p>
+          <p>Медуза</p>
+        </div>
+      </article>
+    </div>
+    <button>Показать еще</button>
+  </main>
+
+  <section>
+    <img src="<%=require('./images/author-photo.jpg').default%>"
+         alt="Фотография автора">
+    <div>
+      <h2>Об авторе</h2>
+      <p>
+        Автор не любит «светиться» в интернете, поэтому вставляет «рыбу» о себе.
+        Фото тоже не настоящее :-)</p>
+      <p>
+        Нормальные люди пишут, как их зовут, чем занимаются, какими технологиями
+        разработки владеют.
+      </p>
+      <p>
+        Если идут на поводу у маркетологов Яндекса, «заодно» рассказывают
+        о процессе обучения в Практикуме, чему научились, и чем могут помочь
+        потенциальным заказчикам.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2020 Мужик один. Выдача новостей — News API</p>
+    <nav>
+      <a href="/">Главная</a>
+      <a href="https://praktikum.yandex.ru/"
+         target="_blank"
+         rel="noopener noreferrer">
+        Яндекс.Практикум
+      </a>
+    </nav>
+    <nav>
+      <a href="https://github.com/"
+         target="_blank"
+         rel="noopener noreferrer">
+        <img src="<%=require('./images/github.svg').default%>"
+             alt="Гитхаб">
+      </a>
+      <a href="https://www.facebook.com/"
+         target="_blank"
+         rel="noopener noreferrer">
+        <img src="<%=require('./images/facebook.svg').default%>"
+             height="24px"
+             width="24px"
+             alt="Фейсбук">
+      </a>
+    </nav>
+  </footer>
 </body>
 
 </html>

@@ -1,0 +1,6 @@
+.button__content-wrapper {
+  margin-top: 3px;
+
+  align-content: baseline;
+  display: flex;
+}

@@ -1,0 +1,9 @@
+.lead {
+  padding-bottom: 80px;
+
+  background: url('../../images/search-background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #FFFFFF;
+}

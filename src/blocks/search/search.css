@@ -1,0 +1,10 @@
+@import url('./__button/search__button.css');
+@import url('./__control-wrapper/search__control-wrapper.css');
+@import url('./__field/search__field.css');
+@import url('./__subtitle/search__subtitle.css');
+@import url('./__title/search__title.css');
+
+.search {
+  margin: 0px auto;
+  max-width: 608px;
+}

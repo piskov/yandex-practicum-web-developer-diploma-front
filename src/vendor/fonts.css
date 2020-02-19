@@ -18,10 +18,3 @@
   font-weight: normal;
   src: url("./fonts/robotoslab-regular-webfont.woff") format("woff");
 }
-
-@font-face {
-  font-family: 'Roboto Slab';
-  font-style: normal;
-  font-weight: bold;
-  src: url("./fonts/robotoslab-bold-webfont.woff") format("woff");
-}

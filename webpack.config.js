@@ -12,7 +12,7 @@ module.exports = {
   entry: { main: './src/main.js' },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[chunkhash].js'
+    filename: './js/[name].[chunkhash].js'
   },
   module: {
     rules: [
@@ -36,7 +36,7 @@ module.exports = {
           {
             loader: 'image-webpack-loader',
             options: {
-              disable: true, // skip image optimize on dev builds
+              disable: true,
               mozjpeg: {
                 progressive: true,
                 quality: 65
@@ -74,7 +74,7 @@ module.exports = {
       filename: 'index.html'
     }),
     new MiniCssExtractPlugin({
-      filename: 'style.[contenthash].css'
+      filename: './css/style.[contenthash].css'
     }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
