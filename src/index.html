@@ -49,34 +49,36 @@
       </a>
       <div class="menu">
         <nav>
-          <a class="menu__item
+          <a class="link
                     menu__current-link
-                    menu__current-link_theme_white"
+                    menu__current-link_theme_white
+                    menu__item"
              href="/">
             Главная
           </a>
-          <a class="menu__item
+          <!-- <a class="link
+                    menu__item
                     menu__link
                     menu__link_theme_white"
              href="/saved">
             Сохранённые статьи
-          </a>
+          </a> -->
         </nav>
-        <!-- <button class="button
+        <button class="button
                        button_theme_transparent
                        menu__item">
           Авторизоваться
-        </button> -->
-        <button class="button
+        </button>
+        <!-- <button class="button
                        button_theme_transparent
                        menu__item">
           <div class="button__content-wrapper">
             <span>Грета</span>
             <img src="<%=require('./images/logout.svg').default%>"
-                 alt=""
+                 alt="Иконка выхода"
                  class="button__image">
           </div>
-        </button>
+        </button> -->
       </div>
     </header>
 
@@ -105,7 +107,7 @@
     </div>
   </section>
 
-  <main>
+  <!-- <main>
     <h2>Результаты поиска</h2>
     <div>
       <article>
@@ -155,54 +157,81 @@
       </article>
     </div>
     <button>Показать еще</button>
-  </main>
+  </main> -->
 
-  <section>
-    <img src="<%=require('./images/author-photo.jpg').default%>"
-         alt="Фотография автора">
-    <div>
-      <h2>Об авторе</h2>
-      <p>
+  <section class="about-author
+                  root__about-author">
+    <img alt="Фотография автора"
+         class="about-author__photo"
+         src="<%=require('./images/author-photo.jpg').default%>">
+
+    <div class="about-author__text-wrapper">
+      <h2 class="about-author__title
+                 text-title
+                 text-title_size_normal">
+        Об авторе
+      </h2>
+      <p class="about-author__text">
         Автор не любит «светиться» в интернете, поэтому вставляет «рыбу» о себе.
-        Фото тоже не настоящее :-)</p>
-      <p>
+        Фото тоже не настоящее :-)
+      </p>
+      <p class="about-author__text">
         Нормальные люди пишут, как их зовут, чем занимаются, какими технологиями
         разработки владеют.
       </p>
-      <p>
-        Если идут на поводу у маркетологов Яндекса, «заодно» рассказывают
-        о процессе обучения в Практикуме, чему научились, и чем могут помочь
-        потенциальным заказчикам.
+      <p class="about-author__text">
+        Еще говорят: «Ссылки нужно подчеркивать (на мобиле „ховера“ нет), цвета
+        подбирать с хорошей контрастностью, отступы делать единообразные, —
+        в общем, как не в этом макете дизайнера „Яндекса“».
       </p>
     </div>
   </section>
 
-  <footer>
-    <p>© 2020 Мужик один. Выдача новостей — News API</p>
-    <nav>
-      <a href="/">Главная</a>
-      <a href="https://praktikum.yandex.ru/"
-         target="_blank"
-         rel="noopener noreferrer">
-        Яндекс.Практикум
-      </a>
-    </nav>
-    <nav>
-      <a href="https://github.com/"
-         target="_blank"
-         rel="noopener noreferrer">
-        <img src="<%=require('./images/github.svg').default%>"
-             alt="Гитхаб">
-      </a>
-      <a href="https://www.facebook.com/"
-         target="_blank"
-         rel="noopener noreferrer">
-        <img src="<%=require('./images/facebook.svg').default%>"
-             height="24px"
-             width="24px"
-             alt="Фейсбук">
-      </a>
-    </nav>
+  <footer class="footer
+                 root__footer">
+    <p class="footer__copyright
+              text-content
+              text-content_size_small">
+      © 2020 Мужик один. Выдача новостей — News API
+    </p>
+    <div class="footer__links-wrapper">
+      <nav class="footer__site-links-wrapper">
+        <a class="footer__link
+                  footer__text-link
+                  link"
+           href="/">
+          Главная
+        </a>
+        <a class="footer__link
+                  footer__text-link
+                  link"
+           href="https://praktikum.yandex.ru/"
+           target="_blank"
+           rel="noopener noreferrer">
+          Яндекс.Практикум
+        </a>
+      </nav>
+      <nav class="footer__social-links-wrapper">
+        <a class="footer__link
+                  footer__social-link
+                  link"
+           href="https://github.com/"
+           target="_blank"
+           rel="noopener noreferrer">
+          <img src="<%=require('./images/github.svg').default%>"
+               alt="Гитхаб">
+        </a>
+        <a class="footer__link
+                  footer__social-link
+                  link"
+           href="https://www.facebook.com/"
+           target="_blank"
+           rel="noopener noreferrer">
+          <img src="<%=require('./images/faceb.svg').default%>"
+               alt="Фейсбук">
+        </a>
+      </nav>
+    </div>
   </footer>
 </body>
 

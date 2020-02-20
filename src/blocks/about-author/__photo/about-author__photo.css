@@ -1,0 +1,9 @@
+.about-author__photo {
+  max-width: 464px;
+  width: 464px;
+
+  align-self: center;
+  overflow: hidden;
+
+  border-radius: 232px;
+}

@@ -1,3 +1,6 @@
+@import url('./__about-author/root__about-author.css');
+@import url('./__footer/root__footer.css');
+
 .root {
   margin: 0px auto;
 

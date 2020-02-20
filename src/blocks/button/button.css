@@ -17,8 +17,7 @@
 }
 
 .button:hover {
-  transition: ease-out 0.2s;
-  transition-property: background-color;
+  transition: background-color ease-out 0.2s;
 }
 
 .button:focus {
