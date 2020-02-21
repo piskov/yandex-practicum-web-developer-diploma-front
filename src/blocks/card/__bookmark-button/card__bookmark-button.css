@@ -1,0 +1,11 @@
+@import url('./_state/card__bookmark-button_state_marked.css');
+@import url('./_state/card__bookmark-button_state_not-marked.css');
+
+.card__bookmark-button {
+  cursor: pointer;
+}
+
+.card__bookmark-button:hover {
+  background-image: url('../../../images/bookmark-hover.svg');
+  transition: background-image 0.2s ease-out;
+}

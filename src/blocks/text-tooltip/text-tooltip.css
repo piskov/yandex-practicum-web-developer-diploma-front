@@ -1,0 +1,7 @@
+@import url('./_size/text-tooltip_size_normal.css');
+@import url('./_size/text-tooltip_size_small.css');
+
+.text-tooltip {
+  font-style: normal;
+  line-height: 1;
+}

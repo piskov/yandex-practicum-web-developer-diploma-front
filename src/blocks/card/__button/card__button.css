@@ -1,0 +1,26 @@
+.card__button {
+  margin-left: 5px;
+  position: absolute;
+  right: 24px;
+  top: 24px;
+
+  height: 40px;
+  width: 40px;
+
+  background-color: transparent;
+  background-size: cover;
+  background-position: center;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.card__button:hover .card__tooltip-wrapper {
+  opacity: 1;
+  transition: opacity 0.2s ease-out;
+}
+
+.card__button:focus {
+  box-shadow: 0 0 0 1pt #4f90f8;
+  outline-style: none;
+}
