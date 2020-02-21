@@ -1,0 +1,21 @@
+@import url('./__date/card__date.css');
+@import url('./__image/card__image.css');
+@import url('./__source/card__source.css');
+@import url('./__text/card__text.css');
+@import url('./__text-wrapper/card__text-wrapper.css');
+@import url('./__title/card__title.css');
+
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  background-color: white;
+  border-radius: 16px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.card:hover {
+  box-shadow: 0px 24px 58px -24px rgba(8, 29, 45, 0.1);
+}

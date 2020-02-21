@@ -1,0 +1,7 @@
+.card__image {
+  height: 272px;
+
+  background-image: url('../../../images/article-stub-1.jpg');
+  background-position: center;
+  background-size: cover;
+}

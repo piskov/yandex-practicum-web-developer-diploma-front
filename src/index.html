@@ -56,20 +56,20 @@
              href="/">
             Главная
           </a>
-          <!-- <a class="link
+          <a class="link
                     menu__item
                     menu__link
                     menu__link_theme_white"
              href="/saved">
             Сохранённые статьи
-          </a> -->
+          </a>
         </nav>
-        <button class="button
+        <!-- <button class="button
                        button_theme_transparent
                        menu__item">
           Авторизоваться
-        </button>
-        <!-- <button class="button
+        </button> -->
+        <button class="button
                        button_theme_transparent
                        menu__item">
           <div class="button__content-wrapper">
@@ -78,7 +78,7 @@
                  alt="Иконка выхода"
                  class="button__image">
           </div>
-        </button> -->
+        </button>
       </div>
     </header>
 
@@ -107,57 +107,119 @@
     </div>
   </section>
 
-  <!-- <main>
-    <h2>Результаты поиска</h2>
-    <div>
-      <article>
-        <div>
+  <main class="root__search-results
+               search-results">
+    <h2 class="search-results__title
+               text-title
+               text-title_size_normal">Результаты поиска</h2>
+    <div class="search-results__cards-container">
+      <a class="card"
+         href="https://google.com"
+         rel="noopener noreferrer"
+         target="_blank">
+        <div class="card__image">
           <button></button>
         </div>
-        <div>
-          <p>2 августа, 2019</p>
-          <h3>Национальное достояние — парки</h3>
-          <p>
-            В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
-            начала складываться система национальных парков – охраняемых
-            территорий, где и сегодня каждый может приобщиться к природе.
+        <div class="card__text-wrapper">
+          <div>
+            <p class="card__date
+                      text-content
+                      text-content_size_small">
+              2 августа, 2019
+            </p>
+            <h3 class="card__title
+                       text-title
+                       text-title_size_small">
+              Национальное достояние — парки
+            </h3>
+            <p class="card__text
+                      text-content
+                      text-content_size_small">
+              В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
+              начала складываться система национальных парков – охраняемых
+              территорий, где и сегодня каждый может приобщиться к природе.
+            </p>
+          </div>
+          <p class="card__source
+                    text-caption">
+            Лента.ру
           </p>
-          <p>Лента.ру</p>
         </div>
-      </article>
-      <article>
-        <div>
+        </article>
+      </a>
+      <a class="card"
+         href="https://google.com"
+         rel="noopener noreferrer"
+         target="_blank">
+        <div class="card__image">
           <button></button>
         </div>
-        <div>
-          <p>2 августа, 2019</p>
-          <h3>Лесные огоньки: история одной фотографии</h3>
-          <p>
-            Фотограф отвлеклась от освещения суровой политической реальности
-            Мексики, чтобы запечатлеть ускользающую красоту одного из местных
-            чудес природы.
+        <div class="card__text-wrapper">
+          <div>
+            <p class="card__date
+                      text-content
+                      text-content_size_small">
+              2 августа, 2019
+            </p>
+            <h3 class="card__title
+                       text-title
+                       text-title_size_small">
+              Лесные огоньки: история одной фотографии
+            </h3>
+            <p class="card__text
+                      text-content
+                      text-content_size_small">
+              Фотограф отвлеклась от освещения суровой политической реальности
+              Мексики, чтобы запечатлеть ускользающую красоту одного из местных
+              чудес природы.
+            </p>
+          </div>
+          <p class="card__source
+                    text-caption">
+            Медуза
           </p>
-          <p>Медуза</p>
         </div>
-      </article>
-      <article>
-        <div>
+      </a>
+      <a class="card"
+         href="https://google.com"
+         rel="noopener noreferrer"
+         target="_blank">
+        <div class="card__image">
           <button></button>
         </div>
-        <div>
-          <p>2 августа, 2019</p>
-          <h3>«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
-          <p>
-            Знаменитый фотограф снимает первозданные леса России, чтобы
-            рассказать о необходимости их сохранения. В этот раз он отправился
-            в Двинско-Пинежскую тайгу, где куда-то пошел
+        <div class="card__text-wrapper">
+          <div>
+            <p class="card__date
+                      text-content
+                      text-content_size_small">
+              2 августа, 2019
+            </p>
+            <h3 class="card__title
+                       text-title
+                       text-title_size_small">
+              «Первозданная тайга»: новый фотопроект Игоря Шпиленка
+            </h3>
+            <p class="card__text
+                      text-content
+                      text-content_size_small">
+              Знаменитый фотограф снимает первозданные леса России, чтобы
+              рассказать о необходимости их сохранения. В этот раз он отправился
+              в Двинско-Пинежскую тайгу, где...
+            </p>
+          </div>
+          <p class="card__source
+                    text-caption">
+            РИА
           </p>
-          <p>Медуза</p>
         </div>
-      </article>
+      </a>
     </div>
-    <button>Показать еще</button>
-  </main> -->
+    <button class="button
+                   button_theme_white
+                   search-results__load-button">
+      Показать еще
+    </button>
+  </main>
 
   <section class="about-author
                   root__about-author">

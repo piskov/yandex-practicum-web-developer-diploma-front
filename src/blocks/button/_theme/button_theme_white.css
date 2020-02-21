@@ -1,4 +1,8 @@
 .button_theme_white {
+  min-height: 64px;
+
+  padding: 0px 60px;
+
   background-color: white;
   border: none;
   font-weight: 500;
