@@ -1,0 +1,7 @@
+@import url("./__caption/preloader__caption.css");
+@import url('./__image/preloader__image.css');
+@import url('./_hidden/preloader_hidden.css');
+
+.preloader {
+  padding: 0px;
+}

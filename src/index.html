@@ -133,8 +133,7 @@
         <div class="card__text-wrapper">
           <div>
             <p class="card__date
-                      text-content
-                      text-content_size_small">
+                      text-date">
               2 августа, 2019
             </p>
             <h3 class="card__title
@@ -177,8 +176,7 @@
         <div class="card__text-wrapper">
           <div>
             <p class="card__date
-                      text-content
-                      text-content_size_small">
+                      text-date">
               2 августа, 2019
             </p>
             <h3 class="card__title
@@ -220,8 +218,7 @@
         <div class="card__text-wrapper">
           <div>
             <p class="card__date
-                      text-content
-                      text-content_size_small">
+                      text-date">
               2 августа, 2019
             </p>
             <h3 class="card__title
@@ -244,11 +241,35 @@
         </div>
       </a>
     </div>
+
     <button class="button
                    button_theme_white
                    search-results__load-button">
       Показать еще
     </button>
+
+    <div class="preloader
+                preloader_hidden
+                search-results__preloader">
+      <div class="preloader__image"></div>
+      <p class="preloader__caption">
+        Идет поиск новостей...
+      </p>
+    </div>
+
+    <div class="not-found
+                not-found_hidden
+                search-results__not-found">
+      <img alt="Изображение грустной лупы"
+           class="not-found__image"
+           src="<%=require('./images/not-found.svg').default%>">
+      <h2 class="not-found__title
+                 text-title
+                 text-title_size_small">Ничего не найдено</h2>
+      <p class="not-found__caption">
+        К сожалению по вашему запросу ничего не найдено.
+      </p>
+    </div>
   </main>
 
   <section class="about-author
