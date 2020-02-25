@@ -11,6 +11,6 @@
   background-color: #2A65CC;
 }
 
-.button_theme_blue:not(:active):hover {
+.button_theme_blue:not(:active):not(:disabled):hover {
   background-color: #347EFF;
 }

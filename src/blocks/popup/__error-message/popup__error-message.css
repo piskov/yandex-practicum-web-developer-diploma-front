@@ -1,0 +1,9 @@
+@import url('./_centered/popup__error-message_centered.css');
+
+.popup__error-message {
+  margin: 3px 0px 0px;
+
+  min-height: 16px;
+
+  color: #FF0000;
+}

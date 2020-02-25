@@ -249,7 +249,7 @@
     </button>
 
     <div class="preloader
-                preloader_hidden
+                preloader_is-hidden
                 search-results__preloader">
       <div class="preloader__image"></div>
       <p class="preloader__caption">
@@ -258,7 +258,7 @@
     </div>
 
     <div class="not-found
-                not-found_hidden
+                not-found_is-hidden
                 search-results__not-found">
       <img alt="Изображение грустной лупы"
            class="not-found__image"
@@ -346,6 +346,237 @@
       </nav>
     </div>
   </footer>
+
+  <div id="login-popup"
+       class="popup
+              popup_is-hidden">
+    <div class="popup__content
+                popup__content_vertical-padding_normal">
+      <img alt="Кнопка закрыть"
+           class="popup__close"
+           src="<%=require('./images/popup-close.svg').default%>">
+      <h2 class="popup__title
+                 text-form-header">
+        Вход
+      </h2>
+      <form class="popup__form"
+            name="login"
+            novalidate>
+        <div class="popup__input-wrapper">
+          <label class="popup__label
+                        text-form-content
+                        text-form-content_size_small"
+                 for="loginEmail">
+            Email
+          </label>
+          <input class="popup__input
+                        text-form-content
+                        text-form-content_size_normal"
+                 id="loginEmail"
+                 maxlength="320"
+                 minlength="1"
+                 name="email"
+                 placeholder="Введите почту"
+                 required
+                 type="email">
+          <p aria-live="polite"
+             class="popup__error-message
+                    text-form-content
+                    text-form-content_size_small"
+             id="error-login-email">
+            Неправильный формат email
+          </p>
+        </div>
+
+        <div class="popup__input-wrapper">
+          <label class="popup__label
+                        text-form-content
+                        text-form-content_size_small"
+                 for="loginPassword">
+            Пароль
+          </label>
+          <input class="popup__input
+                        text-form-content
+                        text-form-content_size_normal"
+                 id="loginPassword"
+                 name="password"
+                 required
+                 placeholder="Введите пароль"
+                 type="password">
+          <p aria-live="polite"
+             class="popup__error-message
+                    text-form-content
+                    text-form-content_size_small"
+             id="error-login-password"></p>
+        </div>
+
+        <div class="popup__submit-wrapper">
+          <p aria-live="polite"
+             class="popup__error-message
+                    popup__error-message_centered
+                    text-form-content
+                    text-form-content_size_small"
+             id="error-login">
+            Сервер не отвечает
+          </p>
+          <button class="button
+                         button_theme_blue
+                         popup__button"
+                  disabled
+                  type="submit">
+            Войти
+          </button>
+        </div>
+      </form>
+
+      <button class="popup__textual-button
+                     popup__textual-button_align_center
+                     text-form-content
+                     text-form-content_size_normal">
+        <span class="popup__textual-button_text-color_black">или</span>
+        Зарегистрироваться
+      </button>
+    </div>
+  </div>
+
+  <div id="signup-popup"
+       class="popup
+              popup_is-hidden">
+    <div class="popup__content
+                popup__content_vertical-padding_normal">
+      <img alt="Кнопка закрыть"
+           class="popup__close"
+           src="<%=require('./images/popup-close.svg').default%>">
+      <h2 class="popup__title
+                 text-form-header">
+        Регистрация
+      </h2>
+      <form class="popup__form"
+            name="signup"
+            novalidate>
+        <div class="popup__input-wrapper">
+          <label class="popup__label
+                        text-form-content
+                        text-form-content_size_small"
+                 for="signupEmail">
+            Email
+          </label>
+          <input class="popup__input
+                        text-form-content
+                        text-form-content_size_normal"
+                 id="signupEmail"
+                 maxlength="320"
+                 minlength="1"
+                 name="email"
+                 placeholder="Введите почту"
+                 required
+                 type="email">
+          <p aria-live="polite"
+             class="popup__error-message
+                    text-form-content
+                    text-form-content_size_small"
+             id="error-signup-email">
+            Неправильный формат email
+          </p>
+        </div>
+
+        <div class="popup__input-wrapper">
+          <label class="popup__label
+                        text-form-content
+                        text-form-content_size_small"
+                 for="signupPassword">
+            Пароль
+          </label>
+          <input class="popup__input
+                        text-form-content
+                        text-form-content_size_normal"
+                 id="signupPassword"
+                 name="password"
+                 required
+                 placeholder="Введите пароль"
+                 type="password">
+          <p aria-live="polite"
+             class="popup__error-message
+                    text-form-content
+                    text-form-content_size_small"
+             id="error-signup-password"></p>
+        </div>
+
+        <div class="popup__input-wrapper">
+          <label class="popup__label
+                        text-form-content
+                        text-form-content_size_small"
+                 for="signupName">
+            Имя
+          </label>
+          <input class="popup__input
+                        text-form-content
+                        text-form-content_size_normal"
+                 id="signupName"
+                 maxlength="30"
+                 minlength="2"
+                 name="name"
+                 placeholder="Введите своё имя"
+                 required
+                 type="text">
+          <p aria-live="polite"
+             class="popup__error-message
+                    text-form-content
+                    text-form-content_size_small"
+             id="error-signup-name">
+            Введите имя
+          </p>
+        </div>
+
+        <div class="popup__submit-wrapper">
+          <p aria-live="polite"
+             class="popup__error-message
+                    popup__error-message_centered
+                    text-form-content
+                    text-form-content_size_small"
+             id="error-signup">
+            Такой пользователь уже есть
+          </p>
+          <button class="button
+                         button_theme_blue
+                         popup__button"
+                  disabled
+                  type="submit">
+            Зарегистрироваться
+          </button>
+        </div>
+      </form>
+
+      <button class="popup__textual-button
+                     popup__textual-button_align_center
+                     text-form-content
+                     text-form-content_size_normal">
+        <span class="popup__textual-button_text-color_black">или</span>
+        Войти
+      </button>
+    </div>
+  </div>
+
+  <div id="signup-ok-popup"
+       class="popup
+              popup_is-hidden">
+    <div class="popup__content
+                popup__content_vertical-padding_large">
+      <img alt="Кнопка закрыть"
+           class="popup__close"
+           src="<%=require('./images/popup-close.svg').default%>">
+      <h2 class="popup__title
+                 text-form-header">
+        Пользователь успешно зарегистрирован!
+      </h2>
+
+      <button class="popup__textual-button
+                     text-content
+                     text-content_size_normal">
+        Выполнить вход
+      </button>
+    </div>
+  </div>
 </body>
 
 </html>

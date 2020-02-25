@@ -1,4 +1,11 @@
 @font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: normal;
+  src: url("./fonts/inter-regular.woff") format("woff");
+}
+
+@font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: normal;
@@ -23,5 +30,5 @@
   font-family: 'Source Sans Pro';
   font-style: normal;
   font-weight: normal;
-  src: url("./fonts/SourceSansPro-Regular.ttf") format("woff");
+  src: url("./fonts/source-sans-pro-regular.woff") format("woff");
 }

@@ -1,0 +1,7 @@
+@import url('./_size/text-form-content_size_normal.css');
+@import url('./_size/text-form-content_size_small.css');
+
+.text-form-content {
+  font-family: 'Inter', Roboto, Arial, sans-serif;
+  font-weight: normal;
+}

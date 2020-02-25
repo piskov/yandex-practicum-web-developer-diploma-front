@@ -1,0 +1,15 @@
+@import url('./_vertical-padding/popup__content_vertical-padding_large.css');
+@import url('./_vertical-padding/popup__content_vertical-padding_normal.css');
+
+.popup__content {
+  box-sizing: border-box;
+  width: 430px;
+
+  padding-left: 36px;
+  padding-right: 36px;
+  position: relative;
+
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+}
