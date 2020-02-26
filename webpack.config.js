@@ -9,10 +9,21 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 
 module.exports = {
-  entry: { main: './src/main.js' },
+  entry: {
+    index: './src/index.js',
+    saved: './src/saved.js'
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: './js/[name].[chunkhash].js'
+  },
+  devServer: {
+    historyApiFallback: {
+      index: 'index.html',
+      rewrites: [
+        { from: /\/saved/, to: '/saved.html' }
+      ]
+    }
   },
   module: {
     rules: [
@@ -73,8 +84,13 @@ module.exports = {
       template: './src/index.html',
       filename: 'index.html'
     }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      template: './src/saved.html',
+      filename: 'saved.html'
+    }),
     new MiniCssExtractPlugin({
-      filename: './css/style.[contenthash].css'
+      filename: './css/[name].[contenthash].css'
     }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,

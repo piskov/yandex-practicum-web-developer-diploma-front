@@ -1,6 +1,8 @@
 @import url('./__bookmark-button/card__bookmark-button.css');
 @import url('./__button/card__button.css');
 @import url('./__date/card__date.css');
+@import url('./__delete-button/card__delete-button.css');
+@import url('./__keyword/card__keyword.css');
 @import url('./__link/card__link.css');
 @import url('./__image/card__image.css');
 @import url('./__tooltip/card__tooltip.css');

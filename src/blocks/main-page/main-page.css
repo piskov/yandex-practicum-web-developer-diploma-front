@@ -1,8 +1,8 @@
-@import url('./__about-author/root__about-author.css');
-@import url('./__footer/root__footer.css');
-@import url('./__search-results/root__search-results.css');
+@import url('./__about-author/main-page__about-author.css');
+@import url('./__footer/main-page__footer.css');
+@import url('./__search-results/main-page__search-results.css');
 
-.root {
+.main-page {
   margin: 0px auto;
 
   max-width: 1440px;

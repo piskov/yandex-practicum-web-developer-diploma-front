@@ -1,0 +1,6 @@
+@import url('./__preloader/saved-cards__preloader.css');
+
+.saved-cards {
+  display: flex;
+  flex-direction: column;
+}

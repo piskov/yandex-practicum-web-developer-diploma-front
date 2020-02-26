@@ -9,9 +9,9 @@
         content="ie=edge">
   <title>News explorer</title>
   <link rel="stylesheet"
-        href="<%= htmlWebpackPlugin.files.chunks.main.css %>">
+        href="<%= htmlWebpackPlugin.files.chunks.index.css %>">
   <script type="module"
-          src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+          src="<%= htmlWebpackPlugin.files.chunks.index.entry %>"></script>
   <link rel="apple-touch-icon"
         sizes="180x180"
         href="/apple-touch-icon.png">
@@ -35,16 +35,17 @@
 </head>
 
 <body class="body
-             root
+             main-page
              text-content
              text-content_size_normal">
   <section class="lead">
     <header class="header
+                   header_theme_white
                    text-content
                    text-content_bold">
       <a href="/">
         <img class="header__logo"
-             src="<%=require('./images/company-logo.svg').default%>"
+             src="<%=require('./images/company-logo-white.svg').default%>"
              alt="Ссылка на главную страницу">
       </a>
       <div class="menu">
@@ -70,10 +71,10 @@
           Авторизоваться
         </button> -->
         <button class="button
-                       button_theme_transparent
+                       button_theme_transparent-white
                        menu__item">
           <span>Грета</span>
-          <img src="<%=require('./images/logout.svg').default%>"
+          <img src="<%=require('./images/logout-white.svg').default%>"
                alt="Иконка выхода"
                class="button__image">
         </button>
@@ -105,12 +106,13 @@
     </div>
   </section>
 
-  <main class="root__search-results
+  <main class="main-page__search-results
                search-results">
     <h2 class="search-results__title
                text-title
                text-title_size_normal">Результаты поиска</h2>
-    <div class="search-results__cards-container">
+    <div class="cards-container
+                search-results__cards-container">
       <article class="card">
         <a class="card__link"
            href="https://google.com"
@@ -271,7 +273,7 @@
   </main>
 
   <section class="about-author
-                  root__about-author">
+                  main-page__about-author">
     <img alt="Фотография автора"
          class="about-author__photo"
          src="<%=require('./images/author-photo.jpg').default%>">
@@ -299,7 +301,7 @@
   </section>
 
   <footer class="footer
-                 root__footer">
+                 main-page__footer">
     <p class="footer__copyright
               text-content
               text-content_size_small">

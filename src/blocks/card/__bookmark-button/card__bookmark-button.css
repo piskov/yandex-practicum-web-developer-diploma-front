@@ -5,7 +5,7 @@
   cursor: pointer;
 }
 
-.card__bookmark-button:hover {
+.card__bookmark-button:not(:active):not(:disabled):hover {
   background-image: url('../../../images/bookmark-hover.svg');
   transition: background-image 0.2s ease-out;
 }

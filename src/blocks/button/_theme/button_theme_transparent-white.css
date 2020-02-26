@@ -1,4 +1,4 @@
-.button_theme_transparent {
+.button_theme_transparent-white {
   min-height: 48px;
 
   padding: 0px 18px;
@@ -8,6 +8,6 @@
   color: white;
 }
 
-.button_theme_transparent:hover {
+.button_theme_transparent-white:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }

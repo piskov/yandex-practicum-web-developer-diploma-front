@@ -1,0 +1,16 @@
+@import url('./__cards-summary/saved-page__cards-summary.css');
+@import url('./__footer/saved-page__footer.css');
+@import url('./__saved-cards/saved-page__saved-cards.css');
+
+.saved-page {
+  margin: 0px auto;
+
+  max-width: 1440px;
+  min-width: 320px;
+
+  font-family: Roboto, Arial, sans-serif;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  text-rendering: optimizeLegibility;
+}

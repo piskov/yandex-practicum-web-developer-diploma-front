@@ -1,8 +1,8 @@
-.card__tooltip {
-  margin-right: 5px;
+.card__keyword {
+  margin: 0px;
+  left: 24px;
   position: absolute;
-  right: 100%;
-  top: 0%;
+  top: 24px;
 
   min-height: 40px;
 
@@ -10,11 +10,11 @@
   flex-direction: column;
   justify-content: center;
   padding: 0 13px;
-  visibility: collapse;
 
   background: #FFFFFF;
   border-radius: 10px;
   box-shadow: 0px 10px 22px rgba(59, 74, 116, 0.1);
-  opacity: 0;
   white-space: nowrap;
+
+  font-size: 14px;
 }

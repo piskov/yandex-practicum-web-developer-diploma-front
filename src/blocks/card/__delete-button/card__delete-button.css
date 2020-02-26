@@ -1,0 +1,8 @@
+.card__delete-button {
+  background-image: url('../../../images/delete-card.svg');
+}
+
+.card__delete-button:not(:active):not(:disabled):hover {
+  background-image: url('../../../images/delete-card-hover.svg');
+  transition: background-image 0.2s ease-out;
+}

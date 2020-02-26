@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible"
+        content="ie=edge">
+  <title>News explorer — сохраненный статьи</title>
+  <link rel="stylesheet"
+        href="<%= htmlWebpackPlugin.files.chunks.saved.css %>">
+  <script type="module"
+          src="<%= htmlWebpackPlugin.files.chunks.saved.entry %>"></script>
+  <link rel="apple-touch-icon"
+        sizes="180x180"
+        href="/apple-touch-icon.png">
+  <link rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/favicon-32x32.png">
+  <link rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="/favicon-16x16.png">
+  <link rel="manifest"
+        href="/site.webmanifest">
+  <link rel="mask-icon"
+        href="/safari-pinned-tab.svg"
+        color="#347eff">
+  <meta name="msapplication-TileColor"
+        content="#00aba9">
+  <meta name="theme-color"
+        content="#ffffff">
+</head>
+
+<body class="body
+             saved-page
+             text-content
+             text-content_size_normal">
+  <header class="header
+                 header_theme_black
+                 text-content
+                 text-content_bold">
+    <a href="/">
+      <img class="header__logo"
+           src="<%=require('./images/company-logo-black.svg').default%>"
+           alt="Ссылка на главную страницу">
+    </a>
+    <div class="menu">
+      <nav>
+        <a class="link
+                  menu__item
+                  menu__link
+                  menu__link_theme_black"
+           href="/">
+          Главная
+        </a>
+        <a class="link
+                  menu__current-link
+                  menu__current-link_theme_black
+                  menu__item"
+           href="/saved">
+          Сохранённые статьи
+        </a>
+      </nav>
+      <button class="button
+                     button_theme_transparent-black
+                     menu__item">
+        <span>Грета</span>
+        <img src="<%=require('./images/logout-black.svg').default%>"
+             alt="Иконка выхода"
+             class="button__image">
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="cards-summary
+                    saved-page__cards-summary">
+      <p class="cards-summary__caption">
+        Сохранённые статьи
+      </p>
+      <h1 class="cards-summary__title
+                 text-title
+                 text-title_size_normal">
+        Грета, у вас 5 сохранённых статей
+      </h1>
+      <p class="cards-summary__keywords-info">
+        По ключевым словам:
+        <span class="cards-summary__keyword">Природа, Тайга</span>
+        и
+        <span class="cards-summary__keyword">2 другим</span>
+      </p>
+    </section>
+
+    <section class="saved-cards
+                    saved-page__saved-cards">
+      <div class="cards-container">
+        <article class="card">
+          <a class="card__link"
+             href="https://google.com"
+             rel="noopener noreferrer"
+             target="_blank"></a>
+          <div class="card__image">
+            <p class="card__keyword
+                      text-keyword">
+              Природа
+            </p>
+            <button class="card__button
+                           card__delete-button">
+              <span class="card__tooltip
+                           text-tooltip
+                           text-tooltip_size_normal">
+                Убрать из сохранённых
+              </span>
+            </button>
+          </div>
+          <div class="card__text-wrapper">
+            <div>
+              <p class="card__date
+                        text-date">
+                2 августа, 2019
+              </p>
+              <h3 class="card__title
+                         text-title
+                         text-title_size_small">
+                Национальное достояние — парки
+              </h3>
+              <p class="card__text
+                        text-content
+                        text-content_size_small">
+                В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
+                начала складываться система национальных парков – охраняемых
+                территорий, где и сегодня каждый может приобщиться к природе.
+              </p>
+            </div>
+            <p class="card__source
+                      text-caption">
+              Лента.ру
+            </p>
+          </div>
+        </article>
+        <article class="card">
+          <a class="card__link"
+             href="https://google.com"
+             rel="noopener noreferrer"
+             target="_blank"></a>
+          <div class="card__image">
+            <p class="card__keyword
+                      text-keyword">
+              Природа
+            </p>
+            <button class="card__button
+                           card__delete-button">
+              <span class="card__tooltip
+                           text-tooltip
+                           text-tooltip_size_normal">
+                Убрать из сохранённых
+              </span>
+            </button>
+          </div>
+          <div class="card__text-wrapper">
+            <div>
+              <p class="card__date
+                                text-date">
+                2 августа, 2019
+              </p>
+              <h3 class="card__title
+                         text-title
+                         text-title_size_small">
+                Национальное достояние — парки
+              </h3>
+              <p class="card__text
+                        text-content
+                        text-content_size_small">
+                В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
+                начала складываться система национальных парков – охраняемых
+                территорий, где и сегодня каждый может приобщиться к природе.
+              </p>
+            </div>
+            <p class="card__source
+                      text-caption">
+              Лента.ру
+            </p>
+          </div>
+        </article>
+        <article class="card">
+          <a class="card__link"
+             href="https://google.com"
+             rel="noopener noreferrer"
+             target="_blank"></a>
+          <div class="card__image">
+            <p class="card__keyword
+                      text-keyword">
+              Природа
+            </p>
+            <button class="card__button
+                           card__delete-button">
+              <span class="card__tooltip
+                           text-tooltip
+                           text-tooltip_size_normal">
+                Убрать из сохранённых
+              </span>
+            </button>
+          </div>
+          <div class="card__text-wrapper">
+            <div>
+              <p class="card__date
+                        text-date">
+                2 августа, 2019
+              </p>
+              <h3 class="card__title
+                         text-title
+                         text-title_size_small">
+                Национальное достояние — парки
+              </h3>
+              <p class="card__text
+                        text-content
+                        text-content_size_small">
+                В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
+                начала складываться система национальных парков – охраняемых
+                территорий, где и сегодня каждый может приобщиться к природе.
+              </p>
+            </div>
+            <p class="card__source
+                      text-caption">
+              Лента.ру
+            </p>
+          </div>
+        </article>
+        <article class="card">
+          <a class="card__link"
+             href="https://google.com"
+             rel="noopener noreferrer"
+             target="_blank"></a>
+          <div class="card__image">
+            <p class="card__keyword
+                      text-keyword">
+              Природа
+            </p>
+            <button class="card__button
+                           card__delete-button">
+              <span class="card__tooltip
+                           text-tooltip
+                           text-tooltip_size_normal">
+                Убрать из сохранённых
+              </span>
+            </button>
+          </div>
+          <div class="card__text-wrapper">
+            <div>
+              <p class="card__date
+                        text-date">
+                2 августа, 2019
+              </p>
+              <h3 class="card__title
+                         text-title
+                         text-title_size_small">
+                Национальное достояние — парки
+              </h3>
+              <p class="card__text
+                        text-content
+                        text-content_size_small">
+                В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
+                начала складываться система национальных парков – охраняемых
+                территорий, где и сегодня каждый может приобщиться к природе.
+              </p>
+            </div>
+            <p class="card__source
+                      text-caption">
+              Лента.ру
+            </p>
+          </div>
+        </article>
+        <article class="card">
+          <a class="card__link"
+             href="https://google.com"
+             rel="noopener noreferrer"
+             target="_blank"></a>
+          <div class="card__image">
+            <p class="card__keyword
+                      text-keyword">
+              Природа
+            </p>
+            <button class="card__button
+                           card__delete-button">
+              <span class="card__tooltip
+                           text-tooltip
+                           text-tooltip_size_normal">
+                Убрать из сохранённых
+              </span>
+            </button>
+          </div>
+          <div class="card__text-wrapper">
+            <div>
+              <p class="card__date
+                        text-date">
+                2 августа, 2019
+              </p>
+              <h3 class="card__title
+                         text-title
+                         text-title_size_small">
+                Национальное достояние — парки
+              </h3>
+              <p class="card__text
+                        text-content
+                        text-content_size_small">
+                В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
+                начала складываться система национальных парков – охраняемых
+                территорий, где и сегодня каждый может приобщиться к природе.
+              </p>
+            </div>
+            <p class="card__source
+                      text-caption">
+              Лента.ру
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <div class="preloader
+                  preloader_is-hidden
+                  saved-cards__preloader">
+        <div class="preloader__image"></div>
+        <p class="preloader__caption">
+          Идет загрузка новостей...
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer
+                 saved-page__footer">
+    <p class="footer__copyright
+              text-content
+              text-content_size_small">
+      © 2020 Мужик один. Выдача новостей — News API
+    </p>
+    <div class="footer__links-wrapper">
+      <nav class="footer__site-links-wrapper">
+        <a class="footer__link
+                  footer__text-link
+                  link"
+           href="/">
+          Главная
+        </a>
+        <a class="footer__link
+                  footer__text-link
+                  link"
+           href="https://praktikum.yandex.ru/"
+           target="_blank"
+           rel="noopener noreferrer">
+          Яндекс.Практикум
+        </a>
+      </nav>
+      <nav class="footer__social-links-wrapper">
+        <a class="footer__link
+                  footer__social-link
+                  link"
+           href="https://github.com/"
+           target="_blank"
+           rel="noopener noreferrer">
+          <img src="<%=require('./images/github.svg').default%>"
+               alt="Гитхаб">
+        </a>
+        <a class="footer__link
+                  footer__social-link
+                  link"
+           href="https://www.facebook.com/"
+           target="_blank"
+           rel="noopener noreferrer">
+          <img src="<%=require('./images/faceb.svg').default%>"
+               alt="Фейсбук">
+        </a>
+      </nav>
+    </div>
+  </footer>
+</body>
+
+</html>
