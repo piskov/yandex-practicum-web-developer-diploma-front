@@ -1,6 +1,8 @@
 .card__text-wrapper {
   margin: 21px 24px 24px 24px;
 
+  box-sizing: border-box;
+  min-height: 259px;
   flex-grow: 1;
 
   display: flex;
