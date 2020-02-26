@@ -1,3 +1,5 @@
 .button__image {
-  margin: -2px -3px 0px 7px;
+  margin: -5px -3px 0px 3px;
+  position: relative;
+  top: 6px;
 }

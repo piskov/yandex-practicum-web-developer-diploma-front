@@ -72,12 +72,10 @@
         <button class="button
                        button_theme_transparent
                        menu__item">
-          <div class="button__content-wrapper">
-            <span>Грета</span>
-            <img src="<%=require('./images/logout.svg').default%>"
-                 alt="Иконка выхода"
-                 class="button__image">
-          </div>
+          <span>Грета</span>
+          <img src="<%=require('./images/logout.svg').default%>"
+               alt="Иконка выхода"
+               class="button__image">
         </button>
       </div>
     </header>
@@ -113,21 +111,20 @@
                text-title
                text-title_size_normal">Результаты поиска</h2>
     <div class="search-results__cards-container">
-      <a class="card"
-         href="https://google.com"
-         rel="noopener noreferrer"
-         target="_blank">
+      <article class="card">
+        <a class="card__link"
+           href="https://google.com"
+           rel="noopener noreferrer"
+           target="_blank"></a>
         <div class="card__image">
           <button class="card__button
                          card__bookmark-button
                          card__bookmark-button_state_not-marked">
-            <div class="card__tooltip-wrapper">
-              <p class="card__tooltip
-                        text-tooltip
-                        text-tooltip_size_small">
-                Войдите, чтобы сохранять статьи
-              </p>
-            </div>
+            <span class="card__tooltip
+                         text-tooltip
+                         text-tooltip_size_small">
+              Войдите, чтобы сохранять статьи
+            </span>
           </button>
         </div>
         <div class="card__text-wrapper">
@@ -154,23 +151,23 @@
             Лента.ру
           </p>
         </div>
-        </article>
-      </a>
-      <a class="card"
-         href="https://google.com"
-         rel="noopener noreferrer"
-         target="_blank">
+      </article>
+      <article class="card">
+        <a class="card__link"
+           href="https://google.com"
+           rel="noopener noreferrer"
+           target="_blank"></a>
         <div class="card__image">
           <button class="card__button
                          card__bookmark-button
                          card__bookmark-button_state_marked">
-            <div class="card__tooltip-wrapper">
-              <p class="card__tooltip
+            <span class="card__tooltip-wrapper">
+              <span class="card__tooltip
                         text-tooltip
                         text-tooltip_size_small">
                 Войдите, чтобы сохранять статьи
-              </p>
-            </div>
+              </span>
+            </span>
           </button>
         </div>
         <div class="card__text-wrapper">
@@ -197,22 +194,23 @@
             Медуза
           </p>
         </div>
-      </a>
-      <a class="card"
-         href="https://google.com"
-         rel="noopener noreferrer"
-         target="_blank">
+      </article>
+      <article class="card">
+        <a class="card__link"
+           href="https://google.com"
+           rel="noopener noreferrer"
+           target="_blank"></a>
         <div class="card__image">
           <button class="card__button
                          card__bookmark-button
                          card__bookmark-button_state_not-marked">
-            <div class="card__tooltip-wrapper">
-              <p class="card__tooltip
+            <span class="card__tooltip-wrapper">
+              <span class="card__tooltip
                         text-tooltip
                         text-tooltip_size_small">
                 Войдите, чтобы сохранять статьи
-              </p>
-            </div>
+              </span>
+            </span>
           </button>
         </div>
         <div class="card__text-wrapper">
@@ -239,7 +237,7 @@
             РИА
           </p>
         </div>
-      </a>
+      </article>
     </div>
 
     <button class="button

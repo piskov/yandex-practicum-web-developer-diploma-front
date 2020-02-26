@@ -3,6 +3,7 @@
   position: absolute;
   right: 24px;
   top: 24px;
+  z-index: 2;
 
   height: 40px;
   width: 40px;
@@ -15,8 +16,9 @@
   cursor: pointer;
 }
 
-.card__button:hover .card__tooltip-wrapper {
+.card__button:hover .card__tooltip {
   opacity: 1;
+  visibility: visible;
   transition: opacity 0.2s ease-out;
 }
 

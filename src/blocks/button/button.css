@@ -1,8 +1,7 @@
-@import url('./__content-wrapper/button__content-wrapper.css');
-@import url('./__image/button__image.css');
 @import url('./_theme/button_theme_blue.css');
 @import url('./_theme/button_theme_transparent.css');
 @import url('./_theme/button_theme_white.css');
+@import url('./__image/button__image.css');
 
 .button {
   border-radius: 100px;

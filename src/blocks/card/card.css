@@ -1,9 +1,9 @@
 @import url('./__bookmark-button/card__bookmark-button.css');
 @import url('./__button/card__button.css');
 @import url('./__date/card__date.css');
+@import url('./__link/card__link.css');
 @import url('./__image/card__image.css');
 @import url('./__tooltip/card__tooltip.css');
-@import url('./__tooltip-wrapper/card__tooltip-wrapper.css');
 @import url('./__source/card__source.css');
 @import url('./__text/card__text.css');
 @import url('./__text-wrapper/card__text-wrapper.css');
@@ -13,6 +13,7 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  position: relative;
 
   background-color: white;
   border-radius: 16px;
