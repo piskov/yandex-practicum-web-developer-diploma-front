@@ -338,42 +338,50 @@
       © 2020 Мужик один. Выдача новостей — News API
     </p>
     <div class="footer__links-wrapper">
-      <nav class="footer__site-links-wrapper">
-        <a class="footer__link
-                  footer__text-link
-                  link"
-           href="/">
-          Главная
-        </a>
-        <a class="footer__link
-                  footer__text-link
-                  link"
-           href="https://praktikum.yandex.ru/"
-           target="_blank"
-           rel="noopener noreferrer">
-          Яндекс.Практикум
-        </a>
-      </nav>
-      <nav class="footer__social-links-wrapper">
-        <a class="footer__link
-                  footer__social-link
-                  link"
-           href="https://github.com/"
-           target="_blank"
-           rel="noopener noreferrer">
-          <img src="<%=require('./images/github.svg').default%>"
-               alt="Гитхаб">
-        </a>
-        <a class="footer__link
-                  footer__social-link
-                  link"
-           href="https://www.facebook.com/"
-           target="_blank"
-           rel="noopener noreferrer">
-          <img src="<%=require('./images/faceb.svg').default%>"
-               alt="Фейсбук">
-        </a>
-      </nav>
+      <ul class="footer__links">
+        <li>
+          <a class="footer__link
+                    footer__text-link
+                    link"
+             href="/">
+            Главная
+          </a>
+        </li>
+        <li>
+          <a class="footer__link
+                    footer__text-link
+                    link"
+             href="https://praktikum.yandex.ru/"
+             target="_blank"
+             rel="noopener noreferrer">
+            Яндекс.Практикум
+          </a>
+        </li>
+      </ul>
+      <ul class="footer__links">
+        <li>
+          <a class="footer__link
+                    footer__social-link
+                    link"
+             href="https://github.com/"
+             target="_blank"
+             rel="noopener noreferrer">
+            <img src="<%=require('./images/github.svg').default%>"
+                 alt="Просто Гитхаб (автор не любит светиться)">
+          </a>
+        </li>
+        <li>
+          <a class="footer__link
+                    footer__social-link
+                    link"
+             href="https://www.facebook.com/"
+             target="_blank"
+             rel="noopener noreferrer">
+            <img src="<%=require('./images/faceb.svg').default%>"
+                 alt="Просто Фейсбук (автор не любит светиться)">
+          </a>
+        </li>
+      </ul>
     </div>
   </footer>
 </body>

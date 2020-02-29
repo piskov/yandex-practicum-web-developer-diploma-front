@@ -1,9 +1,8 @@
 @import url('./__copyright/footer__copyright.css');
 @import url('./__link/footer__link.css');
+@import url('./__links/footer__links.css');
 @import url('./__links-wrapper/footer__links-wrapper.css');
-@import url('./__site-links-wrapper/footer__site-links-wrapper.css');
 @import url('./__social-link/footer__social-link.css');
-@import url('./__social-links-wrapper/footer__social-links-wrapper.css');
 @import url('./__text-link/footer__text-link.css');
 
 .footer {
