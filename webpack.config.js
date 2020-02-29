@@ -42,6 +42,9 @@ module.exports = {
       },
       {
         test: /\.(gif|png|jpe?g|svg|ico)$/,
+        exclude: [
+          path.resolve(__dirname, "src/favicons")
+        ],
         use: [
           'file-loader?name=./images/[name].[ext]',
           {
@@ -68,6 +71,13 @@ module.exports = {
             },
           },
         ],
+      },
+      {
+        test: /\.(gif|png|jpe?g|svg|ico)$/,
+        exclude: [
+          path.resolve(__dirname, "src/images")
+        ],
+        loader: 'file-loader?name=./favicons/[name].[ext]'
       },
       {
         test: /\.(eot|ttf|woff|woff2)$/,
@@ -100,6 +110,44 @@ module.exports = {
       },
       canPrint: true
     }),
+    new HtmlWebpackPlugin({
+      template: './src/favicons/browserconfig.xml',
+      filename: 'browserconfig.xml'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/favicons/site.webmanifest',
+      filename: 'site.webmanifest'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/favicons/android-chrome-192x192.png',
+      filename: './favicons/android-chrome-192x192.png'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/favicons/android-chrome-512x512.png',
+      filename: './favicons/android-chrome-512x512.png'
+    }),
+
+    new HtmlWebpackPlugin({
+      template: './src/favicons/mstile-70x70.png',
+      filename: './favicons/mstile-70x70.png'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/favicons/mstile-144x144.png',
+      filename: './favicons/mstile-144x144.png'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/favicons/mstile-150x150.png',
+      filename: './favicons/mstile-150x150.png'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/favicons/mstile-310x150.png',
+      filename: './favicons/mstile-310x150.png'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/favicons/mstile-310x310.png',
+      filename: './favicons/mstile-310x310.png'
+    }),
+
     new WebpackMd5Hash(),
   ]
 }

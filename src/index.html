@@ -7,6 +7,10 @@
         content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible"
         content="ie=edge">
+  <meta name="author"
+        content="Андрей Писков">
+  <meta name="description"
+        content="Поиск и создание персональных подборок новостей">
   <title>News explorer</title>
   <link rel="stylesheet"
         href="<%= htmlWebpackPlugin.files.chunks.index.css %>">
@@ -14,19 +18,19 @@
           src="<%= htmlWebpackPlugin.files.chunks.index.entry %>"></script>
   <link rel="apple-touch-icon"
         sizes="180x180"
-        href="/apple-touch-icon.png">
+        href="<%=require('./favicons/apple-touch-icon.png').default%>">
   <link rel="icon"
         type="image/png"
         sizes="32x32"
-        href="/favicon-32x32.png">
+        href="<%=require('./favicons/favicon-32x32.png').default%>">
   <link rel="icon"
         type="image/png"
         sizes="16x16"
-        href="/favicon-16x16.png">
+        href="<%=require('./favicons/favicon-16x16.png').default%>">
   <link rel="manifest"
         href="/site.webmanifest">
   <link rel="mask-icon"
-        href="/safari-pinned-tab.svg"
+        href="<%=require('./favicons/safari-pinned-tab.svg').default%>"
         color="#347eff">
   <meta name="msapplication-TileColor"
         content="#00aba9">
@@ -40,15 +44,14 @@
              text-content_size_normal">
   <section class="lead">
     <header class="header
-                   header_theme_white
-                   text-content
-                   text-content_bold">
+                   header_theme_white">
       <a href="/">
         <img class="header__logo"
              src="<%=require('./images/company-logo-white.svg').default%>"
              alt="Ссылка на главную страницу">
       </a>
-      <div class="menu">
+      <div class="menu
+                  text-menu">
         <nav>
           <a class="link
                     menu__current-link
