@@ -26,3 +26,10 @@
   box-shadow: 0 0 0 1pt #4f90f8;
   outline-style: none;
 }
+
+@media screen and (max-width: 1024px) {
+  .card__button {
+    right: 8px;
+    top: 8px;
+  }
+}

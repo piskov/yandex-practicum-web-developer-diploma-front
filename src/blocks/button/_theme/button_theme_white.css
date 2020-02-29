@@ -5,6 +5,7 @@
 
   background-color: white;
   border: none;
+  border-radius: 80px;
   font-weight: 500;
 }
 
@@ -14,4 +15,10 @@
 
 .button_theme_white:hover {
   background-color: #e8e8e8;
+}
+
+@media screen and (max-width: 1024px) {
+  .button_theme_white {
+    min-height: 56px;
+  }
 }

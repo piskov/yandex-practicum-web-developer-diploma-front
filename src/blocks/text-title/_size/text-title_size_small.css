@@ -2,3 +2,10 @@
   font-size: 26px;
   line-height: 30px;
 }
+
+@media screen and (max-width: 1024px) {
+  .text-title_size_small {
+    font-size: 22px;
+    line-height: 24px;
+  }
+}

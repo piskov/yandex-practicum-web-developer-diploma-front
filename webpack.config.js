@@ -111,10 +111,12 @@ module.exports = {
       canPrint: true
     }),
     new HtmlWebpackPlugin({
+      inject: false,
       template: './src/favicons/browserconfig.xml',
       filename: 'browserconfig.xml'
     }),
     new HtmlWebpackPlugin({
+      inject: false,
       template: './src/favicons/site.webmanifest',
       filename: 'site.webmanifest'
     }),

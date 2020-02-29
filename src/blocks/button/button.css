@@ -5,7 +5,6 @@
 @import url('./__image/button__image.css');
 
 .button {
-  border-radius: 100px;
   cursor: pointer;
   font-weight: 500;
   line-height: inherit;

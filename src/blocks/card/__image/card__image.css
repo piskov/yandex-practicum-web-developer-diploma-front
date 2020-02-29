@@ -7,3 +7,9 @@
   background-position: center;
   background-size: cover;
 }
+
+@media screen and (max-width: 1024px) {
+  .card__image {
+    height: 150px;
+  }
+}

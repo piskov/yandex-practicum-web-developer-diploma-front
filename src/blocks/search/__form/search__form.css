@@ -3,3 +3,9 @@
 
   display: flex;
 }
+
+@media screen and (max-width: 1024px) {
+  .search__form {
+    margin-top: 48px;
+  }
+}

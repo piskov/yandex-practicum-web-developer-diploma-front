@@ -5,9 +5,17 @@
 
   background-color: transparent;
   border: 1px solid white;
+  border-radius: 100px;
   color: white;
 }
 
 .button_theme_transparent-white:hover {
   background-color: rgba(255, 255, 255, 0.2);
+}
+
+@media screen and (max-width: 1024px) {
+  .button_theme_transparent-white {
+    min-height: 40px;
+    padding: 0px 14px 3px;
+  }
 }

@@ -1,3 +1,9 @@
 .main-page__search-results {
   padding: 0px 104px 80px;
 }
+
+@media screen and (max-width: 1024px) {
+  .main-page__search-results {
+    padding: 0px 40px 40px;
+  }
+}

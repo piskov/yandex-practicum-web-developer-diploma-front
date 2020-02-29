@@ -1,3 +1,9 @@
 .search__button {
   flex-basis: 168px;
 }
+
+@media screen and (max-width: 1024px) {
+  .search__button {
+    flex-basis: 160px;
+  }
+}

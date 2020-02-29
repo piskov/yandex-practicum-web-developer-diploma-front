@@ -6,3 +6,9 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
 }
+
+@media screen and (max-width: 1024px) {
+  .card__text {
+    margin-top: 8px;
+  }
+}

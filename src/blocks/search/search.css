@@ -8,3 +8,9 @@
   margin: 0px auto;
   max-width: 608px;
 }
+
+@media screen and (max-width: 1024px) {
+  .search {
+    max-width: 448px;
+  }
+}

@@ -1,3 +1,9 @@
 .about-author__text {
   margin: 24px 0px 0px 0px;
 }
+
+@media screen and (max-width: 1024px) {
+  .about-author__text {
+    margin: 12px 0px 0px 0px;
+  }
+}

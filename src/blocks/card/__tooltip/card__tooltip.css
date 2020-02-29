@@ -18,3 +18,12 @@
   opacity: 0;
   white-space: nowrap;
 }
+
+@media screen and (max-width: 1024px) {
+  .card__tooltip {
+    min-width: 86px;
+
+    text-align: left;
+    white-space: normal;
+  }
+}

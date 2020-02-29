@@ -13,3 +13,10 @@
 
   border-bottom: rgba(196, 196, 196, 0.01) 1px solid;
 }
+
+@media screen and (max-width: 1024px) {
+  .header {
+    min-height: 67px;
+    padding: 4px 40px 0px;
+  }
+}
