@@ -5,3 +5,9 @@
 .menu__link_theme_white:hover {
   color: white;
 }
+
+@media screen and (max-width: 767px) {
+  .menu__link_theme_white {
+    color: white;
+  }
+}

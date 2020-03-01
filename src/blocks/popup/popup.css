@@ -25,3 +25,13 @@
 
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+@media screen and (max-width: 767px) {
+  .popup {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 56px;
+
+    background-color: unset;
+  }
+}

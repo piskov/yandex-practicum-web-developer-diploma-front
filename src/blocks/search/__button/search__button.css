@@ -2,8 +2,16 @@
   flex-basis: 168px;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 551px) and (max-width: 1024px) {
   .search__button {
     flex-basis: 160px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .search__button {
+    margin-top: 16px;
+
+    flex-basis: 56px;
   }
 }

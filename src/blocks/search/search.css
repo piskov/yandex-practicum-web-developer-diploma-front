@@ -9,8 +9,15 @@
   max-width: 608px;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .search {
     max-width: 448px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .search {
+    margin: 0px 16px;
+    max-width: unset;
   }
 }

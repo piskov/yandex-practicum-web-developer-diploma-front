@@ -3,3 +3,9 @@
 
   color: #B6BCBF;
 }
+
+@media screen and (max-width: 767px) {
+  .card__source {
+    margin-top: 9px;
+  }
+}

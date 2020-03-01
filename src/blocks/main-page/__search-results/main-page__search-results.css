@@ -2,8 +2,14 @@
   padding: 0px 104px 80px;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .main-page__search-results {
     padding: 0px 40px 40px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .main-page__search-results {
+    padding: 0px 16px 32px;
   }
 }

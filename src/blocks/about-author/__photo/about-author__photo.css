@@ -8,7 +8,7 @@
   border-radius: 464px;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .about-author__photo {
     align-self: flex-start;
     margin-top: 17px;
@@ -16,5 +16,13 @@
     height: 232px;
     width: 232px;
     min-width: 232px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .about-author__photo {
+    margin: 0px 8px 0px;
+
+    width: 272px;
   }
 }

@@ -43,12 +43,18 @@
              text-content
              text-content_size_normal">
   <header class="header
+                 header_is-sticky-mobile
                  header_theme_black">
     <a href="/">
       <img class="header__logo"
            src="<%=require('./images/company-logo-black.svg').default%>"
            alt="Ссылка на главную страницу">
     </a>
+    <button class="button
+                   menu__image-button">
+      <img src="<%=require('./images/menu-black.svg').default%>"
+           alt="Меню">
+    </button>
     <div class="menu
                 text-menu">
       <nav>
@@ -80,9 +86,10 @@
 
   <main>
     <section class="cards-summary
-                    saved-page__cards-summary
-                    text-summary">
-      <p class="cards-summary__caption">
+                    saved-page__cards-summary">
+      <p class="cards-summary__caption
+                text-summary
+                text-summary_size_caption">
         Сохранённые статьи
       </p>
       <h1 class="cards-summary__title
@@ -90,7 +97,9 @@
                  text-title_size_normal">
         Грета, у вас 5 сохранённых статей
       </h1>
-      <p class="cards-summary__keywords-info">
+      <p class="cards-summary__keywords-info
+                text-summary
+                text-summary_size_normal">
         По ключевым словам:
         <span class="cards-summary__keyword">Природа, Тайга</span>
         и
@@ -342,7 +351,8 @@
       © 2020 Supersite, Powered by News API
     </p>
     <div class="footer__links-wrapper">
-      <ul class="footer__links">
+      <ul class="footer__links
+                 footer__links_type_text">
         <li>
           <a class="footer__link
                     footer__text-link
@@ -362,7 +372,8 @@
           </a>
         </li>
       </ul>
-      <ul class="footer__links">
+      <ul class="footer__links
+                 footer__links_type_social">
         <li>
           <a class="footer__link
                     footer__social-link

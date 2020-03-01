@@ -7,8 +7,14 @@
   -webkit-line-clamp: 4;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .card__text {
     margin-top: 8px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .card__text {
+    margin-top: 10px;
   }
 }

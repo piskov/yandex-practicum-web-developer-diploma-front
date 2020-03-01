@@ -1,0 +1,14 @@
+.header_is-sticky-mobile {
+  position: static;
+}
+
+@media screen and (max-width: 767px) {
+  .header_is-sticky-mobile {
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+
+    background: white;
+    opacity: 0.95;
+  }
+}

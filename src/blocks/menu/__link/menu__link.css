@@ -4,3 +4,9 @@
 .menu__link {
   transition: color 0.15s ease-out;
 }
+
+@media screen and (max-width: 767px) {
+  .menu__link {
+    display: block;
+  }
+}

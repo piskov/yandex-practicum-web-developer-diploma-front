@@ -17,3 +17,12 @@
 .search__field::placeholder {
   color: #B6BCBF;
 }
+
+@media screen and (max-width: 550px) {
+  .search__field {
+    margin-right: 0px;
+
+    min-height: 56px;
+    padding: 0px 24px;
+  }
+}

@@ -2,8 +2,14 @@
   margin: 24px 0px 0px 0px;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .about-author__text {
-    margin: 12px 0px 0px 0px;
+    margin-top: 12px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .about-author__text {
+    margin-top: 19px;
   }
 }
