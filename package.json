@@ -2,7 +2,7 @@
   "name": "yandex-praktikum-web-diploma-front",
   "version": "0.1.0",
   "description": "Front end for Diploma work at Yandex Web developer course",
-  "main": "./src/main.js",
+  "main": "./src/index.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production rimraf dist && webpack --mode production",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --mode development --open --watch",
