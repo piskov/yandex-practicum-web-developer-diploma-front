@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible"
+        content="ie=edge">
+  <meta name="author"
+        content="Андрей Писков">
+  <meta name="description"
+        content="Поиск и создание персональных подборок новостей">
+  <title>News explorer — сохраненные статьи</title>
+  <link rel="stylesheet"
+        href="./css/saved.7f5442c9f68980578ce3.css">
+  <script type="module"
+          src="./js/saved.2a1c0e1ec5f2255ed622.js"></script>
+  <link rel="apple-touch-icon"
+        sizes="180x180"
+        href="./favicons/apple-touch-icon.png">
+  <link rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="./favicons/favicon-32x32.png">
+  <link rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="./favicons/favicon-16x16.png">
+  <link rel="manifest"
+        href="./site.webmanifest">
+  <link rel="mask-icon"
+        href="./favicons/safari-pinned-tab.svg"
+        color="#347eff">
+  <meta name="msapplication-TileColor"
+        content="#00aba9">
+  <meta name="theme-color"
+        content="#ffffff">
+</head>
+
+<body class="body
+             saved-page
+             text-content
+             text-content_size_normal">
+  <header class="header
+                 header_is-sticky-mobile
+                 header_theme_black">
+    <a href="./">
+      <img class="header__logo"
+           src="./images/company-logo-black.svg"
+           alt="Ссылка на главную страницу">
+    </a>
+    <button class="button
+                   menu__image-button">
+      <img src="./images/menu-black.svg"
+           alt="Меню">
+    </button>
+    <div class="menu
+                text-menu">
+      <nav>
+        <a class="link
+                  menu__item
+                  menu__link
+                  menu__link_theme_black"
+           href="./">
+          Главная
+        </a>
+        <a class="link
+                  menu__current-link
+                  menu__current-link_theme_black
+                  menu__item"
+           href="./saved">
+          Сохранённые статьи
+        </a>
+      </nav>
+      <button id="headerLoginButton"
+              class="button
+                     button_theme_transparent-black
+                     menu__item">
+        Авторизоваться
+      </button>
+      <button id="headerLogoutButton"
+              class="button
+                     button_theme_transparent-black
+                     menu__item
+                     menu__item_is-hidden">
+        <span class='menu__username'>Выход</span>
+        <img src="./images/logout-black.svg"
+             alt="Иконка выхода"
+             class="button__image">
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="cards-summary
+                    saved-page__cards-summary">
+      <p class="cards-summary__caption
+                text-summary
+                text-summary_size_caption">
+        Сохранённые статьи
+      </p>
+      <h1 class="cards-summary__title
+                 text-title
+                 text-title_size_normal">
+        Идет загрузка новостей…
+      </h1>
+      <p class="cards-summary__keywords-info
+                text-summary
+                text-summary_size_normal"></p>
+    </section>
+
+    <section class="saved-cards_is-hidden
+                    saved-cards
+                    saved-page__saved-cards">
+      <div class="cards-container"></div>
+    </section>
+  </main>
+
+  <footer class="footer
+                 saved-page__footer">
+    <p class="footer__copyright
+              text-content
+              text-content_size_small">
+      © 2020 Supersite, Powered by News API
+    </p>
+    <div class="footer__links-wrapper">
+      <ul class="footer__links
+                 footer__links_type_text">
+        <li>
+          <a class="footer__link
+                    footer__text-link
+                    link"
+             href="./">
+            Главная
+          </a>
+        </li>
+        <li>
+          <a class="footer__link
+                    footer__text-link
+                    link"
+             href="https://praktikum.yandex.ru/"
+             target="_blank"
+             rel="noopener noreferrer">
+            Яндекс.Практикум
+          </a>
+        </li>
+      </ul>
+      <ul class="footer__links
+                 footer__links_type_social">
+        <li>
+          <a class="footer__link
+                    footer__social-link
+                    link"
+             href="https://github.com/"
+             target="_blank"
+             rel="noopener noreferrer">
+            <img src="./images/github.svg"
+                 alt="Просто Гитхаб (автор не любит светиться)">
+          </a>
+        </li>
+        <li>
+          <a class="footer__link
+                    footer__social-link
+                    link"
+             href="https://www.facebook.com/"
+             target="_blank"
+             rel="noopener noreferrer">
+            <img src="./images/faceb.svg"
+                 alt="Просто Фейсбук (автор не любит светиться)">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <div id="mobile-menu-popup"
+       class="popup
+              popup_is-hidden">
+    <div class="mobile-menu">
+      <img alt="Кнопка закрыть"
+           class="popup__close"
+           src="./images/popup-close.svg">
+      <nav>
+        <a class="link
+                  menu__item
+                  menu__link
+                  menu__link_theme_white"
+           href="./">
+          Главная
+        </a>
+        <a class="link
+                  menu__item
+                  menu__item_is-hidden
+                  menu__link
+                  menu__link_theme_white"
+           href="./saved">
+          Сохранённые статьи
+        </a>
+      </nav>
+      <button id="mobileMenuLoginButton"
+              class="button
+                     button_theme_transparent-white
+                     menu__item">
+        Авторизоваться
+      </button>
+      <button id="mobileMenuLogoutButton"
+              class="button
+                     button_theme_transparent-white
+                     menu__item
+                     menu__item_is-hidden">
+        <span class='menu__username'>Выход</span>
+        <img src="./images/logout-white.svg"
+             alt="Иконка выхода"
+             class="button__image">
+      </button>
+    </div>
+  </div>
+
+  <template id="saved-article-template">
+    <article class="card">
+      <a class="card__link"
+         href=""
+         rel="noopener noreferrer"
+         target="_blank"></a>
+      <div class="card__image">
+        <p class="card__keyword
+                  text-keyword"></p>
+        <button class="card__button
+                       card__delete-button">
+          <span class="card__tooltip
+                       text-tooltip
+                       text-tooltip_size_normal">
+            Убрать из сохранённых
+          </span>
+          <div class="preloader
+                      preloader_is-hidden">
+            <div class="preloader__image
+                        preloader__image_size_small"></div>
+          </div>
+        </button>
+      </div>
+      <div class="card__text-wrapper">
+        <div>
+          <p class="card__date
+                    text-date"></p>
+          <h3 class="card__title
+                     text-title
+                     text-title_size_small"></h3>
+          <p class="card__text
+                    text-content
+                    text-content_size_small"></p>
+        </div>
+        <p class="card__source
+                  text-caption"></p>
+      </div>
+    </article>
+  </template>
+</body>
+
+</html>
