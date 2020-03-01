@@ -2,7 +2,7 @@
 
 This repo contains code for the News Explorer front end.
 
-You can see live version at [Github Pages](https://piskov.github.io/yandex-web-developer-diploma-front/).
+You can see live version at [Github Pages](https://piskov.github.io/yandex-web-developer-diploma-front/) or at https://divulge-uncommon.ru/
 
 Project enables news search through public [News API](https://newsapi.org/) and saving articles through tailor-made [API](https://github.com/piskov/yandex-web-developer-diploma-api).
 
