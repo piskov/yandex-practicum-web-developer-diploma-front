@@ -11,11 +11,32 @@
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .lead {
     padding-bottom: 48px;
+
+    background: url('../../images/search-background-tablet.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 551px) and (max-width: 767px) {
   .lead {
     padding-bottom: 32px;
+
+    background: url('../../images/search-background-mobile-horizontal.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .lead {
+    padding-bottom: 32px;
+
+    background: url('../../images/search-background-mobile-vertical.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }

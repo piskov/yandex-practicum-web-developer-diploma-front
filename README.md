@@ -6,7 +6,7 @@ You can see live version at [Github Pages](https://piskov.github.io/yandex-web-d
 
 Project enables news search through public [News API](https://newsapi.org/) and saving articles through tailor-made [API](https://github.com/piskov/yandex-web-developer-diploma-api).
 
-Project contains tree build configurations:
+Project contains three build configurations:
 - `npm run dev` starts dev build in hot-reload mode
 - `npm run build` creates production build (minified, optimized, babelized)
 - `npm run deploy` deploys site at github pages

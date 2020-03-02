@@ -28,7 +28,7 @@
         sizes="16x16"
         href="<%=require('./favicons/favicon-16x16.png').default%>">
   <link rel="manifest"
-        href="/site.webmanifest">
+        href="./site.webmanifest">
   <link rel="mask-icon"
         href="<%=require('./favicons/safari-pinned-tab.svg').default%>"
         color="#347eff">
@@ -107,6 +107,7 @@
                minlength="1"
                maxlength="500"
                placeholder="Введите тему новости"
+               required
                type="text">
         <button class="button
                        button_theme_blue
@@ -286,9 +287,21 @@
 
   <section class="about-author
                   main-page__about-author">
-    <img alt="Фотография автора"
-         class="about-author__photo"
-         src="<%=require('./images/author-photo.jpg').default%>">
+    <picture>
+      <source media="(max-width: 767px)"
+              srcset="<%=require('./images/author-photo-mobile@2x.jpg').default%> 2x,
+                      <%=require('./images/author-photo-mobile.jpg').default%> 1x" />
+      <source media="(max-width: 1024px)"
+              srcset="<%=require('./images/author-photo-tablet@2x.jpg').default%> 2x,
+                   <%=require('./images/author-photo-tablet.jpg').default%> 1x" />
+      <source media=""
+              sizes="1025px"
+              srcset="<%=require('./images/author-photo-desktop@2x.jpg').default%> 2x,
+                   <%=require('./images/author-photo-desktop.jpg').default%> 1x" />
+      <img alt="Фотография автора"
+           class="about-author__photo"
+           src="<%=require('./images/author-photo-desktop.jpg').default%>">
+    </picture>
 
     <div class="about-author__text-wrapper">
       <h2 class="about-author__title
