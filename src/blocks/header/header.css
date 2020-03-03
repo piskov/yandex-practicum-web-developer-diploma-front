@@ -1,0 +1,28 @@
+@import url('./_is-sticky-mobile/header_is-sticky-mobile.css');
+@import url('./_theme/header_theme_black.css');
+@import url('./_theme/header_theme_white.css');
+@import url('./__logo/header__logo.css');
+
+.header {
+  box-sizing: border-box;
+  min-height: 81px;
+
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 103px 0px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .header {
+    min-height: 67px;
+    padding: 9px 40px 0px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    min-height: 56px;
+    padding: 0px 0px 0px 16px;
+  }
+}

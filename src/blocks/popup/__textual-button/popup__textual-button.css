@@ -1,0 +1,25 @@
+@import url('./_align/popup__textual-button_align_center.css');
+@import url('./_align/popup__textual-button_align_left.css');
+@import url('./_text-color/popup__textual-button_text-color_black.css');
+
+.popup__textual-button {
+  margin-top: 16px;
+
+  display: block;
+  padding-left: 0px;
+  padding-right: 0px;
+
+  background-color: transparent;
+  border: none;
+  color: #2F71E5;
+  cursor: pointer;
+  transition: color 0.2s ease-out;
+}
+
+.popup__textual-button:active {
+  color: #2A65CC;
+}
+
+.popup__textual-button:not(:active):not(:disabled):hover {
+  color: #347EFF;
+}

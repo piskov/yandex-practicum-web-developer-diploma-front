@@ -1,0 +1,24 @@
+.button_theme_white {
+  min-height: 64px;
+
+  padding: 0px 60px;
+
+  background-color: white;
+  border: none;
+  border-radius: 80px;
+  font-weight: 500;
+}
+
+.button_theme_white:active {
+  background-color: #dbdbdb;
+}
+
+.button_theme_white:hover {
+  background-color: #e8e8e8;
+}
+
+@media screen and (max-width: 1024px) {
+  .button_theme_white {
+    min-height: 56px;
+  }
+}

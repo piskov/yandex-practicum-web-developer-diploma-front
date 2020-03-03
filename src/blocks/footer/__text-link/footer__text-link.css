@@ -1,0 +1,25 @@
+.footer__text-link {
+  margin-left: 37px;
+
+  color: #1A1B22;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .footer__text-link {
+    margin-left: 18px;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 767px) {
+  .footer__text-link {
+    margin: 0px 18px 0px 0px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .footer__text-link {
+    margin: 0px 0px 24px 0px;
+
+    display: block;
+  }
+}

@@ -1,0 +1,9 @@
+.footer__links_type_text {
+  flex-direction: row;
+}
+
+@media screen and (max-width: 500px) {
+  .footer__links_type_text {
+    flex-direction: column;
+  }
+}

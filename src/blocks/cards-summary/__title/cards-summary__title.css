@@ -1,0 +1,13 @@
+.cards-summary__title {
+  margin: 28px 0px 0px;
+
+  max-width: 530px;
+}
+
+@media screen and (max-width: 1024px) {
+  .cards-summary__title {
+    margin-top: 16px;
+
+    max-width: 336px;
+  }
+}

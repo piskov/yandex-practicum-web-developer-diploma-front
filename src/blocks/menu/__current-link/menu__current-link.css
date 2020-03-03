@@ -1,0 +1,12 @@
+@import url('./_theme/menu__current-link_theme_black.css');
+@import url('./_theme/menu__current-link_theme_white.css');
+
+.menu__current-link {
+  padding-bottom: 24px;
+}
+
+@media screen and (max-width: 1024px) {
+  .menu__current-link {
+    padding-bottom: 18px;
+  }
+}

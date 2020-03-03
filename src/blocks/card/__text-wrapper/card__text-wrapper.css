@@ -1,0 +1,27 @@
+.card__text-wrapper {
+  margin: 21px 24px 24px 24px;
+
+  box-sizing: border-box;
+  min-height: 259px;
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .card__text-wrapper {
+    margin: 16px;
+
+    min-height: 238px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .card__text-wrapper {
+    margin: 16px;
+    
+    min-height: 212px;
+  }
+}

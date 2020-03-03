@@ -1,0 +1,29 @@
+.card__tooltip {
+  margin-right: 5px;
+  position: absolute;
+  right: 100%;
+  top: 0%;
+
+  min-height: 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 13px;
+  visibility: collapse;
+
+  background: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0px 10px 22px rgba(59, 74, 116, 0.1);
+  opacity: 0;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 1024px) {
+  .card__tooltip {
+    min-width: 86px;
+
+    text-align: left;
+    white-space: normal;
+  }
+}

@@ -1,0 +1,23 @@
+@import url('./_type/footer__links_type_social.css');
+@import url('./_type/footer__links_type_text.css');
+
+.footer__links {
+  margin: 0px 0px 0px 33px;
+
+  display: flex;
+  padding: 0px;
+
+  list-style-type: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .footer__links {
+    margin-left: 9px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer__links {
+    margin-left: 0px;
+  }
+}

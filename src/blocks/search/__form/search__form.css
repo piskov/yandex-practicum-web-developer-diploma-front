@@ -1,0 +1,19 @@
+.search__form {
+  margin-top: 64px;
+
+  display: flex;
+}
+
+@media screen and (min-width: 551px) and (max-width: 1024px) {
+  .search__form {
+    margin-top: 48px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .search__form {
+    margin-top: 122px;
+
+    flex-direction: column;
+  }
+}

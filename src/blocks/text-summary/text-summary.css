@@ -1,0 +1,6 @@
+@import url('./_size/text-summary_size_caption.css');
+@import url('./_size/text-summary_size_normal.css');
+
+.text-summary {
+  line-height: 24px;
+}

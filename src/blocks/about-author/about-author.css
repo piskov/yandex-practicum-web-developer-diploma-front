@@ -1,0 +1,14 @@
+@import url('./__photo/about-author__photo.css');
+@import url('./__text/about-author__text.css');
+@import url('./__text-wrapper/about-author__text-wrapper.css');
+@import url('./__title/about-author__title.css');
+
+.about-author {
+  display: flex;
+}
+
+@media screen and (max-width: 767px) {
+  .about-author {
+    flex-direction: column;
+  }
+}

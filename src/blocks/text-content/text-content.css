@@ -1,0 +1,7 @@
+@import url('./_bold/text-content_bold.css');
+@import url('./_size/text-content_size_normal.css');
+@import url('./_size/text-content_size_small.css');
+
+.text-content {
+  font-style: normal;
+}

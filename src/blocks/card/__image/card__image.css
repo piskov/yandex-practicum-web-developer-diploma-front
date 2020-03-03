@@ -1,0 +1,21 @@
+.card__image {
+  height: 272px;
+
+  position: relative;
+
+  background-image: url('../../../images/article-stub-1.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+@media screen and (min-width: 768px)and (max-width: 1024px) {
+  .card__image {
+    height: 150px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .card__image {
+    height: 196px;
+  }
+}

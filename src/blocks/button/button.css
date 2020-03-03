@@ -1,0 +1,26 @@
+@import url('./_theme/button_theme_blue.css');
+@import url('./_theme/button_theme_transparent-black.css');
+@import url('./_theme/button_theme_transparent-white.css');
+@import url('./_theme/button_theme_white.css');
+@import url('./__image/button__image.css');
+
+.button {
+  cursor: pointer;
+  font-weight: 500;
+  line-height: inherit;
+}
+
+.button:disabled {
+  background-color: #E6E8EB;
+  box-shadow: none;
+  color: #B6BCBF;
+}
+
+.button:hover {
+  transition: background-color 0.2s ease-out;
+}
+
+.button:focus {
+  box-shadow: 0 0 0 1pt #4f90f8;
+  outline-style: none;
+}

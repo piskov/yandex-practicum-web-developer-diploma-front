@@ -1,0 +1,23 @@
+.about-author__text-wrapper {
+  margin: 52px 0px 0px 56px;
+  max-width: 600px;
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+  .about-author__text-wrapper {
+    align-self: center;
+    margin-top: 0px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .about-author__text-wrapper {
+    margin: 0px 0px 0px 32px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .about-author__text-wrapper {
+    margin: 27px 0px 0px 0px;
+  }
+}

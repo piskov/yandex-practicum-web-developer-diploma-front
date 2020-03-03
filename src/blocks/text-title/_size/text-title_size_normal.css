@@ -1,0 +1,11 @@
+.text-title_size_normal {
+  font-size: 40px;
+  line-height: 46px;
+}
+
+@media screen and (max-width: 1024px) {
+  .text-title_size_normal {
+    font-size: 30px;
+    line-height: 34px;
+  }
+}

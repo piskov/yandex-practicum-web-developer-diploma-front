@@ -1,0 +1,8 @@
+.text-caption {
+  font-family: 'Roboto Slab', 'Courier New', Courier, monospace;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0.4px;
+  line-height: 20px;
+  text-transform: uppercase;
+}

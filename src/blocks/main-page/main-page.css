@@ -1,0 +1,16 @@
+@import url('./__about-author/main-page__about-author.css');
+@import url('./__footer/main-page__footer.css');
+@import url('./__search-results/main-page__search-results.css');
+
+.main-page {
+  margin: 0px auto;
+
+  max-width: 1440px;
+  min-width: 320px;
+
+  font-family: Roboto, Arial, sans-serif;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  text-rendering: optimizeLegibility;
+}

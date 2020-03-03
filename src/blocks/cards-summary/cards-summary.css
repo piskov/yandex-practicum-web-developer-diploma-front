@@ -1,0 +1,8 @@
+@import url('./__caption/cards-summary__caption.css');
+@import url('./__keyword/cards-summary__keyword.css');
+@import url('./__keywords-info/cards-summary__keywords-info.css');
+@import url("./__title/cards-summary__title.css");
+
+.cards-summary {
+  display: block;
+}

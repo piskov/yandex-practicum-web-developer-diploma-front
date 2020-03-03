@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible"
+        content="ie=edge">
+  <meta name="author"
+        content="Андрей Писков">
+  <meta name="description"
+        content="Поиск и создание персональных подборок новостей">
+  <title>News explorer</title>
+  <link rel="stylesheet"
+        href="<%= htmlWebpackPlugin.files.chunks.index.css %>">
+  <script type="module"
+          src="<%= htmlWebpackPlugin.files.chunks.index.entry %>"></script>
+  <link rel="apple-touch-icon"
+        sizes="180x180"
+        href="<%=require('./favicons/apple-touch-icon.png').default%>">
+  <link rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="<%=require('./favicons/favicon-32x32.png').default%>">
+  <link rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="<%=require('./favicons/favicon-16x16.png').default%>">
+  <link rel="manifest"
+        href="./site.webmanifest">
+  <link rel="mask-icon"
+        href="<%=require('./favicons/safari-pinned-tab.svg').default%>"
+        color="#347eff">
+  <meta name="msapplication-TileColor"
+        content="#00aba9">
+  <meta name="theme-color"
+        content="#ffffff">
+</head>
+
+<body class="body
+             main-page
+             text-content
+             text-content_size_normal">
+  <section class="lead">
+    <header class="header
+                   header_theme_white">
+      <a href="./">
+        <img class="header__logo"
+             src="<%=require('./images/company-logo-white.svg').default%>"
+             alt="Ссылка на главную страницу">
+      </a>
+      <button class="button
+                     menu__image-button">
+        <img src="<%=require('./images/menu-white.svg').default%>"
+             alt="Меню">
+      </button>
+      <div class="menu
+                  text-menu">
+        <nav>
+          <a class="link
+                    menu__current-link
+                    menu__current-link_theme_white
+                    menu__item"
+             href="./">
+            Главная
+          </a>
+          <a class="link
+                    menu__item
+                    menu__link
+                    menu__link_theme_white"
+             href="./saved">
+            Сохранённые статьи
+          </a>
+        </nav>
+        <!-- <button class="button
+                       button_theme_transparent
+                       menu__item">
+          Авторизоваться
+        </button> -->
+        <button class="button
+                       button_theme_transparent-white
+                       menu__item">
+          <span>Грета</span>
+          <img src="<%=require('./images/logout-white.svg').default%>"
+               alt="Иконка выхода"
+               class="button__image">
+        </button>
+      </div>
+    </header>
+
+    <div class="search">
+      <h1 class="search__title
+                 text-title
+                 text-title_size_lead">
+        Что в мире творится?
+      </h1>
+      <p class="search__subtitle">
+        Находите самые свежие статьи на любую тему и сохраняйте
+        в своём личном кабинете.
+      </p>
+      <form class="search__form"
+            novalidate>
+        <input class="search__field
+                      text-content
+                      text-content_size_small"
+               minlength="1"
+               maxlength="500"
+               placeholder="Введите тему новости"
+               required
+               type="text">
+        <button class="button
+                       button_theme_blue
+                       search__button"
+                type="submit">
+          Искать
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <main class="main-page__search-results
+               search-results">
+    <h2 class="search-results__title
+               text-title
+               text-title_size_normal">Результаты поиска</h2>
+    <div class="cards-container
+                search-results__cards-container">
+      <article class="card">
+        <a class="card__link"
+           href="https://google.com"
+           rel="noopener noreferrer"
+           target="_blank"></a>
+        <div class="card__image">
+          <button class="card__button
+                         card__bookmark-button
+                         card__bookmark-button_state_not-marked">
+            <span class="card__tooltip
+                         text-tooltip
+                         text-tooltip_size_small">
+              Войдите, чтобы сохранять статьи
+            </span>
+          </button>
+        </div>
+        <div class="card__text-wrapper">
+          <div>
+            <p class="card__date
+                      text-date">
+              2 августа, 2019
+            </p>
+            <h3 class="card__title
+                       text-title
+                       text-title_size_small">
+              Национальное достояние — парки
+            </h3>
+            <p class="card__text
+                      text-content
+                      text-content_size_small">
+              В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
+              начала складываться система национальных парков – охраняемых
+              территорий, где и сегодня каждый может приобщиться к природе.
+            </p>
+          </div>
+          <p class="card__source
+                    text-caption">
+            Лента.ру
+          </p>
+        </div>
+      </article>
+      <article class="card">
+        <a class="card__link"
+           href="https://google.com"
+           rel="noopener noreferrer"
+           target="_blank"></a>
+        <div class="card__image">
+          <button class="card__button
+                         card__bookmark-button
+                         card__bookmark-button_state_marked">
+            <span class="card__tooltip-wrapper">
+              <span class="card__tooltip
+                        text-tooltip
+                        text-tooltip_size_small">
+                Войдите, чтобы сохранять статьи
+              </span>
+            </span>
+          </button>
+        </div>
+        <div class="card__text-wrapper">
+          <div>
+            <p class="card__date
+                      text-date">
+              2 августа, 2019
+            </p>
+            <h3 class="card__title
+                       text-title
+                       text-title_size_small">
+              Лесные огоньки: история одной фотографии
+            </h3>
+            <p class="card__text
+                      text-content
+                      text-content_size_small">
+              Фотограф отвлеклась от освещения суровой политической реальности
+              Мексики, чтобы запечатлеть ускользающую красоту одного из местных
+              чудес природы.
+            </p>
+          </div>
+          <p class="card__source
+                    text-caption">
+            Медуза
+          </p>
+        </div>
+      </article>
+      <article class="card">
+        <a class="card__link"
+           href="https://google.com"
+           rel="noopener noreferrer"
+           target="_blank"></a>
+        <div class="card__image">
+          <button class="card__button
+                         card__bookmark-button
+                         card__bookmark-button_state_not-marked">
+            <span class="card__tooltip-wrapper">
+              <span class="card__tooltip
+                        text-tooltip
+                        text-tooltip_size_small">
+                Войдите, чтобы сохранять статьи
+              </span>
+            </span>
+          </button>
+        </div>
+        <div class="card__text-wrapper">
+          <div>
+            <p class="card__date
+                      text-date">
+              2 августа, 2019
+            </p>
+            <h3 class="card__title
+                       text-title
+                       text-title_size_small">
+              «Первозданная тайга»: новый фотопроект Игоря Шпиленка
+            </h3>
+            <p class="card__text
+                      text-content
+                      text-content_size_small">
+              Знаменитый фотограф снимает первозданные леса России, чтобы
+              рассказать о необходимости их сохранения. В этот раз он отправился
+              в Двинско-Пинежскую тайгу, где...
+            </p>
+          </div>
+          <p class="card__source
+                    text-caption">
+            РИА
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <button class="button
+                   button_theme_white
+                   search-results__load-button">
+      Показать еще
+    </button>
+
+    <div class="preloader
+                preloader_is-hidden
+                search-results__preloader">
+      <div class="preloader__image"></div>
+      <p class="preloader__caption">
+        Идет поиск новостей...
+      </p>
+    </div>
+
+    <div class="not-found
+                not-found_is-hidden
+                search-results__not-found">
+      <img alt="Изображение грустной лупы"
+           class="not-found__image"
+           src="<%=require('./images/not-found.svg').default%>">
+      <h2 class="not-found__title
+                 text-title
+                 text-title_size_small">Ничего не найдено</h2>
+      <p class="not-found__caption">
+        К сожалению по вашему запросу ничего не найдено.
+      </p>
+    </div>
+  </main>
+
+  <section class="about-author
+                  main-page__about-author">
+    <picture>
+      <source media="(max-width: 767px)"
+              srcset="<%=require('./images/author-photo-mobile@2x.jpg').default%> 2x,
+                      <%=require('./images/author-photo-mobile.jpg').default%> 1x" />
+      <source media="(max-width: 1024px)"
+              srcset="<%=require('./images/author-photo-tablet@2x.jpg').default%> 2x,
+                   <%=require('./images/author-photo-tablet.jpg').default%> 1x" />
+      <source media=""
+              sizes="1025px"
+              srcset="<%=require('./images/author-photo-desktop@2x.jpg').default%> 2x,
+                   <%=require('./images/author-photo-desktop.jpg').default%> 1x" />
+      <img alt="Фотография автора"
+           class="about-author__photo"
+           src="<%=require('./images/author-photo-desktop.jpg').default%>">
+    </picture>
+
+    <div class="about-author__text-wrapper">
+      <h2 class="about-author__title
+                 text-title
+                 text-title_size_normal">
+        Об авторе
+      </h2>
+      <p class="about-author__text">
+        Автор не любит «светиться» в интернете, поэтому вставляет «рыбу» о себе.
+        Фото тоже не настоящее :-)
+      </p>
+      <p class="about-author__text">
+        Нормальные люди пишут, как их зовут, чем занимаются, какими технологиями
+        разработки владеют.
+      </p>
+      <p class="about-author__text">
+        Еще говорят: «Ссылки нужно подчеркивать (на мобиле „ховера“ нет), цвета
+        подбирать с хорошей контрастностью, отступы делать единообразные, —
+        в общем, как не в этом макете дизайнера „Яндекса“».
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer
+                 main-page__footer">
+    <p class="footer__copyright
+              text-content
+              text-content_size_small">
+      © 2020 Supersite, Powered by News API
+    </p>
+    <div class="footer__links-wrapper">
+      <ul class="footer__links
+                 footer__links_type_text">
+        <li>
+          <a class="footer__link
+                    footer__text-link
+                    link"
+             href="./">
+            Главная
+          </a>
+        </li>
+        <li>
+          <a class="footer__link
+                    footer__text-link
+                    link"
+             href="https://praktikum.yandex.ru/"
+             target="_blank"
+             rel="noopener noreferrer">
+            Яндекс.Практикум
+          </a>
+        </li>
+      </ul>
+      <ul class="footer__links
+                 footer__links_type_social">
+        <li>
+          <a class="footer__link
+                    footer__social-link
+                    link"
+             href="https://github.com/"
+             target="_blank"
+             rel="noopener noreferrer">
+            <img src="<%=require('./images/github.svg').default%>"
+                 alt="Гитхаб">
+          </a>
+        </li>
+        <li>
+          <a class="footer__link
+                    footer__social-link
+                    link"
+             href="https://www.facebook.com/"
+             target="_blank"
+             rel="noopener noreferrer">
+            <img src="<%=require('./images/faceb.svg').default%>"
+                 alt="Фейсбук">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <div id="login-popup"
+       class="popup
+              popup_is-hidden">
+    <div class="popup__content
+                popup__content_vertical-padding_normal">
+      <img alt="Кнопка закрыть"
+           class="popup__close"
+           src="<%=require('./images/popup-close.svg').default%>">
+      <h2 class="popup__title
+                 text-form-header">
+        Вход
+      </h2>
+      <form class="popup__form"
+            name="login"
+            novalidate>
+        <div class="popup__input-wrapper">
+          <label class="popup__label
+                        text-form-content
+                        text-form-content_size_small"
+                 for="loginEmail">
+            Email
+          </label>
+          <input class="popup__input
+                        text-form-content
+                        text-form-content_size_normal"
+                 id="loginEmail"
+                 maxlength="320"
+                 minlength="1"
+                 name="email"
+                 placeholder="Введите почту"
+                 required
+                 type="email">
+          <p aria-live="polite"
+             class="popup__error-message
+                    text-form-content
+                    text-form-content_size_small"
+             id="error-login-email">
+            Неправильный формат email
+          </p>
+        </div>
+
+        <div class="popup__input-wrapper">
+          <label class="popup__label
+                        text-form-content
+                        text-form-content_size_small"
+                 for="loginPassword">
+            Пароль
+          </label>
+          <input class="popup__input
+                        text-form-content
+                        text-form-content_size_normal"
+                 id="loginPassword"
+                 name="password"
+                 required
+                 placeholder="Введите пароль"
+                 type="password">
+          <p aria-live="polite"
+             class="popup__error-message
+                    text-form-content
+                    text-form-content_size_small"
+             id="error-login-password"></p>
+        </div>
+
+        <div class="popup__submit-wrapper">
+          <p aria-live="polite"
+             class="popup__error-message
+                    popup__error-message_centered
+                    text-form-content
+                    text-form-content_size_small"
+             id="error-login">
+            Сервер не отвечает
+          </p>
+          <button class="button
+                         button_theme_blue
+                         popup__button"
+                  disabled
+                  type="submit">
+            Войти
+          </button>
+        </div>
+      </form>
+
+      <button class="popup__textual-button
+                     popup__textual-button_align_center
+                     text-form-content
+                     text-form-content_size_normal">
+        <span class="popup__textual-button_text-color_black">или</span>
+        Зарегистрироваться
+      </button>
+    </div>
+  </div>
+
+  <div id="signup-popup"
+       class="popup
+              popup_is-hidden">
+    <div class="popup__content
+                popup__content_vertical-padding_normal">
+      <img alt="Кнопка закрыть"
+           class="popup__close"
+           src="<%=require('./images/popup-close.svg').default%>">
+      <h2 class="popup__title
+                 text-form-header">
+        Регистрация
+      </h2>
+      <form class="popup__form"
+            name="signup"
+            novalidate>
+        <div class="popup__input-wrapper">
+          <label class="popup__label
+                        text-form-content
+                        text-form-content_size_small"
+                 for="signupEmail">
+            Email
+          </label>
+          <input class="popup__input
+                        text-form-content
+                        text-form-content_size_normal"
+                 id="signupEmail"
+                 maxlength="320"
+                 minlength="1"
+                 name="email"
+                 placeholder="Введите почту"
+                 required
+                 type="email">
+          <p aria-live="polite"
+             class="popup__error-message
+                    text-form-content
+                    text-form-content_size_small"
+             id="error-signup-email">
+            Неправильный формат email
+          </p>
+        </div>
+
+        <div class="popup__input-wrapper">
+          <label class="popup__label
+                        text-form-content
+                        text-form-content_size_small"
+                 for="signupPassword">
+            Пароль
+          </label>
+          <input class="popup__input
+                        text-form-content
+                        text-form-content_size_normal"
+                 id="signupPassword"
+                 name="password"
+                 required
+                 placeholder="Введите пароль"
+                 type="password">
+          <p aria-live="polite"
+             class="popup__error-message
+                    text-form-content
+                    text-form-content_size_small"
+             id="error-signup-password"></p>
+        </div>
+
+        <div class="popup__input-wrapper">
+          <label class="popup__label
+                        text-form-content
+                        text-form-content_size_small"
+                 for="signupName">
+            Имя
+          </label>
+          <input class="popup__input
+                        text-form-content
+                        text-form-content_size_normal"
+                 id="signupName"
+                 maxlength="30"
+                 minlength="2"
+                 name="name"
+                 placeholder="Введите своё имя"
+                 required
+                 type="text">
+          <p aria-live="polite"
+             class="popup__error-message
+                    text-form-content
+                    text-form-content_size_small"
+             id="error-signup-name">
+            Введите имя
+          </p>
+        </div>
+
+        <div class="popup__submit-wrapper">
+          <p aria-live="polite"
+             class="popup__error-message
+                    popup__error-message_centered
+                    text-form-content
+                    text-form-content_size_small"
+             id="error-signup">
+            Такой пользователь уже есть
+          </p>
+          <button class="button
+                         button_theme_blue
+                         popup__button"
+                  disabled
+                  type="submit">
+            Зарегистрироваться
+          </button>
+        </div>
+      </form>
+
+      <button class="popup__textual-button
+                     popup__textual-button_align_center
+                     text-form-content
+                     text-form-content_size_normal">
+        <span class="popup__textual-button_text-color_black">или</span>
+        Войти
+      </button>
+    </div>
+  </div>
+
+  <div id="signup-ok-popup"
+       class="popup
+              popup_is-hidden">
+    <div class="popup__content
+                popup__content_vertical-padding_large">
+      <img alt="Кнопка закрыть"
+           class="popup__close"
+           src="<%=require('./images/popup-close.svg').default%>">
+      <h2 class="popup__title
+                 text-form-header">
+        Пользователь успешно зарегистрирован!
+      </h2>
+
+      <button class="popup__textual-button
+                     text-content
+                     text-content_size_normal">
+        Выполнить вход
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu-popup"
+       class="popup
+              popup_is-hidden">
+    <div class="mobile-menu">
+      <img alt="Кнопка закрыть"
+           class="popup__close"
+           src="<%=require('./images/popup-close.svg').default%>">
+      <nav>
+        <a class="link
+                  menu__item
+                  menu__link
+                  menu__link_theme_white"
+           href="/">
+          Главная
+        </a>
+        <a class="link
+                  menu__item
+                  menu__link
+                  menu__link_theme_white"
+           href="/saved">
+          Сохранённые статьи
+        </a>
+      </nav>
+      <!-- <button class="button
+                         button_theme_transparent
+                         menu__item">
+            Авторизоваться
+          </button> -->
+      <button class="button
+                     button_theme_transparent-white
+                     menu__item">
+        <span>Грета</span>
+        <img src="<%=require('./images/logout-white.svg').default%>"
+             alt="Иконка выхода"
+             class="button__image">
+      </button>
+    </div>
+  </div>
+</body>
+
+</html>

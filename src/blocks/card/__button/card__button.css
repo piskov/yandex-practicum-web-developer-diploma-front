@@ -1,0 +1,42 @@
+.card__button {
+  margin-left: 5px;
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  z-index: 2;
+
+  height: 40px;
+  width: 40px;
+
+  background-color: transparent;
+  background-size: cover;
+  background-position: center;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.card__button:hover .card__tooltip {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.2s ease-out;
+}
+
+.card__button:focus {
+  box-shadow: 0 0 0 1pt #4f90f8;
+  outline-style: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .card__button {
+    right: 8px;
+    top: 8px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .card__button {
+    right: 16px;
+    top: 16px;
+  }
+}

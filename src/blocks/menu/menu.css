@@ -1,0 +1,16 @@
+@import url('./__current-link/menu__current-link.css');
+@import url('./__image-button/menu__image-button.css');
+@import url('./__item/menu__item.css');
+@import url('./__link/menu__link.css');
+
+.menu {
+  align-items: baseline;
+  display: flex;
+}
+
+@media screen and (max-width: 767px) {
+  .menu {
+    visibility: collapse;
+    position: fixed;
+  }
+}

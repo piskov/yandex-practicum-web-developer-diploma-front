@@ -1,0 +1,12 @@
+@import url('./__cards-container/search-results__cards-container.css');
+@import url('./__load-button/search-results__load-button.css');
+@import url('./__not-found/search-results__not-found.css');
+@import url('./__preloader/search-results__preloader.css');
+@import url('./__title/search-results__title.css');
+
+.search-results {
+  display: flex;
+  flex-direction: column;
+
+  background-color: #F5F6F7;
+}

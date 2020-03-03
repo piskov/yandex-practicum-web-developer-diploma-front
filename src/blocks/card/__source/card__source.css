@@ -1,0 +1,11 @@
+.card__source {
+  margin: 10px 0px 0px;
+
+  color: #B6BCBF;
+}
+
+@media screen and (max-width: 767px) {
+  .card__source {
+    margin-top: 9px;
+  }
+}
