@@ -17,7 +17,7 @@ export default class ExplorerApi {
    * @param {ArticleModel} article Article to delete.
    */
   deleteArticleAsync(article) {
-    const requestUrl = BASE_ADDRESS + `articles/${article.articleId}`;
+    const requestUrl = BASE_ADDRESS + `articles/${article.serverArticleId}`;
 
     return fetch(requestUrl, this._createRequestParams('DELETE'))
       .then(response => {
@@ -105,7 +105,7 @@ export default class ExplorerApi {
 
   /**
    * Create a request to save the article to the user’s store.
-   * @param {Article} article Article to save.
+   * @param {ArticleModel} article Article to save.
    */
   saveArticleAsync(article) {
     const requestUrl = BASE_ADDRESS + `articles/`;

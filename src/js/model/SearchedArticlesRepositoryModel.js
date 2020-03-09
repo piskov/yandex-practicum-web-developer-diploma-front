@@ -67,14 +67,21 @@ export default class SearchedArticlesRepositoryModel extends SavedArticlesReposi
   //#region ------ Public methods ------
 
   /**
+   * Clears articles collection.
+   */
+  clearArticles() {
+    this._searchResults.forEach(article => article.cleanup());
+    this._searchResults = [];
+
+    super.clearArticles();
+  }
+
+  /**
    * Creates a search request to the News API based on the search phrase.
    * @param {string} searchPhrase Keyword to search articles for.
    */
   searchArticlesAsync(searchPhrase) {
-    this._searchResults.forEach(article => article.cleanup());
-    this._searchResults = [];
-
-    super.clearSavedArticles();
+    this.clearArticles();
 
     this._searchPhrase = searchPhrase;
 

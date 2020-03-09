@@ -1,4 +1,5 @@
-import NetworkError from '../errors/NetworkError';
+import NetworkError from '../error/NetworkError';
+
 
 /**
  * Generic operation result: either contains error, or operation result.

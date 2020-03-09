@@ -1,0 +1,7 @@
+.preloader__image_size_normal {
+  box-sizing: border-box;
+  height: 74px;
+  width: 74px;
+
+  border-width: 1px;
+}

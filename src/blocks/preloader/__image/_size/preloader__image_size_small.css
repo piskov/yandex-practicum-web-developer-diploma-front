@@ -1,0 +1,8 @@
+.preloader__image_size_small {
+  box-sizing: border-box;
+  height: 24px;
+  width: 24px;
+
+  background: #fff;
+  border-width: 2px;
+}

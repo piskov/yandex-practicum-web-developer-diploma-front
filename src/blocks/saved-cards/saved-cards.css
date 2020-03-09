@@ -1,4 +1,4 @@
-@import url('./__preloader/saved-cards__preloader.css');
+@import url('./_is-hidden/saved-cards_is-hidden.css');
 
 .saved-cards {
   display: flex;

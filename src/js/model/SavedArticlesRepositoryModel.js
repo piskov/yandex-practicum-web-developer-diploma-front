@@ -3,6 +3,8 @@ import ExplorerApi from '../api/ExplorerApi';
 import MapCollectionItemChanged from '../tools/MapCollectionItemChanged';
 import OperationResult from '../tools/OperationResult';
 
+import errorConstants from '../constants/error-constants';
+
 
 /**
  * Describes a collection of saved news articles.
@@ -38,6 +40,21 @@ export default class SavedArticlesRepositoryModel {
 
 
   //#region ------ Events ------
+
+  /**
+   * Callback to be fired on article network  operation completed.
+   */
+  get onArticleBusyOperationCompleted() {
+    return this._onArticleBusyOperationCompleted;
+  }
+
+  /**
+   * Callback to be fired on article network  operation completed.
+   */
+  set onArticleBusyOperationCompleted(value) {
+    this._onArticleBusyOperationCompleted = value;
+  }
+
 
   /**
    * Callback to be fired on savedArticlesMap colleciton change.
@@ -76,7 +93,7 @@ export default class SavedArticlesRepositoryModel {
   /**
    * Clears saved articles collection.
    */
-  clearSavedArticles() {
+  clearArticles() {
     for (let article of this._savedArticlesMap.values()) {
       article.cleanup();
     }
@@ -145,10 +162,9 @@ export default class SavedArticlesRepositoryModel {
       .then(() => {
         this._savedArticlesMap.delete(article.articleId);
 
-        // in search results we do not delete (hide) cards from the view
-        // thus we can save them again later → we’ll may need the card again
-        // so we cleanup cards on delete only on saved page where there’s no
-        // search results
+        // In search results we do not delete (hide) cards from the view
+        // so we could save them again later → we may need the card again.
+        // Thus we cleanup cards only on saved page
         if (this._searchResults === undefined) {
           article.cleanup();
         }
@@ -164,6 +180,12 @@ export default class SavedArticlesRepositoryModel {
       })
       .catch(error => {
         article.isSaved = true; // revert model deletion state back to “saved”
+        alert(errorConstants.HUMAN_READABLE_DELETE_ARTICLE_PAGE_ERROR);
+      })
+      .finally(() => {
+        if (this._onArticleBusyOperationCompleted) {
+          this._onArticleBusyOperationCompleted(article.articleId);
+        }
       });
   }
 
@@ -221,7 +243,7 @@ export default class SavedArticlesRepositoryModel {
 
     return this._explorerApi.saveArticleAsync(article)
       .then(jsonData => {
-        article.articleId = jsonData._id;
+        article.serverArticleId = jsonData._id;
 
         this._savedArticlesMap.set(article.articleId, article);
 
@@ -236,6 +258,12 @@ export default class SavedArticlesRepositoryModel {
       })
       .catch(error => {
         article.isSaved = false; // revert model’s state back to “not saved”
+        alert(errorConstants.HUMAN_READABLE_SAVE_ARTICLE_PAGE_ERROR);
+      })
+      .finally(() => {
+        if (this._onArticleBusyOperationCompleted) {
+          this._onArticleBusyOperationCompleted(article.articleId);
+        }
       });
   }
 

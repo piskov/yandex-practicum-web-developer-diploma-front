@@ -29,7 +29,7 @@ export default class UserModel {
   //#region ------ Properties ------
 
   /**
-   * User’s name.
+   * Indicates whether user is logged-in.
    * @type {boolean}
    */
   get isLoggedIn() {
@@ -37,7 +37,7 @@ export default class UserModel {
   }
 
   /**
-   * User’s name.
+   * User’s first name.
    * @type {?string}
    */
   get name() {
@@ -65,14 +65,14 @@ export default class UserModel {
 
 
   /**
-   * Callback to be fired on login operation completion.
+   * Callback to be fired on name load operation completion.
    */
   get onNameLoadCompleted() {
     return this._onNameLoadCompleted;
   }
 
   /**
-   * Callback to be fired on login operation completion.
+   * Callback to be fired on name load operation completion.
    */
   set onNameLoadCompleted(value) {
     this._onNameLoadCompleted = value;

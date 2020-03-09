@@ -1,6 +1,7 @@
-import NetworkError from '../errors/NetworkError';
+import NetworkError from '../error/NetworkError';
 
 import logout from './logout';
+
 
 /**
  * Helper method to extract additional error info from the response body.
