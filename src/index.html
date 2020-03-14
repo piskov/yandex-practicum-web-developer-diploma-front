@@ -81,7 +81,10 @@
         <button class="button
                        button_theme_transparent-white
                        menu__item">
-          <span>Грета</span>
+          <span>
+            <<<<<<< ОБНОВИ
+                    МЕНЯ>>>>>>>>>>>>>
+          </span>
           <img src="<%=require('./images/logout-white.svg').default%>"
                alt="Иконка выхода"
                class="button__image">
@@ -100,6 +103,7 @@
         в своём личном кабинете.
       </p>
       <form class="search__form"
+            name="search"
             novalidate>
         <input class="search__field
                       text-content
@@ -120,151 +124,25 @@
   </section>
 
   <main class="main-page__search-results
-               search-results">
+               search-results
+               search-results_is-hidden">
     <h2 class="search-results__title
                text-title
                text-title_size_normal">Результаты поиска</h2>
-    <div class="cards-container
-                search-results__cards-container">
-      <article class="card">
-        <a class="card__link"
-           href="https://google.com"
-           rel="noopener noreferrer"
-           target="_blank"></a>
-        <div class="card__image">
-          <button class="card__button
-                         card__bookmark-button
-                         card__bookmark-button_state_not-marked">
-            <span class="card__tooltip
-                         text-tooltip
-                         text-tooltip_size_small">
-              Войдите, чтобы сохранять статьи
-            </span>
-          </button>
-        </div>
-        <div class="card__text-wrapper">
-          <div>
-            <p class="card__date
-                      text-date">
-              2 августа, 2019
-            </p>
-            <h3 class="card__title
-                       text-title
-                       text-title_size_small">
-              Национальное достояние — парки
-            </h3>
-            <p class="card__text
-                      text-content
-                      text-content_size_small">
-              В 2016 году Америка отмечала важный юбилей: сто лет назад здесь
-              начала складываться система национальных парков – охраняемых
-              территорий, где и сегодня каждый может приобщиться к природе.
-            </p>
-          </div>
-          <p class="card__source
-                    text-caption">
-            Лента.ру
-          </p>
-        </div>
-      </article>
-      <article class="card">
-        <a class="card__link"
-           href="https://google.com"
-           rel="noopener noreferrer"
-           target="_blank"></a>
-        <div class="card__image">
-          <button class="card__button
-                         card__bookmark-button
-                         card__bookmark-button_state_marked">
-            <span class="card__tooltip-wrapper">
-              <span class="card__tooltip
-                        text-tooltip
-                        text-tooltip_size_small">
-                Войдите, чтобы сохранять статьи
-              </span>
-            </span>
-          </button>
-        </div>
-        <div class="card__text-wrapper">
-          <div>
-            <p class="card__date
-                      text-date">
-              2 августа, 2019
-            </p>
-            <h3 class="card__title
-                       text-title
-                       text-title_size_small">
-              Лесные огоньки: история одной фотографии
-            </h3>
-            <p class="card__text
-                      text-content
-                      text-content_size_small">
-              Фотограф отвлеклась от освещения суровой политической реальности
-              Мексики, чтобы запечатлеть ускользающую красоту одного из местных
-              чудес природы.
-            </p>
-          </div>
-          <p class="card__source
-                    text-caption">
-            Медуза
-          </p>
-        </div>
-      </article>
-      <article class="card">
-        <a class="card__link"
-           href="https://google.com"
-           rel="noopener noreferrer"
-           target="_blank"></a>
-        <div class="card__image">
-          <button class="card__button
-                         card__bookmark-button
-                         card__bookmark-button_state_not-marked">
-            <span class="card__tooltip-wrapper">
-              <span class="card__tooltip
-                        text-tooltip
-                        text-tooltip_size_small">
-                Войдите, чтобы сохранять статьи
-              </span>
-            </span>
-          </button>
-        </div>
-        <div class="card__text-wrapper">
-          <div>
-            <p class="card__date
-                      text-date">
-              2 августа, 2019
-            </p>
-            <h3 class="card__title
-                       text-title
-                       text-title_size_small">
-              «Первозданная тайга»: новый фотопроект Игоря Шпиленка
-            </h3>
-            <p class="card__text
-                      text-content
-                      text-content_size_small">
-              Знаменитый фотограф снимает первозданные леса России, чтобы
-              рассказать о необходимости их сохранения. В этот раз он отправился
-              в Двинско-Пинежскую тайгу, где...
-            </p>
-          </div>
-          <p class="card__source
-                    text-caption">
-            РИА
-          </p>
-        </div>
-      </article>
-    </div>
+    <div class="cards-container"></div>
 
     <button class="button
                    button_theme_white
-                   search-results__load-button">
+                   search-results__load-button
+                   search-results__load-button_is-hidden">
       Показать еще
     </button>
 
     <div class="preloader
                 preloader_is-hidden
                 search-results__preloader">
-      <div class="preloader__image"></div>
+      <div class="preloader__image
+                  preloader__image_size_normal"></div>
       <p class="preloader__caption">
         Идет поиск новостей...
       </p>
@@ -283,6 +161,9 @@
         К сожалению по вашему запросу ничего не найдено.
       </p>
     </div>
+
+    <p class="search-results__error
+              search-results__error_is-hidden"></p>
   </main>
 
   <section class="about-author
@@ -651,6 +532,45 @@
       </button>
     </div>
   </div>
+
+  <template id="search-article-template">
+    <article class="card">
+      <a class="card__link"
+         href=""
+         rel="noopener noreferrer"
+         target="_blank"></a>
+      <div class="card__image">
+        <button class="card__button
+                       card__bookmark-button
+                       card__bookmark-button_state_not-marked">
+          <span class="card__tooltip
+                       text-tooltip
+                       text-tooltip_size_small">
+            Войдите, чтобы сохранять статьи
+          </span>
+          <div class="preloader
+                      preloader_is-hidden">
+            <div class="preloader__image
+                        preloader__image_size_small"></div>
+          </div>
+        </button>
+      </div>
+      <div class="card__text-wrapper">
+        <div>
+          <p class="card__date
+                    text-date"></p>
+          <h3 class="card__title
+                     text-title
+                     text-title_size_small"></h3>
+          <p class="card__text
+                    text-content
+                    text-content_size_small"></p>
+        </div>
+        <p class="card__source
+                  text-caption"></p>
+      </div>
+    </article>
+  </template>
 </body>
 
 </html>

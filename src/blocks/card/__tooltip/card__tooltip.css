@@ -1,3 +1,5 @@
+@import url('./_is-hidden/card__tooltip_is-hidden.css');
+
 .card__tooltip {
   margin-right: 5px;
   position: absolute;

@@ -1,7 +1,6 @@
 import ArticlesRepositoryViewModel from './ArticlesRepositoryViewModel';
 import SavedArticleViewModel from './SavedArticleViewModel';
 
-import ArticleModel from '../model/ArticleModel';
 import SavedArticlesRepositoryModel from '../model/SavedArticlesRepositoryModel';
 
 import MapCollectionItemChanged from '../tools/MapCollectionItemChanged';
@@ -175,7 +174,6 @@ export default class SavedArticlesRepositoryViewModel extends ArticlesRepository
 
     this.articlesCountMessage = getArticlesCountMessage(this.userFirstName, articlesCount);
     this.keywordList = getKeywordList([...this._articlesMap.values()]);
-    super.hasArticles = articlesCount > 0;
   }
 
   //#endregion

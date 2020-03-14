@@ -19,7 +19,11 @@ export default class ArticleModel {
    */
   constructor(keyword, title, description, publishedAt, source, url, urlToImage,
     isSaved = false, serverArticleId = null) {
-    this.description = description;
+    // News API returns 'undefined' (as a string, sic!) for empty description
+    if (description !== 'undefined') {
+      this.description = description;
+    }
+
     this.keyword = keyword;
     this.publishedAt = publishedAt;
     this.source = source;

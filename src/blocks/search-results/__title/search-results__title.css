@@ -1,15 +1,17 @@
 .search-results__title {
-  margin: 80px 0px 0px;
+  margin: 80px 0px 64px;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .search-results__title {
+    margin-bottom: 32px;
     margin-top: 40px;
   }
 }
 
 @media screen and (max-width: 767px) {
   .search-results__title {
+    margin-bottom: 24px;
     margin-top: 32px;
   }
 }

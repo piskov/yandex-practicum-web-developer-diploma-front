@@ -15,7 +15,7 @@ import errorConstants from './js/constants/error-constants';
 
   const repositoryModel = new SavedArticlesRepositoryModel(explorerApi);
   const repositoryVM = new SavedArticlesRepositoryViewModel(repositoryModel);
-  const savedArticlesView = new SavedArticlesView(repositoryVM);
+  const repositoryView = new SavedArticlesView(repositoryVM);
 
   const nameLoadOperation = await userModel.loadNameAsync();
   if (nameLoadOperation.error !== null) {

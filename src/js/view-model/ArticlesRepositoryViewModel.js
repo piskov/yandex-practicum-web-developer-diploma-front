@@ -67,6 +67,7 @@ export default class ArticlesRepositoryViewModel extends BaseViewModel {
    */
   addArticle(articleViewModel, articleId) {
     this._articlesMap.set(articleId, articleViewModel);
+    this.hasArticles = this._articlesMap.size > 0;
 
     if (this._onObservableCollectionItemAdded) {
       // intertwine with render cycles to prevent “ui hanging” with many articles
@@ -115,6 +116,7 @@ export default class ArticlesRepositoryViewModel extends BaseViewModel {
     article.cleanup();
 
     this._articlesMap.delete(articleId);
+    this.hasArticles = this._articlesMap.size > 0;
   }
 
   //#endregion
