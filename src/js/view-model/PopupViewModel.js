@@ -6,10 +6,14 @@ import BaseViewModel from './BaseViewModel';
  */
 export default class PopupViewModel extends BaseViewModel {
   /**
-   * Inits new instance of the popup view model.
+   *
+   * @param {PopupViewModel} pairedPopup
+   * Secondary popup (if one popup can open another).
    */
-  constructor() {
+  constructor(pairedPopup) {
     super(null);
+
+    this._pairedPopup = pairedPopup;
   }
 
 
@@ -108,14 +112,32 @@ export default class PopupViewModel extends BaseViewModel {
     }
   }
 
+
+  /**
+   * Secondary popup (if one popup can open another).
+   * @type {PopupViewModel}
+   */
+  set pairedPopup(value) {
+    this._pairedPopup = value;
+  }
+
   //#endregion
 
 
   //#region ------ Commands ------
 
   /**
+   * Show secondary popup command.
+   */
+  showPairedPopupCommand() {
+    if (!this._isBusy) {
+      this.showPairedPopup();
+    }
+  }
+
+  /**
    * Submit form data command.
-   * @param {{email: string, password: string}} credentials
+   * @param {{email: string, password: string, name: string}} credentials
    */
   submitCommand(credentials) {
     this.errorMessage = '';
@@ -136,6 +158,16 @@ export default class PopupViewModel extends BaseViewModel {
    */
   cleanup() {
     super.cleanup();
+  }
+
+  /**
+   * Shows secondary popup and hides this one.
+   */
+  showPairedPopup() {
+    if (this._pairedPopup) {
+      this.isShown = false;
+      this._pairedPopup.isShown = true;
+    }
   }
 
   //#endregion

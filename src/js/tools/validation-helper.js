@@ -7,7 +7,7 @@ import errorConstants from '../constants/error-constants';
  * @param {boolean} isEnabled - Availability state.
  */
 export function changeButtonState(button, isEnabled) {
-  if (button === null) {
+  if (button == null) {
     return;
   }
 

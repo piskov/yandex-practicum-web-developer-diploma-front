@@ -5,9 +5,11 @@ module.exports = Object.freeze({
   SAVE_ARTICLE_ERROR_PREFIX: 'Error saving article',
   SEARCH_ERROR_PREFIX: 'Error searching for articles',
   SIGN_IN_ERROR_PREFIX: 'Error during login',
+  SIGN_UP_ERROR_PREFIX: 'Error during sign-up',
 
   HUMAN_READABLE_DELETE_ARTICLE_PAGE_ERROR: 'Не удалось удалить статью — попробуйте ещё раз',
   HUMAN_READABLE_GENERIC_ERROR: 'Ошибка соединения — попробуйте ещё раз',
+  HUMAN_READABLE_EMAIL_TAKEN: 'Пользователь с таким email уже существует',
   HUMAN_READABLE_INVALID_USERNAME_OR_PASSWORD_ERROR: 'Неправильные почта или пароль',
   HUMAN_READABLE_LOAD_NAME_ERROR: 'Возникла ошибка загрузки профиля — попробуйте перезагрузить страницу',
   HUMAN_READABLE_LOAD_SAVED_PAGE_ERROR: 'Возникла ошибка — попробуйте перезагрузить страницу',

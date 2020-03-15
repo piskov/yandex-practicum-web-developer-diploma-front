@@ -1,5 +1,6 @@
 import ExplorerApi from '../api/ExplorerApi';
 import OperationResult from '../tools/OperationResult';
+import UserDto from '../dto/UserDto';
 
 import logout from '../tools/logout';
 
@@ -78,6 +79,21 @@ export default class UserModel {
     this._onNameLoadCompleted = value;
   }
 
+
+  /**
+   * Callback to be fired on sign-up operation completion.
+   */
+  get onSignUpCompleted() {
+    return this._onSignUpCompleted;
+  }
+
+  /**
+   * Callback to be fired on sign-up operation completion.
+   */
+  set onSignUpCompleted(value) {
+    this._onSignUpCompleted = value;
+  }
+
   //#endregion
 
 
@@ -146,6 +162,30 @@ export default class UserModel {
       .finally(() => {
         if (this._onLoginCompleted) {
           this._onLoginCompleted(result);
+        }
+      });
+  }
+
+  /**
+   * Creates a sign-in request to the Explorer API.
+   * @param {{email: string, password: string, name: string}} credentials
+   */
+  signUpAsync(credentials) {
+    const result = new OperationResult();
+
+    const { name, email, password } = credentials;
+    const dto = new UserDto(name, email, password);
+
+    return this._explorerApi.signUpAsync(dto)
+      .then(() => {
+        result.data = true;
+      })
+      .catch(error => {
+        result.error = error;
+      })
+      .finally(() => {
+        if (this._onSignUpCompleted) {
+          this._onSignUpCompleted(result);
         }
       });
   }

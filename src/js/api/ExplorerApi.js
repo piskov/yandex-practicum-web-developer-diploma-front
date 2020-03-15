@@ -1,5 +1,6 @@
 import ArticleDto from '../dto/ArticleDto';
 import ArticleModel from '../model/ArticleModel';
+import UserDto from '../dto/UserDto';
 
 import errorConstants from '../constants/error-constants';
 import parseErrorBodyAsync from '../tools/error-helper';
@@ -104,11 +105,11 @@ export default class ExplorerApi {
   }
 
   /**
-   * Create a request to save the article to the user’s store.
+   * Createы a request to save the article to the user’s store.
    * @param {ArticleModel} article Article to save.
    */
   saveArticleAsync(article) {
-    const requestUrl = BASE_ADDRESS + `articles/`;
+    const requestUrl = BASE_ADDRESS + `articles`;
 
     const request = this._createRequestParams('POST');
 
@@ -124,6 +125,31 @@ export default class ExplorerApi {
         return parseErrorBodyAsync(
           response,
           errorConstants.SAVE_ARTICLE_ERROR_PREFIX,
+          true
+        );
+      });
+  }
+
+  /**
+   * Createы a request to sign up a new user.
+   * @param {UserDto} userDto User data transfer object.
+   */
+  signUpAsync(userDto) {
+    const requestUrl = BASE_ADDRESS + `signup`;
+
+    const request = this._createRequestParams('POST');
+
+    request.body = JSON.stringify(userDto);
+
+    return fetch(requestUrl, request)
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+
+        return parseErrorBodyAsync(
+          response,
+          errorConstants.SIGN_UP_ERROR_PREFIX,
           true
         );
       });

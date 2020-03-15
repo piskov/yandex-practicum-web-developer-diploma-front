@@ -34,7 +34,9 @@ export default class PopupView extends BaseView {
     }
 
     this._popupCloseButton = super.htmlMarkup.querySelector('.popup__close');
+    this._showPairedPopupButton = super.htmlMarkup.querySelector('.popup__textual-button');
 
+    this._onShowPairedPopupClick = this._onShowPairedPopupClick.bind(this);
     this._onPopupCloseButtonClick = this._onPopupCloseButtonClick.bind(this);
     this._onKeyPress = this._onKeyPress.bind(this);
     this._subscribeToUiEvents = this._subscribeToUiEvents.bind(this);
@@ -45,7 +47,7 @@ export default class PopupView extends BaseView {
   //#region ------ Event handlers ------
 
   /**
-   * Handle escape key press.
+   * Handles escape key press.
    */
   _onKeyPress(event) {
     if (event.keyCode === ESCAPE_CODE) {
@@ -54,7 +56,7 @@ export default class PopupView extends BaseView {
   }
 
   /**
-   * Handle close popup button press.
+   * Handles close popup button click.
    */
   _onPopupCloseButtonClick() {
     if (super.dataContext.isBusy) {
@@ -63,6 +65,13 @@ export default class PopupView extends BaseView {
 
     super.dataContext.isShown = false;
     this._unsubscribeFromUiEvents();
+  }
+
+  /**
+   * Handles show secondary popup button click.
+   */
+  _onShowPairedPopupClick() {
+    super.dataContext.showPairedPopupCommand();
   }
 
   /**
@@ -88,7 +97,9 @@ export default class PopupView extends BaseView {
         break;
 
       case 'isBusy':
-        this._updateSubmitButton(super.dataContext.isBusy);
+        const isBusy = super.dataContext.isBusy;
+        this._updateSubmitButton(isBusy);
+        changeButtonState(this._showPairedPopupButton, !isBusy);
         break;
 
       case 'isShown':
@@ -124,6 +135,7 @@ export default class PopupView extends BaseView {
    */
   _subscribeToUiEvents() {
     this._popupCloseButton.addEventListener('click', this._onPopupCloseButtonClick);
+    this._showPairedPopupButton.addEventListener('click', this._onShowPairedPopupClick);
     document.addEventListener('keyup', this._onKeyPress);
   }
 
@@ -132,6 +144,7 @@ export default class PopupView extends BaseView {
    */
   _unsubscribeFromUiEvents() {
     this._popupCloseButton.removeEventListener('click', this._onPopupCloseButtonClick);
+    this._showPairedPopupButton.removeEventListener('click', this._onShowPairedPopupClick);
     document.removeEventListener('keyup', this._onKeyPress);
   }
 
@@ -151,6 +164,10 @@ export default class PopupView extends BaseView {
   }
 
   _updateSubmitButton(isBusy) {
+    if (!this._formValidator) {
+      return;
+    }
+
     const button = this._formValidator.submitButton;
 
     if (isBusy) {

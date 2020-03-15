@@ -354,9 +354,9 @@
     </div>
   </div>
 
-  <div id="signup-popup"
-       class="popup
-              popup_is-hidden">
+  <div class="popup
+              popup_is-hidden"
+       id="signup-popup">
     <div class="popup__content
                 popup__content_vertical-padding_normal">
       <img alt="Кнопка закрыть"
@@ -390,9 +390,7 @@
              class="popup__error-message
                     text-form-content
                     text-form-content_size_small"
-             id="error-signup-email">
-            Неправильный формат email
-          </p>
+             id="error-signup-email"></p>
         </div>
 
         <div class="popup__input-wrapper">
@@ -432,7 +430,7 @@
                  id="signupName"
                  maxlength="30"
                  minlength="2"
-                 name="name"
+                 name="firstName"
                  placeholder="Введите своё имя"
                  required
                  type="text">
@@ -440,9 +438,7 @@
              class="popup__error-message
                     text-form-content
                     text-form-content_size_small"
-             id="error-signup-name">
-            Введите имя
-          </p>
+             id="error-signup-firstName"></p>
         </div>
 
         <div class="popup__submit-wrapper">
@@ -451,9 +447,7 @@
                     popup__error-message_centered
                     text-form-content
                     text-form-content_size_small"
-             id="error-signup">
-            Такой пользователь уже есть
-          </p>
+             id="error-signup"></p>
           <button class="button
                          button_theme_blue
                          popup__button"

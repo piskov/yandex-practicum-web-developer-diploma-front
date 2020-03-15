@@ -16,8 +16,10 @@ export default class UserViewModel extends BaseViewModel {
    * Inits new instance of the user view model.
    * @param {UserModel} model Underlying model.
    * @param {PopupViewModel} loginPopupViewModel Login popup VM.
+   * @param {PopupViewModel} signUpPopupViewModel Sign-up popup VM.
+   * @param {PopupViewModel} signUpOkPopupViewModel “Sign-up OK” popup VM.
    */
-  constructor(model, loginPopupViewModel) {
+  constructor(model, loginPopupViewModel, signUpPopupViewModel, signUpOkPopupViewModel) {
     super(model);
 
     if (loginPopupViewModel) {
@@ -25,8 +27,18 @@ export default class UserViewModel extends BaseViewModel {
       this._loginPopupViewModel.onFormSubmit = this._onLoginFormSubmitHandler.bind(this);
     }
 
+    if (signUpPopupViewModel) {
+      this._signUpPopupViewModel = signUpPopupViewModel;
+      this._signUpPopupViewModel.onFormSubmit = this._onSignUpFormSubmitHandler.bind(this);
+    }
+
+    if (signUpOkPopupViewModel) {
+      this._signUpOkPopupViewModel = signUpOkPopupViewModel;
+    }
+
     model.onLoginCompleted = this._onLoginCompletedHandler.bind(this);
     model.onNameLoadCompleted = this._onNameLoadCompletedHandler.bind(this);
+    model.onSignUpCompleted = this._onSignUpCompletedHandler.bind(this);
   }
 
 
@@ -96,10 +108,21 @@ export default class UserViewModel extends BaseViewModel {
   cleanup() {
     if (this._loginPopupViewModel) {
       this._loginPopupViewModel.onFormSubmit = null;
+      this._loginPopupViewModel.cleanup();
+    }
+
+    if (this._signUpPopupViewModel) {
+      this._signUpPopupViewModel.onFormSubmit = null;
+      this._signUpPopupViewModel.cleanup();
+    }
+
+    if (this._signUpOkPopupViewModel) {
+      this._signUpOkPopupViewModel.cleanup();
     }
 
     this._model.onLoginCompleted = null;
     this._model.onNameLoadCompleted = null;
+    this._model.onSignUpCompleted = null;
 
     super.cleanup();
   }
@@ -118,7 +141,7 @@ export default class UserViewModel extends BaseViewModel {
       super.onNotifyPropertyChanged('isLoggedIn');
     }
 
-    this._updateLoginPopup(operationResult.error);
+    this._updatePopup(this._loginPopupViewModel, operationResult.error);
 
     if (operationResult.error === null) {
       if (this._onLoginCompleted) {
@@ -153,6 +176,22 @@ export default class UserViewModel extends BaseViewModel {
     }
   }
 
+  /**
+   * Handles UserModel.onSignUpCompleted event.
+   * @param {OperationResult} operationResult
+   */
+  _onSignUpCompletedHandler(operationResult) {
+    this._updatePopup(this._signUpPopupViewModel, operationResult.error);
+  }
+
+  /**
+  * Handles sign-up form submit event.
+  * @param {{email: string, password: string, name: string}} credentials
+  */
+  _onSignUpFormSubmitHandler(credentials) {
+    this._model.signUpAsync(credentials);
+  }
+
   //#endregion
 
 
@@ -160,26 +199,35 @@ export default class UserViewModel extends BaseViewModel {
 
   /**
    * Updates login popup.
+   * @param {PopupViewModel} popupViewModel Popup to update.
    * @param {NetworkError} error
    */
-  _updateLoginPopup(error) {
-    if (!this._loginPopupViewModel) {
+  _updatePopup(popupViewModel, error) {
+    if (!popupViewModel) {
       return;
     }
 
-    this._loginPopupViewModel.isBusy = false;
+    popupViewModel.isBusy = false;
 
     if (!error) {
-      this._loginPopupViewModel.isShown = false;
+      popupViewModel.isShown = false;
+
+      if (popupViewModel === this._signUpPopupViewModel) {
+        this._signUpOkPopupViewModel.isShown = true;
+      }
+
       return;
     }
 
     let errorMessage = errorConstants.HUMAN_READABLE_GENERIC_ERROR;
-    if (error.statusCode === 401) {
+
+    if (popupViewModel === this._loginPopupViewModel && error.statusCode === 401) {
       errorMessage = errorConstants.HUMAN_READABLE_INVALID_USERNAME_OR_PASSWORD_ERROR;
+    } else if (popupViewModel === this._signUpPopupViewModel && error.statusCode === 400) {
+      errorMessage = errorConstants.HUMAN_READABLE_EMAIL_TAKEN;
     }
 
-    this._loginPopupViewModel.errorMessage = errorMessage;
+    popupViewModel.errorMessage = errorMessage;
   }
 
   //#endregion
