@@ -4,6 +4,7 @@ import SearchedArticleView from './SearchedArticleView';
 import SearchedArticlesRepositoryViewModel from '../view-model/SearchedArticlesRepositoryViewModel';
 import SearchedArticleViewModel from '../view-model/SearchedArticleViewModel';
 
+import errorConstants from '../constants/error-constants';
 import updateElementVisiblity from '../tools/updateElementVisiblity';
 
 
@@ -23,7 +24,9 @@ export default class SearchedArticlesView extends BaseView {
     super.subscribeToVmCollectionItemAdded(this._onVmCollectionItemAdded.bind(this));
 
     this._searchButton = document.querySelector('.search__button');
+    this._searchButtonOriginalContent = this._searchButton.textContent;
 
+    this._searchField = document.querySelector('.search__field');
     this._searchResults = document.querySelector('.search-results');
 
     this._noResultsImage = this._searchResults.querySelector('.not-found');
@@ -44,8 +47,17 @@ export default class SearchedArticlesView extends BaseView {
   _onSearchButtonClick(event) {
     event.preventDefault();
 
+    const searchPhrase = this._searchField.value;
+    if (searchPhrase.length < 2) {
+      this._searchButton.textContent = errorConstants.HUMAN_READABLE_SEARCH_PHRASE_EMPTY;
+      setTimeout(() => {
+        this._searchButton.textContent = this._searchButtonOriginalContent;
+      }, 2000);
+      return;
+    }
+
     this._searchResults.classList.remove('search-results_is-hidden');
-    super.dataContext.searchCommand();
+    super.dataContext.searchCommand(searchPhrase);
   }
 
   /**

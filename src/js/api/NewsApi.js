@@ -3,7 +3,7 @@ import parseErrorBodyAsync from '../tools/error-helper';
 
 
 const API_KEY = '7f192e97d7af4ebfb14a61206ff44b23';
-const BASE_ADDRESS = 'http://newsapi.org/v2/everything';
+const BASE_ADDRESS = 'https://newsapi.org/v2/everything';
 const NEWS_COUNT = 100;
 const OLDEST_NEWS_DAYS_BEFORE = 7;
 

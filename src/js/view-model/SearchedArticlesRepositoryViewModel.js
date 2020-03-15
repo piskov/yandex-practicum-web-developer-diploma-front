@@ -153,7 +153,7 @@ export default class SearchedArticlesRepositoryViewModel extends ArticlesReposit
   /**
    * “Search for news” command.
    */
-  searchCommand() {
+  searchCommand(searchPhrase) {
     this.isMoreNewsButtonVisibile = false;
     this.isNoResultsImageVisible = false;
     this.searchErrorMessage = '';
@@ -161,7 +161,7 @@ export default class SearchedArticlesRepositoryViewModel extends ArticlesReposit
 
     super.clearArticles();
 
-    this._model.searchArticlesAsync(this._searchPhrase);
+    this._model.searchArticlesAsync(searchPhrase);
   }
 
   /**
