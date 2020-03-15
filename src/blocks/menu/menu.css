@@ -2,6 +2,7 @@
 @import url('./__image-button/menu__image-button.css');
 @import url('./__item/menu__item.css');
 @import url('./__link/menu__link.css');
+@import url('./__username/menu__username.css');
 
 .menu {
   align-items: baseline;

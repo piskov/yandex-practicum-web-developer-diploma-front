@@ -12,13 +12,13 @@ export default class SearchedArticleViewModel extends ArticleViewModel {
    * @param {ArticleModel} model
    * Underlying model.
    *
-   * @param {boolean} hasNotLoggedInTooltip
-   * Indicates whether article should indicate that user is not authenticated.
+   * @param {boolean} isUserLoggedIn
+   * Indicates whether user is signed-in.
    */
-  constructor(model, hasNotLoggedInTooltip) {
+  constructor(model, isUserLoggedIn) {
     super(model);
 
-    this._hasNotLoggedInTooltip = hasNotLoggedInTooltip;
+    this._hasNotLoggedInTooltip = !isUserLoggedIn;
   }
 
 
@@ -71,6 +71,19 @@ export default class SearchedArticleViewModel extends ArticleViewModel {
     if (super.onNotifyPropertyChanged) {
       super.onNotifyPropertyChanged('isSaved');
     }
+  }
+
+  //#endregion
+
+
+  //#region ------ Commands ------
+
+  /**
+   * Toggle bookmark command.
+   */
+  toggleIsSavedCommand() {
+    super.isBusy = true;
+    this.isSaved = !this.isSaved;
   }
 
   //#endregion

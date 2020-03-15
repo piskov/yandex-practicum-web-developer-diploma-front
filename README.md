@@ -17,3 +17,6 @@ Package.json has fixed version for all npm modules.
 - adaptive and responsive layout for all major resolutions
 - two pages: main search and saved articles
 - no .js code
+
+## Release notes for `0.2.0`:
+- .js logic — app is now live

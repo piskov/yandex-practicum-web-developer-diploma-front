@@ -1,5 +1,6 @@
 import ArticlesRepositoryViewModel from './ArticlesRepositoryViewModel';
 import SearchedArticleViewModel from './SearchedArticleViewModel';
+import UserViewModel from './UserViewModel';
 
 import SearchedArticlesRepositoryModel from '../model/SavedArticlesRepositoryModel';
 
@@ -17,9 +18,12 @@ export default class SearchedArticlesRepositoryViewModel extends ArticlesReposit
   /**
    * Inits new instance of news articles search results repository view model.
    * @param {SearchedArticlesRepositoryModel} model Underlying model.
+   * @param {UserViewModel} userViewModel
    */
-  constructor(model) {
+  constructor(model, userViewModel) {
     super(model);
+
+    this._userViewModel = userViewModel;
 
     this._isBusy = false;
     this._isMoreNewsButtonVisibile = false;
@@ -27,6 +31,7 @@ export default class SearchedArticlesRepositoryViewModel extends ArticlesReposit
     this._searchErrorMessage = '';
 
     model.onSearchCompleted = this._searchCompletedCompletedHandler.bind(this);
+    userViewModel.onLoginCompleted = this._onLoginCompletedHandler.bind(this);
   }
 
 
@@ -172,7 +177,11 @@ export default class SearchedArticlesRepositoryViewModel extends ArticlesReposit
 
     const articlesToShow = this._model.searchResults.slice(startIndex, endIndex);
     articlesToShow.forEach(articleModel => {
-      const vm = new SearchedArticleViewModel(articleModel);
+      const vm = new SearchedArticleViewModel(
+        articleModel,
+        this._userViewModel.isLoggedIn
+      );
+
       super.addArticle(vm, articleModel.articleId);
     });
 
@@ -190,6 +199,8 @@ export default class SearchedArticlesRepositoryViewModel extends ArticlesReposit
    */
   cleanup() {
     this._model.onSearchCompleted = null;
+    this._userViewModel.onLoginCompleted = null;
+    this._userViewModel = null;
 
     super.cleanup();
   }
@@ -198,6 +209,19 @@ export default class SearchedArticlesRepositoryViewModel extends ArticlesReposit
 
 
   //#region ------ Event handlers ------
+
+  /**
+   * Handles UserViewModel.onLoginCompleted event.
+   */
+  _onLoginCompletedHandler() {
+    if (this._articlesMap.size === 0) {
+      return;
+    }
+
+    for (let article of this._articlesMap.values()) {
+      article.hasNotLoggedInTooltip = false;
+    }
+  }
 
   /**
    * Handles SearchedArticlesRepositoryModel.onSearchCompleted event.

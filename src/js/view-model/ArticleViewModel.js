@@ -5,7 +5,7 @@ import convertDateToRussianString from '../tools/date-helper';
 
 
 /**
- * Describes VM for a news article .
+ * Describes VM for a news article.
  */
 export default class ArticleViewModel extends BaseViewModel {
   /**
@@ -49,6 +49,7 @@ export default class ArticleViewModel extends BaseViewModel {
 
     if (super.onNotifyPropertyChanged) {
       super.onNotifyPropertyChanged('isBusy');
+      super.onNotifyPropertyChanged('isSaved');
     }
   }
 

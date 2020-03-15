@@ -1,3 +1,5 @@
+@import url('./_is-hidden/menu__item_is-hidden.css');
+
 .menu__item {
   margin-left: 32px;
 }

@@ -67,24 +67,25 @@
           </a>
           <a class="link
                     menu__item
+                    menu__item_is-hidden
                     menu__link
                     menu__link_theme_white"
              href="./saved">
             Сохранённые статьи
           </a>
         </nav>
-        <!-- <button class="button
-                       button_theme_transparent
-                       menu__item">
-          Авторизоваться
-        </button> -->
-        <button class="button
+        <button id="headerLoginButton"
+                class="button
                        button_theme_transparent-white
                        menu__item">
-          <span>
-            <<<<<<< ОБНОВИ
-                    МЕНЯ>>>>>>>>>>>>>
-          </span>
+          Авторизоваться
+        </button>
+        <button id="headerlogoutButton"
+                class="button
+                       button_theme_transparent-white
+                       menu__item
+                       menu__item_is-hidden">
+          <span class='menu__username'>Выход</span>
           <img src="<%=require('./images/logout-white.svg').default%>"
                alt="Иконка выхода"
                class="button__image">
@@ -525,7 +526,7 @@
       <button class="button
                      button_theme_transparent-white
                      menu__item">
-        <span>Грета</span>
+        <span class='menu__username'>Выход</span>
         <img src="<%=require('./images/logout-white.svg').default%>"
              alt="Иконка выхода"
              class="button__image">
@@ -542,7 +543,8 @@
       <div class="card__image">
         <button class="card__button
                        card__bookmark-button
-                       card__bookmark-button_state_not-marked">
+                       card__bookmark-button_state_not-marked"
+                disabled>
           <span class="card__tooltip
                        text-tooltip
                        text-tooltip_size_small">

@@ -5,13 +5,18 @@ import SavedArticlesRepositoryModel from './js/model/SavedArticlesRepositoryMode
 import SavedArticlesRepositoryViewModel from './js/view-model/SavedArticlesRepositoryViewModel';
 import SavedArticlesView from './js/view/SavedArticlesView';
 import UserModel from './js/model/UserModel';
+import UserView from './js/view/UserView';
+import UserViewModel from './js/view-model/UserViewModel';
 
 import errorConstants from './js/constants/error-constants';
 
 
 (async function () {
   const explorerApi = new ExplorerApi();
+
   const userModel = new UserModel(explorerApi);
+  const userVM = new UserViewModel(userModel);
+  const userView = new UserView(userVM);
 
   const repositoryModel = new SavedArticlesRepositoryModel(explorerApi);
   const repositoryVM = new SavedArticlesRepositoryViewModel(repositoryModel);

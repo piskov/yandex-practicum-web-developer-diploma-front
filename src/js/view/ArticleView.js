@@ -2,6 +2,7 @@ import BaseView from './BaseView';
 import ArticleViewModel from '../view-model/ArticleViewModel';
 
 import changeButtonEnabledState from '../tools/button-enabled-helper';
+import updateElementVisiblity from '../tools/updateElementVisiblity';
 
 
 /**
@@ -15,7 +16,7 @@ export default class ArticleView extends BaseView {
      */
   constructor(dataContext, htmlMarkup) {
     super(dataContext, htmlMarkup);
-    
+
     this._busyIndicator = this._htmlMarkup.querySelector('.preloader');
     super.subscribeToVmPropertyChanged(this._onVmPropertyChanges.bind(this));
 
@@ -81,11 +82,10 @@ export default class ArticleView extends BaseView {
    * @param {boolean} isBusy
    */
   _updateBusyIndicatorVisibility(isBusy) {
-    changeButtonEnabledState(this._deleteButton, !isBusy);
+    const button = this._deleteButton || this._bookmarkButton;
+    changeButtonEnabledState(button, !isBusy);
 
-    const isHiddenClass = 'preloader_is-hidden';
-    isBusy ? this._busyIndicator.classList.remove(isHiddenClass)
-      : this._busyIndicator.classList.add(isHiddenClass);
+    updateElementVisiblity(this._busyIndicator, isBusy, 'preloader_is-hidden');
   }
 
   //#endregion

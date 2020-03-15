@@ -5,7 +5,11 @@
   cursor: pointer;
 }
 
+.card__bookmark-button:disabled {
+  background-image: url('../../../images/bookmark-disabled.svg');
+}
+
 .card__bookmark-button:not(:active):not(:disabled):hover {
-  background-image: url('../../../images/bookmark-hover.svg');
-  transition: background-image 0.2s ease-out;
+  opacity: 0.8;
+  transition: opacity 0.2s ease-out;
 }

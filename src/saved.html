@@ -73,13 +73,18 @@
           Сохранённые статьи
         </a>
       </nav>
-      <button class="button
+      <button id="headerLoginButton"
+              class="button
                      button_theme_transparent-black
                      menu__item">
-        <span>
-          <<<<<<< ОБНОВИ
-                  МЕНЯ>>>>>>>>>>>>>
-        </span>
+        Авторизоваться
+      </button>
+      <button id="headerlogoutButton"
+              class="button
+                     button_theme_transparent-black
+                     menu__item
+                     menu__item_is-hidden">
+        <span class='menu__username'>Выход</span>
         <img src="<%=require('./images/logout-black.svg').default%>"
              alt="Иконка выхода"
              class="button__image">

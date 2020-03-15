@@ -2,6 +2,7 @@ import ArticleView from './ArticleView';
 import SearchedArticleViewModel from '../view-model/SearchedArticleViewModel';
 
 import changeButtonEnabledState from '../tools/button-enabled-helper';
+import updateElementVisiblity from '../tools/updateElementVisiblity';
 
 
 const ARTICLE_TEMPLATE =
@@ -73,7 +74,7 @@ export default class SearchedArticleView extends ArticleView {
    * @param {Event} event
    */
   _onBookmarkButtonClick(event) {
-    super.dataContext.isSaved = !super.dataContext.isSaved;
+    super.dataContext.toggleIsSavedCommand();
     event.stopPropagation();
   }
 
@@ -121,10 +122,7 @@ export default class SearchedArticleView extends ArticleView {
    */
   _updateNotLoggedInTooltipVisibility(isLoggedOut) {
     changeButtonEnabledState(this._bookmarkButton, !isLoggedOut);
-
-    const isHiddenClass = 'card__tooltip_is-hidden';
-    isLoggedOut ? this._notLoggedInTooltip.classList.add(isHiddenClass)
-      : this._notLoggedInTooltip.classList.remove(isHiddenClass);
+    updateElementVisiblity(this._notLoggedInTooltip, isLoggedOut, 'card__tooltip_is-hidden');
   }
 
   //#endregion

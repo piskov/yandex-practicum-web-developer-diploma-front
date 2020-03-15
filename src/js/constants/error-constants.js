@@ -7,6 +7,7 @@ module.exports = Object.freeze({
   SIGN_IN_ERROR_PREFIX: 'Error during login',
 
   HUMAN_READABLE_DELETE_ARTICLE_PAGE_ERROR: 'Не удалось удалить статью — попробуйте ещё раз',
+  HUMAN_READABLE_LOAD_NAME_ERROR: 'Возникла ошибка загрузки профиля — попробуйте перезагрузить страницу',
   HUMAN_READABLE_LOAD_SAVED_PAGE_ERROR: 'Возникла ошибка — попробуйте перезагрузить страницу',
   HUMAN_READABLE_SAVE_ARTICLE_PAGE_ERROR: 'Не удалось сохранить статью — попробуйте ещё раз',
   HUMAN_READABLE_SEARCH_ERROR: 'Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз.'

@@ -50,8 +50,8 @@ export default class UserModel {
   //#region ------ Events ------
 
   /**
- * Callback to be fired on login operation completion.
- */
+   * Callback to be fired on login operation completion.
+   */
   get onLoginCompleted() {
     return this._onLoginCompleted;
   }
@@ -83,11 +83,25 @@ export default class UserModel {
 
   //#region ------ Public methods ------
 
-  loadNameAsync() {
+  /**
+   * Creates a load user’s name request to the Explorer API.
+   *
+   * @param {boolean} shouldLogOutOnUnauthorized
+   */
+  loadNameAsync(shouldLogOutOnUnauthorized = true) {
     const result = new OperationResult();
 
     return this._explorerApi.getProfileAsync()
       .then(jsonData => {
+        // we also use this method on startup as a check-up for authentication
+        if (!this._isLoggedIn) {
+          this._isLoggedIn = true;
+
+          if (this._onLoginCompleted) {
+            this._onLoginCompleted(true);
+          }
+        }
+
         this._name = jsonData.data.name;
 
         result.data = this._name;
@@ -95,8 +109,9 @@ export default class UserModel {
       })
       .catch(error => {
         if (error.statusCode === 401
-          && this._isLoggedIn) {
-          this._isLoggedIn = false;
+          && shouldLogOutOnUnauthorized) {
+          this.logout();
+          return;
         }
 
         result.error = error;
