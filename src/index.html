@@ -264,9 +264,9 @@
     </div>
   </footer>
 
-  <div id="login-popup"
-       class="popup
-              popup_is-hidden">
+  <div class="popup
+              popup_is-hidden"
+       id="login-popup">
     <div class="popup__content
                 popup__content_vertical-padding_normal">
       <img alt="Кнопка закрыть"
@@ -300,9 +300,7 @@
              class="popup__error-message
                     text-form-content
                     text-form-content_size_small"
-             id="error-login-email">
-            Неправильный формат email
-          </p>
+             id="error-login-email"></p>
         </div>
 
         <div class="popup__input-wrapper">
@@ -316,6 +314,8 @@
                         text-form-content
                         text-form-content_size_normal"
                  id="loginPassword"
+                 minlength="8"
+                 maxlength="2028"
                  name="password"
                  required
                  placeholder="Введите пароль"
@@ -333,9 +333,7 @@
                     popup__error-message_centered
                     text-form-content
                     text-form-content_size_small"
-             id="error-login">
-            Сервер не отвечает
-          </p>
+             id="error-login"></p>
           <button class="button
                          button_theme_blue
                          popup__button"
@@ -408,6 +406,8 @@
                         text-form-content
                         text-form-content_size_normal"
                  id="signupPassword"
+                 maxlength="2048"
+                 minlength="8"
                  name="password"
                  required
                  placeholder="Введите пароль"

@@ -98,7 +98,9 @@ export default class UserModel {
           this._isLoggedIn = true;
 
           if (this._onLoginCompleted) {
-            this._onLoginCompleted(true);
+            const loginResult = new OperationResult();
+            loginResult.data = this._isLoggedIn;
+            this._onLoginCompleted(loginResult);
           }
         }
 

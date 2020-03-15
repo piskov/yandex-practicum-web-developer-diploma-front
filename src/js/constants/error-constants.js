@@ -7,8 +7,16 @@ module.exports = Object.freeze({
   SIGN_IN_ERROR_PREFIX: 'Error during login',
 
   HUMAN_READABLE_DELETE_ARTICLE_PAGE_ERROR: 'Не удалось удалить статью — попробуйте ещё раз',
+  HUMAN_READABLE_GENERIC_ERROR: 'Ошибка соединения — попробуйте ещё раз',
+  HUMAN_READABLE_INVALID_USERNAME_OR_PASSWORD_ERROR: 'Неправильные почта или пароль',
   HUMAN_READABLE_LOAD_NAME_ERROR: 'Возникла ошибка загрузки профиля — попробуйте перезагрузить страницу',
   HUMAN_READABLE_LOAD_SAVED_PAGE_ERROR: 'Возникла ошибка — попробуйте перезагрузить страницу',
   HUMAN_READABLE_SAVE_ARTICLE_PAGE_ERROR: 'Не удалось сохранить статью — попробуйте ещё раз',
-  HUMAN_READABLE_SEARCH_ERROR: 'Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз.'
+  HUMAN_READABLE_SEARCH_ERROR: 'Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз.',
+
+  VALIDATION_GENERIC_ERROR: 'Проверьте данные в поле',
+  VALIDATION_NAME_LENGTH_MISMATCH: 'Должно быть от 2 до 30 символов',
+  VALIDATION_PASSWORD_LENGTH_MISMATCH: 'Должно быть от 8 до 2048 символов',
+  VALIDATION_TYPE_MISMATCH: 'Неправильный формат email',
+  VALIDATION_VALUE_MISSING: 'Это обязательное поле',
 });

@@ -36,6 +36,15 @@ export default class SearchedArticleView extends ArticleView {
   //#region ------ Event handlers ------
 
   /**
+   * Handles “bookmark switch” button click.
+   * @param {Event} event
+   */
+  _onBookmarkButtonClick(event) {
+    super.dataContext.toggleIsSavedCommand();
+    event.stopPropagation();
+  }
+
+  /**
    * Cleans-up the resources.
    */
   _onVmCleanup() {
@@ -62,20 +71,6 @@ export default class SearchedArticleView extends ArticleView {
     }
 
     super._onVmPropertyChanges(propertyName);
-  }
-
-  //#endregion
-
-
-  //#region ------ Event handlers ------
-
-  /**
-   * Handles “bookmark switch” button click.
-   * @param {Event} event
-   */
-  _onBookmarkButtonClick(event) {
-    super.dataContext.toggleIsSavedCommand();
-    event.stopPropagation();
   }
 
   //#endregion

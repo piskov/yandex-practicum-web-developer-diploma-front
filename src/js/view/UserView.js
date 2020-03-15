@@ -35,7 +35,7 @@ export default class UserView extends BaseView {
    * @param {Event} event
    */
   _onLoginButtonClick(event) {
-    super.dataContext.loginCommand();
+    this._dataContext.showLoginPopupCommand();
   }
 
   /**
