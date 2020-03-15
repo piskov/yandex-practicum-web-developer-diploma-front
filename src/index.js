@@ -11,6 +11,7 @@ import SearchedArticlesRepositoryViewModel from './js/view-model/SearchedArticle
 import UserViewModel from './js/view-model/UserViewModel';
 
 import LoginPopupView from './js/view/LoginPopupView';
+import MobileMenuPopupView from './js/view/MobileMenuPopupView';
 import SearchedArticlesView from './js/view/SearchedArticlesView';
 import SignUpPopupView from './js/view/SignUpPopupView';
 import SignUpOkPopupView from './js/view/SignUpOkPopupView';
@@ -26,13 +27,21 @@ const signUpPopupView = new SignUpPopupView(signUpPopupVM);
 const loginPopupVM = new PopupViewModel(signUpPopupVM);
 const loginPopupView = new LoginPopupView(loginPopupVM);
 
-signUpPopupVM.pairedPopup = loginPopupVM;
-
 const signUpOkPopupVM = new PopupViewModel(loginPopupVM);
 const signUpOkPopupView = new SignUpOkPopupView(signUpOkPopupVM);
 
+signUpPopupVM.pairedPopup = loginPopupVM;
+
+const mobileMenuPopupVM = new PopupViewModel();
+const mobileMenuPopupView = new MobileMenuPopupView(mobileMenuPopupVM);
+
 const userModel = new UserModel(explorerApi);
-const userVM = new UserViewModel(userModel, loginPopupVM, signUpPopupVM, signUpOkPopupVM);
+const userVM = new UserViewModel(
+  userModel,
+  mobileMenuPopupVM,
+  loginPopupVM,
+  signUpPopupVM,
+  signUpOkPopupVM);
 const userView = new UserView(userVM);
 
 const repositoryModel = new SearchedArticlesRepositoryModel(explorerApi, newsApi);

@@ -80,7 +80,7 @@
                        menu__item">
           Авторизоваться
         </button>
-        <button id="headerlogoutButton"
+        <button id="headerLogoutButton"
                 class="button
                        button_theme_transparent-white
                        menu__item
@@ -501,25 +501,29 @@
                   menu__item
                   menu__link
                   menu__link_theme_white"
-           href="/">
+           href="./">
           Главная
         </a>
         <a class="link
                   menu__item
+                  menu__item_is-hidden
                   menu__link
                   menu__link_theme_white"
-           href="/saved">
+           href="./saved">
           Сохранённые статьи
         </a>
       </nav>
-      <!-- <button class="button
-                         button_theme_transparent
-                         menu__item">
-            Авторизоваться
-          </button> -->
-      <button class="button
+      <button id="mobileMenuLoginButton"
+              class="button
                      button_theme_transparent-white
                      menu__item">
+        Авторизоваться
+      </button>
+      <button id="mobileMenuLogoutButton"
+              class="button
+                     button_theme_transparent-white
+                     menu__item
+                     menu__item_is-hidden">
         <span class='menu__username'>Выход</span>
         <img src="<%=require('./images/logout-white.svg').default%>"
              alt="Иконка выхода"

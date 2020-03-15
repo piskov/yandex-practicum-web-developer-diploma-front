@@ -32,6 +32,6 @@
     justify-content: flex-start;
     padding-top: 56px;
 
-    background-color: unset;
+    background-color: rgba(0, 0, 0, 0.8);
   }
 }

@@ -78,7 +78,9 @@ export default class PopupView extends BaseView {
    * Cleans-up the resources.
    */
   _onVmCleanup() {
-    this._formValidator.cleanup();
+    if (this._formValidator) {
+      this._formValidator.cleanup();
+    }
 
     this._unsubscribeFromUiEvents();
     super.cleanup();
@@ -135,8 +137,11 @@ export default class PopupView extends BaseView {
    */
   _subscribeToUiEvents() {
     this._popupCloseButton.addEventListener('click', this._onPopupCloseButtonClick);
-    this._showPairedPopupButton.addEventListener('click', this._onShowPairedPopupClick);
     document.addEventListener('keyup', this._onKeyPress);
+
+    if (this._showPairedPopupButton) {
+      this._showPairedPopupButton.addEventListener('click', this._onShowPairedPopupClick);
+    }
   }
 
   /**
@@ -144,8 +149,11 @@ export default class PopupView extends BaseView {
    */
   _unsubscribeFromUiEvents() {
     this._popupCloseButton.removeEventListener('click', this._onPopupCloseButtonClick);
-    this._showPairedPopupButton.removeEventListener('click', this._onShowPairedPopupClick);
     document.removeEventListener('keyup', this._onKeyPress);
+
+    if (this._showPairedPopupButton) {
+      this._showPairedPopupButton.removeEventListener('click', this._onShowPairedPopupClick);
+    }
   }
 
   /**

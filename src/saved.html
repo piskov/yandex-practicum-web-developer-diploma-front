@@ -79,7 +79,7 @@
                      menu__item">
         Авторизоваться
       </button>
-      <button id="headerlogoutButton"
+      <button id="headerLogoutButton"
               class="button
                      button_theme_transparent-black
                      menu__item
@@ -173,6 +173,49 @@
       </ul>
     </div>
   </footer>
+
+  <div id="mobile-menu-popup"
+       class="popup
+              popup_is-hidden">
+    <div class="mobile-menu">
+      <img alt="Кнопка закрыть"
+           class="popup__close"
+           src="<%=require('./images/popup-close.svg').default%>">
+      <nav>
+        <a class="link
+                  menu__item
+                  menu__link
+                  menu__link_theme_white"
+           href="./">
+          Главная
+        </a>
+        <a class="link
+                  menu__item
+                  menu__item_is-hidden
+                  menu__link
+                  menu__link_theme_white"
+           href="./saved">
+          Сохранённые статьи
+        </a>
+      </nav>
+      <button id="mobileMenuLoginButton"
+              class="button
+                     button_theme_transparent-white
+                     menu__item">
+        Авторизоваться
+      </button>
+      <button id="mobileMenuLogoutButton"
+              class="button
+                     button_theme_transparent-white
+                     menu__item
+                     menu__item_is-hidden">
+        <span class='menu__username'>Выход</span>
+        <img src="<%=require('./images/logout-white.svg').default%>"
+             alt="Иконка выхода"
+             class="button__image">
+      </button>
+    </div>
+  </div>
 
   <template id="saved-article-template">
     <article class="card">

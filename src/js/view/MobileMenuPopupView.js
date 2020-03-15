@@ -3,21 +3,21 @@ import PopupViewModel from '../view-model/PopupViewModel';
 
 
 /**
- * Describes a view for a login popup.
+ * Describes a view for a mobile menu popup.
  */
-export default class LoginPopupView extends PopupView {
+export default class MobileMenuPopupView extends PopupView {
   /**
-     * Inits new instance of the login popup view.
+     * Inits new instance of the mobile menu view.
      * @param {PopupViewModel} dataContext Underlying VM.
      */
   constructor(dataContext) {
     super(
       dataContext,
-      document.getElementById('login-popup'),
-      document.forms.login
+      document.getElementById('mobile-menu-popup'),
+      null
     );
 
-    super.subscribeToCleanup(this._onVmCleanup.bind(this));
+    this._menuOpenButton = document.querySelector('.menu__image-button');
     this._subscribeToUiEvents();
   }
 
@@ -25,17 +25,10 @@ export default class LoginPopupView extends PopupView {
   //#region ------ Event handlers ------
 
   /**
-   * Handles form submit event
+   * Handles show secondary popup button click.
    */
-  _onFormSubmit(event) {
-    event.preventDefault();
-
-    const credentials = {
-      email: this._form.elements.email.value,
-      password: this._form.elements.password.value,
-    };
-
-    super.dataContext.submitCommand(credentials);
+  _onMenuOpenButtonClick() {
+    super.dataContext.isShown = true;
   }
 
   /**
@@ -55,9 +48,8 @@ export default class LoginPopupView extends PopupView {
    * Subscribes to UI events.
    */
   _subscribeToUiEvents() {
-    this._onFormSubmit = this._onFormSubmit.bind(this);
-    this._form.addEventListener('submit', this._onFormSubmit);
-
+    this._onMenuOpenButtonClick = this._onMenuOpenButtonClick.bind(this);
+    this._menuOpenButton.addEventListener('click', this._onMenuOpenButtonClick);
     super._subscribeToUiEvents();
   }
 
@@ -65,8 +57,9 @@ export default class LoginPopupView extends PopupView {
    * Unsubscribes from UI events.
    */
   _unsubscribeFromUiEvents() {
-    this._form.removeEventListener('submit', this._onFormSubmit);
+    this._menuOpenButton.removeEventListener('click', this._onMenuOpenButtonClick);
   }
 
   //#endregion
+
 }

@@ -21,8 +21,10 @@ export default class UserView extends BaseView {
     this._hiddenMenuItems = Array.from(document.getElementsByClassName('menu__item_is-hidden'));
     this._nameHolders = Array.from(document.getElementsByClassName('menu__username'));
 
-    this._headerLogoutButton = document.getElementById('headerlogoutButton');
+    this._headerLogoutButton = document.getElementById('headerLogoutButton');
     this._headerLoginButton = document.getElementById('headerLoginButton');
+    this._mobileMenuLogoutButton = document.getElementById('mobileMenuLogoutButton');
+    this._mobileMenuLoginButton = document.getElementById('mobileMenuLoginButton');
 
     this._subscribeToUiEvents();
   }
@@ -94,6 +96,7 @@ export default class UserView extends BaseView {
     const classForIsHidden = 'menu__item_is-hidden';
 
     updateElementVisiblity(this._headerLoginButton, false, classForIsHidden);
+    updateElementVisiblity(this._mobileMenuLoginButton, false, classForIsHidden);
 
     this._hiddenMenuItems.forEach(item =>
       updateElementVisiblity(item, true, classForIsHidden)
@@ -106,9 +109,11 @@ export default class UserView extends BaseView {
   _subscribeToUiEvents() {
     this._onLoginButtonClick = this._onLoginButtonClick.bind(this);
     this._headerLoginButton.addEventListener('click', this._onLoginButtonClick);
+    this._mobileMenuLoginButton.addEventListener('click', this._onLoginButtonClick);
 
     this._onLogoutButtonClick = this._onLogoutButtonClick.bind(this);
     this._headerLogoutButton.addEventListener('click', this._onLogoutButtonClick);
+    this._mobileMenuLogoutButton.addEventListener('click', this._onLogoutButtonClick);
   }
 
   /**
@@ -116,7 +121,10 @@ export default class UserView extends BaseView {
    */
   _unsubscribeFromUiEvents() {
     this._headerLoginButton.removeEventListener('click', this._onLoginButtonClick);
+    this._mobileMenuLoginButton.removeEventListener('click', this._onLoginButtonClick);
+
     this._headerLogoutButton.removeEventListener('click', this._onLogoutButtonClick);
+    this._mobileMenuLogoutButton.removeEventListener('click', this._onLogoutButtonClick);
   }
 
   /**

@@ -18,8 +18,13 @@ export default class UserViewModel extends BaseViewModel {
    * @param {PopupViewModel} loginPopupViewModel Login popup VM.
    * @param {PopupViewModel} signUpPopupViewModel Sign-up popup VM.
    * @param {PopupViewModel} signUpOkPopupViewModel “Sign-up OK” popup VM.
+   * @param {PopupViewModel} mobileMenuPopupViewModel Mobile menu popup VM.
    */
-  constructor(model, loginPopupViewModel, signUpPopupViewModel, signUpOkPopupViewModel) {
+  constructor(model,
+    mobileMenuPopupViewModel,
+    loginPopupViewModel = null,
+    signUpPopupViewModel = null,
+    signUpOkPopupViewModel = null) {
     super(model);
 
     if (loginPopupViewModel) {
@@ -35,6 +40,8 @@ export default class UserViewModel extends BaseViewModel {
     if (signUpOkPopupViewModel) {
       this._signUpOkPopupViewModel = signUpOkPopupViewModel;
     }
+
+    this._mobileMenuPopupViewModel = mobileMenuPopupViewModel;
 
     model.onLoginCompleted = this._onLoginCompletedHandler.bind(this);
     model.onNameLoadCompleted = this._onNameLoadCompletedHandler.bind(this);
@@ -74,6 +81,7 @@ export default class UserViewModel extends BaseViewModel {
    * Shows login popup
    */
   showLoginPopupCommand() {
+    this._mobileMenuPopupViewModel.isShown = false;
     this._loginPopupViewModel.isShown = true;
   }
   //#endregion

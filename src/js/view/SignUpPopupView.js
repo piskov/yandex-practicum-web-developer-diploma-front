@@ -44,7 +44,7 @@ export default class SignUpPopupView extends PopupView {
    */
   _onVmCleanup() {
     this._unsubscribeFromUiEvents();
-    super.cleanup();
+    super._onVmCleanup();
   }
 
   //#endregion
