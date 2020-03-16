@@ -10,6 +10,10 @@ const BASE_ADDRESS = 'https://api.divulge-uncommon.ru/';
 
 
 export default class ExplorerApi {
+  constructor() {
+    this._authToken = localStorage.getItem('token');
+  }
+
   //#region ------ Public methods ------
 
   /**
@@ -93,13 +97,18 @@ export default class ExplorerApi {
     return fetch(requestUrl, request)
       .then(response => {
         if (response.ok) {
-          return;
+          return response.json();
         }
 
         return parseErrorBodyAsync(
           response,
           errorConstants.SIGN_IN_ERROR_PREFIX
         );
+      })
+      .then(jsonData => {
+        this._authToken = jsonData.token;
+        localStorage.setItem('token', this._authToken);
+        return;
       });
   }
 
@@ -162,16 +171,21 @@ export default class ExplorerApi {
   /**
    * Builds fetch request object.
    * @param {string} method - Request method type.
-   * @returns {{credentials: string, headers: {'Content-Type': string}, method: string}}
+   * @returns {{credentials: string, headers: {'Authorization': string, 'Content-Type': string}, method: string}}
    */
   _createRequestParams(method = 'GET') {
-    return {
-      credentials: 'include',
+    const params = {
       headers: {
         'Content-Type': 'application/json'
       },
       method
     };
+
+    if (this._authToken) {
+      params.headers.Authorization = `Bearer ${this._authToken}`;
+    }
+
+    return params;
   }
 
   //#endregion
