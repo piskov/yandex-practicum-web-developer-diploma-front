@@ -11,11 +11,9 @@ export default class SignUpPopupView extends PopupView {
      * @param {PopupViewModel} dataContext Underlying VM.
      */
   constructor(dataContext) {
-    super(
-      dataContext,
-      document.getElementById('signup-popup'),
-      document.forms.signup
-    );
+    const loginPopup = document.getElementById('signup-popup');
+    const form = loginPopup.querySelector('.popup__form');
+    super(dataContext, loginPopup, form);
 
     super.subscribeToCleanup(this._onVmCleanup.bind(this));
     this._subscribeToUiEvents();
