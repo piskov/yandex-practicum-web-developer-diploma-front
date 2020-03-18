@@ -4,7 +4,7 @@ import MapCollectionItemChanged from '../tools/MapCollectionItemChanged';
 import OperationResult from '../tools/OperationResult';
 
 import errorConstants from '../constants/error-constants';
-
+import parseSavedArticles from '../tools/parseSavedArticles';
 
 /**
  * Describes a collection of saved news articles.
@@ -109,9 +109,11 @@ export default class SavedArticlesRepositoryModel {
 
     return this._explorerApi.getSavedArticlesAsync()
       .then(jsonData => {
-        const savedArticles = this._parseSavedArticles(jsonData);
-        savedArticles.forEach(article =>
-          this._savedArticlesMap.set(article.articleId, article));
+        const savedArticles = parseSavedArticles(jsonData);
+        savedArticles.forEach(article => {
+          article.onIsSavedChanged = this._articleIsSavedChangedHandler.bind(this)
+          this._savedArticlesMap.set(article.articleId, article);
+        });
 
         result.data = savedArticles;
         return result;
@@ -190,47 +192,6 @@ export default class SavedArticlesRepositoryModel {
   }
 
   /**
-   *
-   * Creates article models from News Explorer API JSON.
-   *
-   * @param jsonData {[Object]}
-   * Collection of articles.
-   *
-   * @returns {[ArticleModel]} Parsed articles.
-   * @private
-   */
-  _parseSavedArticles(jsonData) {
-    const articles = [];
-
-    if (jsonData === undefined
-      || jsonData.data === undefined
-      || jsonData.data.length === 0) {
-      return articles;
-    }
-
-    for (let item of jsonData.data) {
-      const { _id, keyword, title, text, date, source, link, image } = item;
-
-      const article = new ArticleModel(
-        keyword,
-        title,
-        text,
-        date,
-        source,
-        link,
-        image,
-        true, // isSaved
-        _id
-      );
-
-      articles.push(article);
-      article.onIsSavedChanged = this._articleIsSavedChangedHandler.bind(this);
-    }
-
-    return articles;
-  }
-
-  /**
    * Saves article to the user’s collection.
    * @param {ArticleModel} article Arcticle to save.
    * @private
@@ -243,7 +204,7 @@ export default class SavedArticlesRepositoryModel {
 
     return this._explorerApi.saveArticleAsync(article)
       .then(jsonData => {
-        article.serverArticleId = jsonData._id;
+        article.serverArticleId = jsonData.data._id;
 
         this._savedArticlesMap.set(article.articleId, article);
 

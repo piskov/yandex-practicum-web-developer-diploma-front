@@ -134,6 +134,22 @@ export default class PopupView extends BaseView {
   }
 
   /**
+   * Enables or disables form inputs on isBusy.
+   * @param {boolean} isBusy
+   */
+  _setFormBusyState(isBusy) {
+    if (!this._formValidator) {
+      return;
+    }
+
+    this._formValidator.setFormBusyState(
+      isBusy,
+      messageConstants.WAIT_MESSAGE,
+      this._submitButtonNormalText
+    );
+  }
+
+  /**
    * Subscribes to UI events.
    */
   _subscribeToUiEvents() {
@@ -170,22 +186,6 @@ export default class PopupView extends BaseView {
     }
 
     updateElementVisiblity(super.htmlMarkup, isVisible, 'popup_is-hidden');
-  }
-
-  _setFormBusyState(isBusy) {
-    if (!this._formValidator) {
-      return;
-    }
-
-    const button = this._formValidator.submitButton;
-
-    if (isBusy) {
-      button.textContent = messageConstants.WAIT_MESSAGE;
-    } else {
-      button.textContent = this._submitButtonNormalText;
-    }
-
-    this._formValidator.setInputsEnabled(!isBusy);
   }
 
   //#endregion

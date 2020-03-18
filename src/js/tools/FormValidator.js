@@ -55,12 +55,13 @@ export default class FormValidator {
   }
 
   /**
-   * Enables or disable form inputs.
-   * @param {boolean} isEnabled
+   * Update form to “wait for an operation to complete” state.
    */
-  setInputsEnabled(isEnabled) {
+  setFormBusyState(isBusy, buttonWaitMessage, buttonEnabledMessaged) {
+    this.submitButton.textContent = isBusy ? buttonWaitMessage : buttonEnabledMessaged;
+
     for (let input of this._inputs) {
-      ValidationHelper.changeInputEnabledState(input, isEnabled);
+      ValidationHelper.changeInputEnabledState(input, !isBusy);
     }
   }
 

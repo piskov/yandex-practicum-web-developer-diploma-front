@@ -1,6 +1,5 @@
 import ExplorerApi from '../api/ExplorerApi';
 import OperationResult from '../tools/OperationResult';
-import UserDto from '../dto/UserDto';
 
 import logout from '../tools/logout';
 
@@ -173,10 +172,7 @@ export default class UserModel {
   signUpAsync(credentials) {
     const result = new OperationResult();
 
-    const { name, email, password } = credentials;
-    const dto = new UserDto(name, email, password);
-
-    return this._explorerApi.signUpAsync(dto)
+    return this._explorerApi.signUpAsync(credentials)
       .then(() => {
         result.data = true;
       })

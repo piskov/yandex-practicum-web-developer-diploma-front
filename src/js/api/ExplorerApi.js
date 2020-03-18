@@ -6,7 +6,8 @@ import errorConstants from '../constants/error-constants';
 import parseErrorBodyAsync from '../tools/error-helper';
 
 
-const BASE_ADDRESS = 'https://api.divulge-uncommon.ru/';
+// const BASE_ADDRESS = 'https://api.divulge-uncommon.ru/';
+const BASE_ADDRESS = 'http://localhost:3000/';
 
 
 export default class ExplorerApi {
@@ -139,15 +140,17 @@ export default class ExplorerApi {
   }
 
   /**
-   * Createы a request to sign up a new user.
-   * @param {UserDto} userDto User data transfer object.
+   * Creates a request to sign up a new user.
+   * @param {{email: string, password: string, name: string}} credentials
    */
-  signUpAsync(userDto) {
+  signUpAsync(credentials) {
     const requestUrl = BASE_ADDRESS + `signup`;
 
     const request = this._createRequestParams('POST');
 
-    request.body = JSON.stringify(userDto);
+    const { name, email, password } = credentials;
+    const dto = new UserDto(name, email, password);
+    request.body = JSON.stringify(dto);
 
     return fetch(requestUrl, request)
       .then(response => {

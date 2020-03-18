@@ -4,6 +4,8 @@ import NewsApi from '../api/NewsApi';
 import OperationResult from '../tools/OperationResult';
 import SavedArticlesRepositoryModel from './SavedArticlesRepositoryModel';
 
+import parseSearchArticles from '../tools/parseSearchArticles';
+
 
 /**
  * Describes a collection of searched news articles.
@@ -89,7 +91,10 @@ export default class SearchedArticlesRepositoryModel extends SavedArticlesReposi
 
     return this._newsApi.searchAsync(searchPhrase)
       .then(jsonData => {
-        this._searchResults = this._parseSearchArticles(jsonData);
+        this._searchResults = parseSearchArticles(this._searchPhrase, jsonData);
+        this._searchResults.forEach(article =>
+          article.onIsSavedChanged = super._articleIsSavedChangedHandler.bind(this)
+        );
 
         result.data = this._searchResults;
         return result;
@@ -107,48 +112,4 @@ export default class SearchedArticlesRepositoryModel extends SavedArticlesReposi
 
   //#endregion
 
-
-  //#region ------ Private methods ------
-
-  /**
-   *
-   * Creates article models from News API JSON.
-   *
-   * @param jsonData {[Object]}
-   * Collection of articles.
-   *
-   * @returns {[ArticleModel]} Parsed articles.
-   * @private
-   */
-  _parseSearchArticles(jsonData) {
-    const articles = [];
-
-    if (jsonData === undefined
-      || jsonData.articles === undefined
-      || jsonData.articles.length === 0) {
-      return articles;
-    }
-
-    for (let item of jsonData.articles) {
-      const { title, description, url, urlToImage, publishedAt } = item;
-      const source = item.source.name;
-
-      const article = new ArticleModel(
-        this._searchPhrase,
-        title,
-        description,
-        publishedAt,
-        source,
-        url,
-        urlToImage
-      );
-
-      articles.push(article);
-      article.onIsSavedChanged = super._articleIsSavedChangedHandler.bind(this);
-    }
-
-    return articles;
-  }
-
-  //#endregion
 }
