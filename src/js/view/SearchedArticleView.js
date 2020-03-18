@@ -1,7 +1,7 @@
 import ArticleView from './ArticleView';
 import SearchedArticleViewModel from '../view-model/SearchedArticleViewModel';
 
-import changeButtonEnabledState from '../tools/button-enabled-helper';
+import { changeInputEnabledState } from '../tools/validation-helper';
 import updateElementVisiblity from '../tools/updateElementVisiblity';
 
 
@@ -116,7 +116,7 @@ export default class SearchedArticleView extends ArticleView {
    * @param {boolean} isLoggedOut
    */
   _updateNotLoggedInTooltipVisibility(isLoggedOut) {
-    changeButtonEnabledState(this._bookmarkButton, !isLoggedOut);
+    changeInputEnabledState(this._bookmarkButton, !isLoggedOut);
     updateElementVisiblity(this._notLoggedInTooltip, isLoggedOut, 'card__tooltip_is-hidden');
   }
 

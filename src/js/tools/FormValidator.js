@@ -54,6 +54,16 @@ export default class FormValidator {
     this._updateSubmitButtonState();
   }
 
+  /**
+   * Enables or disable form inputs.
+   * @param {boolean} isEnabled
+   */
+  setInputsEnabled(isEnabled) {
+    for (let input of this._inputs) {
+      ValidationHelper.changeInputEnabledState(input, isEnabled);
+    }
+  }
+
   //#endregion
 
 
@@ -131,7 +141,7 @@ export default class FormValidator {
       }
     }
 
-    ValidationHelper.changeButtonState(this._submitButton, isFormValid);
+    ValidationHelper.changeInputEnabledState(this._submitButton, isFormValid);
   }
 
   //#endregion

@@ -3,8 +3,9 @@ import FormValidator from '../tools/FormValidator';
 import PopupViewModel from '../view-model/PopupViewModel';
 
 import messageConstants from '../constants/message-constants';
+import { changeInputEnabledState } from '../tools/validation-helper';
 import updateElementVisiblity from '../tools/updateElementVisiblity';
-import { changeButtonState } from '../tools/validation-helper';
+
 
 const ESCAPE_CODE = 27;
 
@@ -100,8 +101,8 @@ export default class PopupView extends BaseView {
 
       case 'isBusy':
         const isBusy = super.dataContext.isBusy;
-        this._updateSubmitButton(isBusy);
-        changeButtonState(this._showPairedPopupButton, !isBusy);
+        this._setFormBusyState(isBusy);
+        changeInputEnabledState(this._showPairedPopupButton, !isBusy);
         break;
 
       case 'isShown':
@@ -127,7 +128,7 @@ export default class PopupView extends BaseView {
     }
 
     this._submitErrorMessage.textContent = '';
-    this._updateSubmitButton(false);
+    this._setFormBusyState(false);
     this._form.reset();
     this._formValidator.resetErrors();
   }
@@ -171,7 +172,7 @@ export default class PopupView extends BaseView {
     updateElementVisiblity(super.htmlMarkup, isVisible, 'popup_is-hidden');
   }
 
-  _updateSubmitButton(isBusy) {
+  _setFormBusyState(isBusy) {
     if (!this._formValidator) {
       return;
     }
@@ -184,7 +185,7 @@ export default class PopupView extends BaseView {
       button.textContent = this._submitButtonNormalText;
     }
 
-    changeButtonState(button, !isBusy);
+    this._formValidator.setInputsEnabled(!isBusy);
   }
 
   //#endregion

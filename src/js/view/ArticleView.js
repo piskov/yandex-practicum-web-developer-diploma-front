@@ -1,7 +1,7 @@
 import BaseView from './BaseView';
 import ArticleViewModel from '../view-model/ArticleViewModel';
 
-import changeButtonEnabledState from '../tools/button-enabled-helper';
+import { changeInputEnabledState } from '../tools/validation-helper';
 import updateElementVisiblity from '../tools/updateElementVisiblity';
 
 
@@ -83,7 +83,7 @@ export default class ArticleView extends BaseView {
    */
   _updateBusyIndicatorVisibility(isBusy) {
     const button = this._deleteButton || this._bookmarkButton;
-    changeButtonEnabledState(button, !isBusy);
+    changeInputEnabledState(button, !isBusy);
 
     updateElementVisiblity(this._busyIndicator, isBusy, 'preloader_is-hidden');
   }

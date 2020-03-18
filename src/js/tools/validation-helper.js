@@ -2,19 +2,19 @@ import errorConstants from '../constants/error-constants';
 
 
 /**
- * Enables or disables a button.
- * @param {Element} button - Button reference.
+ * Enables or disables an input.
+ * @param {Element} input - Input element reference.
  * @param {boolean} isEnabled - Availability state.
  */
-export function changeButtonState(button, isEnabled) {
-  if (button == null) {
+export function changeInputEnabledState(input, isEnabled) {
+  if (input == null) {
     return;
   }
 
   if (isEnabled) {
-    button.removeAttribute('disabled');
+    input.removeAttribute('disabled');
   } else {
-    button.setAttribute('disabled', "true");
+    input.setAttribute('disabled', "true");
   }
 }
 

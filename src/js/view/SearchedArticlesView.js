@@ -5,6 +5,7 @@ import SearchedArticlesRepositoryViewModel from '../view-model/SearchedArticlesR
 import SearchedArticleViewModel from '../view-model/SearchedArticleViewModel';
 
 import errorConstants from '../constants/error-constants';
+import { changeInputEnabledState } from '../tools/validation-helper';
 import updateElementVisiblity from '../tools/updateElementVisiblity';
 
 
@@ -92,9 +93,13 @@ export default class SearchedArticlesView extends BaseView {
   _onVmPropertyChanges(propertyName) {
     switch (propertyName) {
       case 'isBusy':
+        const isBusy = super.dataContext.isBusy;
+        changeInputEnabledState(this._searchField, !isBusy);
+        changeInputEnabledState(this._searchButton, !isBusy);
+
         updateElementVisiblity(
           this._preloader,
-          super.dataContext.isBusy,
+          isBusy,
           'preloader_is-hidden');
         break;
 
