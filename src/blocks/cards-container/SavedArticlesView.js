@@ -1,8 +1,8 @@
-import BaseView from './BaseView';
-import SavedArticleView from './SavedArticleView';
+import BaseView from '../../js/view/BaseView';
+import SavedArticleView from '../card/SavedArticleView';
 
-import SavedArticlesRepositoryViewModel from '../view-model/SavedArticlesRepositoryViewModel';
-import SavedArticleViewModel from '../view-model/SavedArticleViewModel';
+import SavedArticlesRepositoryViewModel from '../../js/view-model/SavedArticlesRepositoryViewModel';
+import SavedArticleViewModel from '../../js/view-model/SavedArticleViewModel';
 
 
 /**

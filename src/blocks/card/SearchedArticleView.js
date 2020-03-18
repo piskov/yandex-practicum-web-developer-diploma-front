@@ -1,8 +1,8 @@
 import ArticleView from './ArticleView';
-import SearchedArticleViewModel from '../view-model/SearchedArticleViewModel';
+import SearchedArticleViewModel from '../../js/view-model/SearchedArticleViewModel';
 
-import { changeInputEnabledState } from '../tools/validation-helper';
-import updateElementVisiblity from '../tools/updateElementVisiblity';
+import { changeInputEnabledState } from '../../js/tools/validation-helper';
+import updateElementVisiblity from '../../js/tools/updateElementVisiblity';
 
 
 const ARTICLE_TEMPLATE =

@@ -6,8 +6,7 @@ import errorConstants from '../constants/error-constants';
 import parseErrorBodyAsync from '../tools/error-helper';
 
 
-// const BASE_ADDRESS = 'https://api.divulge-uncommon.ru/';
-const BASE_ADDRESS = 'http://localhost:3000/';
+const BASE_ADDRESS = 'https://api.divulge-uncommon.ru/';
 
 
 export default class ExplorerApi {

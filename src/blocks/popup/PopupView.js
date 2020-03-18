@@ -1,10 +1,10 @@
-import BaseView from './BaseView';
-import FormValidator from '../tools/FormValidator';
-import PopupViewModel from '../view-model/PopupViewModel';
+import BaseView from '../../js/view/BaseView'
+import FormValidator from '../../js/tools/FormValidator';
+import PopupViewModel from '../../js/view-model/PopupViewModel';
 
-import messageConstants from '../constants/message-constants';
-import { changeInputEnabledState } from '../tools/validation-helper';
-import updateElementVisiblity from '../tools/updateElementVisiblity';
+import messageConstants from '../../js/constants/message-constants';
+import { changeInputEnabledState } from '../../js/tools/validation-helper';
+import updateElementVisiblity from '../../js/tools/updateElementVisiblity';
 
 
 const ESCAPE_CODE = 27;

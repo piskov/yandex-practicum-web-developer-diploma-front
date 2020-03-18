@@ -1,14 +1,17 @@
 import './pages/saved.css';
 
 import ExplorerApi from './js/api/ExplorerApi';
-import PopupViewModel from './js/view-model/PopupViewModel';
-import MobileMenuPopupView from './js/view/MobileMenuPopupView';
+
 import SavedArticlesRepositoryModel from './js/model/SavedArticlesRepositoryModel';
-import SavedArticlesRepositoryViewModel from './js/view-model/SavedArticlesRepositoryViewModel';
-import SavedArticlesView from './js/view/SavedArticlesView';
 import UserModel from './js/model/UserModel';
-import UserView from './js/view/UserView';
+
+import PopupViewModel from './js/view-model/PopupViewModel';
+import SavedArticlesRepositoryViewModel from './js/view-model/SavedArticlesRepositoryViewModel';
 import UserViewModel from './js/view-model/UserViewModel';
+
+import MobileMenuPopupView from './blocks/popup/MobileMenuPopupView';
+import SavedArticlesView from './blocks/cards-container/SavedArticlesView';
+import UserView from './js/view/UserView';
 
 import errorConstants from './js/constants/error-constants';
 

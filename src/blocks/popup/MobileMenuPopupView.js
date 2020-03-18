@@ -1,5 +1,5 @@
 import PopupView from './PopupView';
-import PopupViewModel from '../view-model/PopupViewModel';
+import PopupViewModel from '../../js/view-model/PopupViewModel';
 
 
 /**

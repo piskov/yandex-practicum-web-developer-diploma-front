@@ -1,5 +1,5 @@
 import ArticleView from './ArticleView';
-import SavedArticleViewModel from '../view-model/SavedArticleViewModel';
+import SavedArticleViewModel from '../../js/view-model/SavedArticleViewModel';
 
 
 const ARTICLE_TEMPLATE =

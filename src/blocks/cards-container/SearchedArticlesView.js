@@ -1,12 +1,12 @@
-import BaseView from './BaseView';
-import SearchedArticleView from './SearchedArticleView';
+import BaseView from '../../js/view/BaseView';
+import SearchedArticleView from '../card/SearchedArticleView';
 
-import SearchedArticlesRepositoryViewModel from '../view-model/SearchedArticlesRepositoryViewModel';
-import SearchedArticleViewModel from '../view-model/SearchedArticleViewModel';
+import SearchedArticlesRepositoryViewModel from '../../js/view-model/SearchedArticlesRepositoryViewModel';
+import SearchedArticleViewModel from '../../js/view-model/SearchedArticleViewModel';
 
-import errorConstants from '../constants/error-constants';
-import { changeInputEnabledState } from '../tools/validation-helper';
-import updateElementVisiblity from '../tools/updateElementVisiblity';
+import errorConstants from '../../js/constants/error-constants';
+import { changeInputEnabledState } from '../../js/tools/validation-helper';
+import updateElementVisiblity from '../../js/tools/updateElementVisiblity';
 
 
 /**

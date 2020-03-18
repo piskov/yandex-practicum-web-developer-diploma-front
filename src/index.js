@@ -10,11 +10,11 @@ import PopupViewModel from './js/view-model/PopupViewModel';
 import SearchedArticlesRepositoryViewModel from './js/view-model/SearchedArticlesRepositoryViewModel';
 import UserViewModel from './js/view-model/UserViewModel';
 
-import LoginPopupView from './js/view/LoginPopupView';
-import MobileMenuPopupView from './js/view/MobileMenuPopupView';
-import SearchedArticlesView from './js/view/SearchedArticlesView';
-import SignUpPopupView from './js/view/SignUpPopupView';
-import SignUpOkPopupView from './js/view/SignUpOkPopupView';
+import LoginPopupView from './blocks/popup/LoginPopupView';
+import MobileMenuPopupView from './blocks/popup/MobileMenuPopupView';
+import SearchedArticlesView from './blocks/cards-container/SearchedArticlesView';
+import SignUpPopupView from './blocks/popup/SignUpPopupView';
+import SignUpOkPopupView from './blocks/popup/SignUpOkPopupView';
 import UserView from './js/view/UserView';
 
 

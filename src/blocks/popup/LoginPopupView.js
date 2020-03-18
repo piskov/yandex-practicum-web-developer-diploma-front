@@ -1,17 +1,17 @@
 import PopupView from './PopupView';
-import PopupViewModel from '../view-model/PopupViewModel';
+import PopupViewModel from '../../js/view-model/PopupViewModel';
 
 
 /**
- * Describes a view for a sign-up popup.
+ * Describes a view for a login popup.
  */
-export default class SignUpPopupView extends PopupView {
+export default class LoginPopupView extends PopupView {
   /**
-     * Inits new instance of the sign-up popup view.
+     * Inits new instance of the login popup view.
      * @param {PopupViewModel} dataContext Underlying VM.
      */
   constructor(dataContext) {
-    const loginPopup = document.getElementById('signup-popup');
+    const loginPopup = document.getElementById('login-popup');
     const form = loginPopup.querySelector('.popup__form');
     super(dataContext, loginPopup, form);
 
@@ -30,7 +30,6 @@ export default class SignUpPopupView extends PopupView {
 
     const credentials = {
       email: this._form.elements.email.value,
-      name: this._form.elements.firstName.value,
       password: this._form.elements.password.value,
     };
 

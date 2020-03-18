@@ -1,8 +1,8 @@
-import BaseView from './BaseView';
-import ArticleViewModel from '../view-model/ArticleViewModel';
+import BaseView from '../../js/view/BaseView';
+import ArticleViewModel from '../../js/view-model/ArticleViewModel';
 
-import { changeInputEnabledState } from '../tools/validation-helper';
-import updateElementVisiblity from '../tools/updateElementVisiblity';
+import { changeInputEnabledState } from '../../js/tools/validation-helper';
+import updateElementVisiblity from '../../js/tools/updateElementVisiblity';
 
 
 /**
