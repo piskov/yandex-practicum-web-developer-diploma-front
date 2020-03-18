@@ -28,17 +28,21 @@ export default class PopupView extends BaseView {
 
     if (form) {
       this._form = form;
+
+      // Yes, we need to create FormValidator exatly here,
+      // yes, it’s needed to bee tightly coupled to the view,
+      // you cannot separate FormValidator from the form that is
+      // defined only in consturctor in runtime
       this._formValidator = new FormValidator(form);
 
       this._submitButtonNormalText = this._formValidator.submitButton.textContent;
       this._submitErrorMessage = document.getElementById(`error-${form.name}`);
     }
 
-    this._popupCloseButton = super.htmlMarkup.querySelector('.popup__close');
     this._showPairedPopupButton = super.htmlMarkup.querySelector('.popup__textual-button');
 
     this._onShowPairedPopupClick = this._onShowPairedPopupClick.bind(this);
-    this._onPopupCloseButtonClick = this._onPopupCloseButtonClick.bind(this);
+    this._onPopupBackgroundClick = this._onPopupBackgroundClick.bind(this);
     this._onKeyPress = this._onKeyPress.bind(this);
     this._subscribeToUiEvents = this._subscribeToUiEvents.bind(this);
     this._unsubscribeFromUiEvents = this._unsubscribeFromUiEvents.bind(this);
@@ -52,20 +56,21 @@ export default class PopupView extends BaseView {
    */
   _onKeyPress(event) {
     if (event.keyCode === ESCAPE_CODE) {
-      this._onPopupCloseButtonClick();
+      this._onPopupBackgroundClick();
     }
   }
 
-  /**
-   * Handles close popup button click.
-   */
-  _onPopupCloseButtonClick() {
+  _onPopupBackgroundClick(event) {
     if (super.dataContext.isBusy) {
       return;
     }
 
-    super.dataContext.isShown = false;
-    this._unsubscribeFromUiEvents();
+    if (event &&
+      (event.target.classList.contains('popup')
+        || event.target.classList.contains('popup__close'))) {
+      super.dataContext.isShown = false;
+      this._unsubscribeFromUiEvents();
+    }
   }
 
   /**
@@ -153,7 +158,7 @@ export default class PopupView extends BaseView {
    * Subscribes to UI events.
    */
   _subscribeToUiEvents() {
-    this._popupCloseButton.addEventListener('click', this._onPopupCloseButtonClick);
+    super.htmlMarkup.addEventListener('click', this._onPopupBackgroundClick);
     document.addEventListener('keyup', this._onKeyPress);
 
     if (this._showPairedPopupButton) {
@@ -165,7 +170,7 @@ export default class PopupView extends BaseView {
    * Unsubscribes from UI events.
    */
   _unsubscribeFromUiEvents() {
-    this._popupCloseButton.removeEventListener('click', this._onPopupCloseButtonClick);
+    super.htmlMarkup.removeEventListener('click', this._onPopupBackgroundClick);
     document.removeEventListener('keyup', this._onKeyPress);
 
     if (this._showPairedPopupButton) {
