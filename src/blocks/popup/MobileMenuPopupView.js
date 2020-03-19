@@ -13,7 +13,7 @@ export default class MobileMenuPopupView extends PopupView {
   constructor(dataContext) {
     super(
       dataContext,
-      document.getElementById('mobile-menu-popup'),
+      document.querySelector('#mobile-menu-popup'),
       null
     );
 

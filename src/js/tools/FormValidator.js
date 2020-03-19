@@ -58,7 +58,8 @@ export default class FormValidator {
    * Update form to “wait for an operation to complete” state.
    */
   setFormBusyState(isBusy, buttonWaitMessage, buttonEnabledMessaged) {
-    this.submitButton.textContent = isBusy ? buttonWaitMessage : buttonEnabledMessaged;
+    this._submitButton.textContent = isBusy ? buttonWaitMessage : buttonEnabledMessaged;
+    ValidationHelper.changeInputEnabledState(this._submitButton, !isBusy);
 
     for (let input of this._inputs) {
       ValidationHelper.changeInputEnabledState(input, !isBusy);

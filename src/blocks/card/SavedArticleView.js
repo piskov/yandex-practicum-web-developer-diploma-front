@@ -3,7 +3,7 @@ import SavedArticleViewModel from '../../js/view-model/SavedArticleViewModel';
 
 
 const ARTICLE_TEMPLATE =
-  document.getElementById('saved-article-template')
+  document.querySelector('#saved-article-template')
     .content
     .querySelector('.card');
 

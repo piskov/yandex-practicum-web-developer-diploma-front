@@ -6,7 +6,7 @@ import updateElementVisiblity from '../../js/tools/updateElementVisiblity';
 
 
 const ARTICLE_TEMPLATE =
-  document.getElementById('search-article-template')
+  document.querySelector('#search-article-template')
     .content
     .querySelector('.card');
 

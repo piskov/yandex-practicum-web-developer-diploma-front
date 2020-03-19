@@ -71,7 +71,7 @@ export function showError(errorMessage, errorElementId) {
     return;
   }
 
-  const errorLabel = document.getElementById(errorElementId);
+  const errorLabel = document.querySelector('#' + errorElementId);
   if (errorLabel === null) {
     return;
   }

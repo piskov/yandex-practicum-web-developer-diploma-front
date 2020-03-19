@@ -21,10 +21,10 @@ export default class UserView extends BaseView {
     this._hiddenMenuItems = Array.from(document.getElementsByClassName('menu__item_is-hidden'));
     this._nameHolders = Array.from(document.getElementsByClassName('menu__username'));
 
-    this._headerLogoutButton = document.getElementById('headerLogoutButton');
-    this._headerLoginButton = document.getElementById('headerLoginButton');
-    this._mobileMenuLogoutButton = document.getElementById('mobileMenuLogoutButton');
-    this._mobileMenuLoginButton = document.getElementById('mobileMenuLoginButton');
+    this._headerLogoutButton = document.querySelector('#headerLogoutButton');
+    this._headerLoginButton = document.querySelector('#headerLoginButton');
+    this._mobileMenuLogoutButton = document.querySelector('#mobileMenuLogoutButton');
+    this._mobileMenuLoginButton = document.querySelector('#mobileMenuLoginButton');
 
     this._subscribeToUiEvents();
   }

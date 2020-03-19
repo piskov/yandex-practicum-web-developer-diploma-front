@@ -13,7 +13,7 @@ export default class SignUpOkPopupView extends PopupView {
   constructor(dataContext) {
     super(
       dataContext,
-      document.getElementById('signup-ok-popup'),
+      document.querySelector('#signup-ok-popup'),
       null
     );
   }
