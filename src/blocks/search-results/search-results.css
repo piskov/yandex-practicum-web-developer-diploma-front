@@ -1,4 +1,5 @@
-@import url('./__cards-container/search-results__cards-container.css');
+@import url('./_is-hidden/search-results_is-hidden.css');
+@import url('./__error/search-results__error.css');
 @import url('./__load-button/search-results__load-button.css');
 @import url('./__not-found/search-results__not-found.css');
 @import url('./__preloader/search-results__preloader.css');

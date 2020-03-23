@@ -16,6 +16,10 @@
   transition: color 0.2s ease-out;
 }
 
+.popup__textual-button:disabled {
+  color: #E6E8EB;
+}
+
 .popup__textual-button:active {
   color: #2A65CC;
 }
